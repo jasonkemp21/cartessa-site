@@ -6,7 +6,7 @@
 <title>Cartessa Real Estate Company</title>
 <meta name="description" content="Cartessa Real Estate Company, Rochester Hills, Michigan. Adaptive reuse and affordable housing development led by Bill Chalmers. Website concept.">
 <meta property="og:title" content="Cartessa Real Estate Company">
-<meta property="og:description" content="We buy the buildings other people have written off, then deliver them on time, on budget and fully leased. Website concept for Cartessa and Westwood Apartments.">
+<meta property="og:description" content="We buy the buildings other people have written off, then deliver them on time, on budget and fully leased. Website concept for Cartessa and its properties.">
 <meta property="og:image" content="img/ngop-after.jpg">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="img/c-mark.png">
@@ -14,7 +14,7 @@
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Libre+Franklin:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Libre+Franklin:wght@400;500;600;700;800&display=swap">
 <style>
 /* Layout: Bill's completion package, online. A white page with his navy doing the structure
    (navigation bar, caption bars, short rules), photographs matted in white with a soft shadow the
@@ -312,37 +312,296 @@ form.cf{display:grid;gap:14px;background:var(--panel);padding:24px}
 .ww .record b{font-family:var(--sans);font-weight:800}
 .ww .foot{background:var(--rust-2)}
 
-/* property mini-sites */
-.ps{--brand:#2F5D46;--brand-2:color-mix(in srgb,var(--brand) 78%,#000);--panel:color-mix(in srgb,var(--brand) 7%,#fff);--panel-2:color-mix(in srgb,var(--brand) 15%,#fff)}
-.ps-office{--brand:#1F4E5A}
-.ps-retail{--brand:#7A2E3A}
-.ps-pharmacies{--brand:#1E5A8A}
-.ps-banks{--brand:#5C4A1E}
-.ps-westwood{--brand:#774C3F}
-.ps .mono{width:46px;height:46px;background:var(--brand);color:#fff;display:grid;place-items:center;font-family:var(--serif);font-size:21px;font-weight:600;flex:none}
-.ps .lk-name{font-family:var(--serif);font-weight:600;font-size:25px;letter-spacing:0;line-height:1.05}
-.ps .lk-sub{font-family:var(--sans);font-size:13px;margin-top:4px;color:var(--ink-2)}
-.ps .tagline{font-style:normal;font-family:var(--sans);font-size:14px}
-.ps .tagline a{color:var(--brand);text-decoration:none;font-weight:600}
-.ps .tagline a:hover{text-decoration:underline}
-.ps .ba .tag{background:color-mix(in srgb,var(--brand) 88%,transparent)}
+/* ===== property sub-sites: shared parts ===== */
+.ps{--brand:#2F5D46;--brand-2:color-mix(in srgb,var(--brand) 76%,#000);--panel:color-mix(in srgb,var(--brand) 6%,#fff);--panel-2:color-mix(in srgb,var(--brand) 14%,#fff);--line:color-mix(in srgb,var(--brand) 24%,#fff);--jost:"Jost","Century Gothic",Futura,sans-serif;--corm:"Cormorant Garamond","EB Garamond",Garamond,serif;--arch:"Archivo","Arial Narrow",Arial,sans-serif}
+.ps h2{font-size:clamp(26px,3.2vw,36px)}
 .ps .foot{background:var(--brand-2)}
-.ps .hero h1{max-width:18ch;font-size:clamp(34px,4.6vw,54px)}
-@media (max-width:480px){.ps .lk-name{font-size:20px}.ps .mono{width:40px;height:40px;font-size:18px}}
-.glance{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border-top:2px solid var(--brand);border-bottom:1px solid var(--rule)}
-.glance>div{background:var(--paper);padding:16px 18px 18px 0;min-width:0}
-.glance>div+div{padding-left:18px}
-.glance dt{font-family:var(--sans);font-size:12px;font-weight:600;color:var(--mute)}
-.glance dd{font-family:var(--serif);font-size:23px;color:var(--brand);line-height:1.15;margin-top:4px;overflow-wrap:anywhere}
-@media (max-width:760px){.glance{grid-template-columns:1fr 1fr}.glance>div:nth-child(odd){padding-left:0}}
-@media (max-width:420px){.glance{grid-template-columns:1fr}.glance>div+div{padding-left:0}}
-.story{display:grid;grid-template-columns:4fr 8fr;gap:40px;align-items:start}
-.story .memo{margin-top:0}
-.story .memo dt:first-child{margin-top:0}
-@media (max-width:860px){.story{grid-template-columns:1fr;gap:20px}}
-.more{display:flex;flex-wrap:wrap;gap:8px 26px;font-family:var(--sans);font-size:15px}
-.more a{color:var(--brand);text-decoration:none;border-bottom:1px solid var(--rule)}
-.more a:hover{border-bottom-color:var(--brand)}
+.ps .ba .tag{background:color-mix(in srgb,var(--brand) 88%,transparent)}
+.sx{padding-block:clamp(40px,6vw,68px)}
+.sx.tint{background:var(--panel)}
+.sx.rule{border-top:1px solid var(--line)}
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:start}
+.cols2.wide-l{grid-template-columns:7fr 5fr}
+.cols2.wide-r{grid-template-columns:5fr 7fr}
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,40px);align-items:start}
+.cols2>*,.cols3>*{min-width:0}
+@media (max-width:860px){.cols2,.cols2.wide-l,.cols2.wide-r,.cols3{grid-template-columns:1fr}}
+.kicker{font-family:var(--sans);font-size:13px;font-weight:700;color:var(--brand);margin-bottom:10px}
+.mapfig{margin:0;border:1px solid var(--line);background:#fff;max-width:100%}
+.mapfig img{width:100%;height:auto;display:block}
+.mapfig figcaption{font:13px/1.45 var(--sans);color:var(--mute);padding:10px 12px;border-top:1px solid var(--line)}
+.snap{margin:0;background:#fff;padding:7px 7px 0;box-shadow:0 1px 2px rgba(0,20,40,.2),0 10px 24px rgba(0,20,40,.13);max-width:340px;width:100%}
+.snap img{width:100%;height:auto;display:block}
+.snap figcaption{font:12px/1.4 var(--sans);color:var(--mute);padding:8px 2px 9px}
+.snap.tilt{transform:rotate(-1.2deg)}
+.kv{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:15px}
+.kv th,.kv td{text-align:left;vertical-align:top;padding:11px 0;border-bottom:1px solid var(--line)}
+.kv th{font-weight:600;color:var(--mute);font-size:13px;width:38%;padding-right:14px}
+.kv td{color:var(--ink)}
+.kv tr:first-child th,.kv tr:first-child td{border-top:2px solid var(--brand)}
+.ledger{width:100%;border-collapse:collapse}
+.ledger th{font:600 12px/1.3 var(--sans);color:var(--mute);text-align:left;padding:0 0 8px;border-bottom:2px solid var(--brand)}
+.ledger td{vertical-align:top;padding:14px 18px 14px 0;border-bottom:1px solid var(--line);font-size:18px;line-height:1.4;width:50%}
+.ledger td:first-child{color:var(--brand);font-weight:500}
+@media (max-width:560px){.ledger thead{display:none}.ledger td{display:block;width:auto;padding:10px 0 4px;border:0}.ledger td+td{padding:0 0 14px;border-bottom:1px solid var(--line)}}
+.facts-list{display:grid;gap:0}
+.facts-list li{display:grid;grid-template-columns:150px 1fr;gap:6px 18px;padding:12px 0;border-bottom:1px solid var(--line);font-size:17px;line-height:1.45}
+.facts-list li b{font:600 13px/1.5 var(--sans);color:var(--brand);padding-top:3px}
+@media (max-width:560px){.facts-list li{grid-template-columns:1fr}}
+.plain-list li{padding:9px 0 9px 20px;border-bottom:1px solid var(--line);position:relative;font-size:17px;line-height:1.45}
+.plain-list li::before{content:"";position:absolute;left:2px;top:19px;width:8px;height:2px;background:var(--brand)}
+.near{display:grid;grid-template-columns:1fr auto;gap:0 18px;font-family:var(--sans);font-size:15px}
+.near div{padding:9px 0;border-bottom:1px solid var(--line)}
+.near div:nth-child(even){color:var(--mute);text-align:right;white-space:nowrap}
+.near small{display:block;color:var(--mute);font-size:13px}
+.today{display:flex;gap:12px;align-items:flex-start;font-family:var(--sans);font-size:15px;line-height:1.5;border:1px solid var(--line);padding:14px 16px;background:#fff}
+.today i{flex:none;width:10px;height:10px;border-radius:50%;background:var(--brand);margin-top:6px}
+.today b{color:var(--brand)}
+.srcs{font:12.5px/1.6 var(--sans);color:var(--mute)}
+.srcs a{color:var(--mute);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:2px;overflow-wrap:anywhere}
+.srcs a:hover{color:var(--brand)}
+.dg{width:100%;height:auto;display:block;font-family:var(--sans)}
+.dg .t{font-size:13px;fill:var(--ink)}
+.dg .tb{font-size:13px;font-weight:700;fill:var(--ink)}
+.dg .ts{font-size:11.5px;fill:var(--mute)}
+.dg .tw{font-size:13px;font-weight:700;fill:#fff}
+.dg .tws{font-size:11.5px;fill:#fff;opacity:.85}
+.dg .ta{font-size:12px;font-weight:700;fill:var(--brand)}
+.dg .ln{stroke:var(--brand);fill:none;stroke-width:1.5}
+.dg .lot{fill:var(--panel);stroke:var(--brand);stroke-width:1.5;stroke-dasharray:6 4}
+.dg .old{fill:#fff;stroke:var(--mute);stroke-width:1.2;stroke-dasharray:4 3}
+.dg .bld{fill:var(--brand)}
+.dg .bld2{fill:var(--panel-2);stroke:var(--brand);stroke-width:1.2}
+.dg .rd{fill:#E3E6EA}
+.dgcap{font:13px/1.45 var(--sans);color:var(--mute);margin-top:10px}
+.wasis{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--brand);border-bottom:1px solid var(--line)}
+.wasis div{padding:14px 18px 16px 0;position:relative;min-width:0}
+.wasis div+div{padding-left:26px;border-left:1px solid var(--line)}
+.wasis div+div::before{content:"";position:absolute;left:-7px;top:50%;width:12px;height:12px;border-top:2px solid var(--brand);border-right:2px solid var(--brand);transform:translateY(-50%) rotate(45deg);background:var(--paper)}
+.wasis span{display:block;font:600 12px/1.3 var(--sans);color:var(--mute);margin-bottom:5px}
+.wasis b{font-family:var(--serif);font-weight:500;font-size:21px;line-height:1.2;color:var(--brand)}
+@media (max-width:640px){.wasis{grid-template-columns:1fr}.wasis div+div{padding-left:0;border-left:0;border-top:1px solid var(--line)}.wasis div+div::before{display:none}}
+.pressrow a{display:grid;gap:3px;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.pressrow a:first-child{border-top:2px solid var(--brand)}
+.pressrow .t{font-family:var(--serif);font-size:20px;line-height:1.25;color:var(--brand)}
+.pressrow a:hover .t{text-decoration:underline;text-underline-offset:4px}
+.pressrow .o{font:13px/1.4 var(--sans);color:var(--mute)}
+.pressrow .s{font:14px/1.45 var(--sans);color:var(--ink-2)}
+.pull{font-family:var(--serif);font-style:italic;font-size:clamp(24px,3vw,32px);line-height:1.28;color:var(--brand);text-wrap:balance}
+.pull-by{font:13px/1.45 var(--sans);color:var(--mute);margin-top:12px}
+.pull-by b{color:var(--ink)}
+.sibs{display:flex;flex-wrap:wrap;gap:8px 24px;font-family:var(--sans);font-size:14.5px}
+.sibs a{color:var(--brand);text-decoration:none;border-bottom:1px solid var(--line)}
+.sibs a:hover{border-bottom-color:var(--brand)}
+.backbar{font:13px/1 var(--sans);background:var(--brand-2);color:#fff}
+.backbar .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:9px}
+.backbar a{color:#fff;text-decoration:none;opacity:.9}
+.backbar a:hover{opacity:1;text-decoration:underline}
+.snav{display:flex;flex-wrap:wrap;gap:2px 22px;font:500 14px/1 var(--sans)}
+.snav a{color:inherit;text-decoration:none;padding:8px 0;border-bottom:2px solid transparent}
+.snav a:hover{border-bottom-color:currentColor}
+
+/* ===== bank branch file (engraved, centred) ===== */
+.k-bank .bhead{text-align:center;padding-block:34px 0}
+.k-bank .bhead .name{font-family:var(--wordmark);font-weight:600;font-size:clamp(24px,4.4vw,44px);letter-spacing:.12em;line-height:1.1;color:var(--brand);text-wrap:balance}
+.k-bank .bhead .sub{font:500 14px/1.5 var(--sans);color:var(--ink-2);margin-top:12px;letter-spacing:.02em}
+.k-bank .bhead .snav{justify-content:center;margin-top:22px;padding-block:6px;border-top:3px double var(--brand);border-bottom:1px solid var(--line);color:var(--brand)}
+.k-bank .plaque-wrap{position:relative;margin-top:28px}
+.k-bank .plaque{position:absolute;left:18px;bottom:54px;background:#fff;border:1px solid var(--brand);outline:3px solid #fff;padding:16px 18px;max-width:330px;font-family:var(--sans);font-size:14px;line-height:1.5;box-shadow:0 8px 22px rgba(0,0,0,.14)}
+.k-bank .plaque b{display:block;font-family:var(--serif);font-weight:500;font-size:22px;line-height:1.15;color:var(--brand);margin-bottom:6px}
+.k-bank .plaque-wrap .snap{position:absolute;right:18px;top:18px;max-width:230px}
+@media (max-width:760px){.k-bank .plaque{position:static;max-width:none;margin-top:12px;outline:0;box-shadow:none}.k-bank .plaque-wrap .snap{position:static;max-width:300px;margin-top:14px}}
+.k-bank h2{font-family:var(--wordmark);font-weight:600;font-size:clamp(19px,2.2vw,23px);letter-spacing:.14em;text-transform:uppercase;color:var(--brand)}
+.k-bank h2::after{content:"";display:block;width:100%;height:0;border-top:3px double var(--line);margin-top:12px}
+.prog{display:grid;grid-template-columns:repeat(6,1fr);gap:0;counter-reset:pg;margin-top:22px}
+.prog a{counter-increment:pg;text-decoration:none;color:var(--ink-2);text-align:center;padding:0 6px;position:relative;font:13px/1.35 var(--sans);min-width:0}
+.prog a::before{content:counter(pg);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;margin:0 auto 10px;border:1.5px solid var(--brand);color:var(--brand);background:#fff;font:600 17px/1 var(--serif);position:relative;z-index:1}
+.prog a::after{content:"";position:absolute;left:-50%;right:50%;top:19px;border-top:1.5px solid var(--line)}
+.prog a:first-child::after{display:none}
+.prog a.on::before{background:var(--brand);color:#fff}
+.prog a.on b{color:var(--brand)}
+.prog a b{display:block;font-weight:600;color:var(--ink);overflow-wrap:anywhere}
+.prog a:hover b{text-decoration:underline}
+@media (max-width:700px){.prog{grid-template-columns:repeat(3,1fr);row-gap:20px}.prog a:nth-child(4)::after{display:none}}
+
+/* ===== pharmacy land assembly (drawing title block) ===== */
+.k-rx{--grid:color-mix(in srgb,var(--brand) 9%,#fff)}
+.k-rx .tb{border-bottom:2px solid var(--brand)}
+.k-rx .tb .wrap{display:grid;grid-template-columns:1fr auto;gap:0;align-items:stretch}
+.k-rx .tb .name{font-family:var(--arch);font-weight:800;font-size:clamp(24px,3.6vw,38px);letter-spacing:-.01em;line-height:1;color:var(--brand);padding-block:20px 16px;text-transform:uppercase}
+.k-rx .tb .name small{display:block;font:500 13px/1.4 var(--sans);letter-spacing:.02em;text-transform:none;color:var(--ink-2);margin-top:8px}
+.k-rx .tb dl{display:grid;grid-template-columns:auto auto auto;font-family:var(--sans);border-left:1px solid var(--brand)}
+.k-rx .tb dl div{padding:10px 16px;border-right:1px solid var(--line)}
+.k-rx .tb dt{font-size:10.5px;font-weight:700;color:var(--mute);letter-spacing:.08em;text-transform:uppercase}
+.k-rx .tb dd{font-size:15px;font-weight:600;color:var(--ink);margin-top:5px;white-space:nowrap}
+@media (max-width:820px){.k-rx .tb .wrap{grid-template-columns:1fr}.k-rx .tb dl{border-left:0;border-top:1px solid var(--line);grid-template-columns:repeat(3,1fr)}.k-rx .tb dl div{padding:10px 10px 10px 0;border-right:0}.k-rx .tb dd{white-space:normal}}
+.k-rx .tbnav{border-bottom:1px solid var(--line);color:var(--brand)}
+.k-rx h1{font-family:var(--arch);font-weight:800;font-size:clamp(30px,4.2vw,50px);letter-spacing:-.02em;line-height:1.02;color:var(--ink)}
+.k-rx h2{font-family:var(--arch);font-weight:800;letter-spacing:-.01em;color:var(--ink);font-size:clamp(22px,2.6vw,30px)}
+.k-rx .sheet{background-color:#fff;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:22px 22px;border:1px solid var(--brand);padding:18px 18px 14px}
+.k-rx .chips{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--line);font-family:var(--sans)}
+.k-rx .chips div{flex:1 1 130px;padding:12px 14px;border-right:1px solid var(--line);min-width:0}
+.k-rx .chips b{display:block;font-family:var(--arch);font-weight:800;font-size:24px;color:var(--brand);line-height:1.1}
+.k-rx .chips span{font-size:12.5px;color:var(--mute)}
+
+/* ===== cafe corners (neighbourhood paper) ===== */
+.k-cafe .paper{text-align:center;padding-block:26px 0}
+.k-cafe .paper .name{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(34px,6vw,64px);line-height:1;color:var(--brand)}
+.k-cafe .paper .dateline{display:flex;justify-content:space-between;gap:10px 24px;flex-wrap:wrap;font:600 12.5px/1.4 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);border-top:1px solid var(--ink);border-bottom:3px double var(--ink);padding:8px 0;margin-top:18px}
+.k-cafe .paper .snav{justify-content:center;margin-top:8px;color:var(--brand)}
+.k-cafe h1{font-family:var(--serif);font-weight:500;font-size:clamp(32px,5vw,58px);line-height:1.04;color:var(--ink);text-align:center;max-width:20ch;margin:0 auto;text-wrap:balance}
+.k-cafe .deck{font-size:21px;line-height:1.45;color:var(--ink-2);text-align:center;max-width:56ch;margin:16px auto 0;text-wrap:pretty}
+.k-cafe h2{font-family:var(--serif);font-style:italic;font-weight:500;color:var(--brand)}
+.k-cafe .col-story{columns:2;column-gap:36px;font-size:18.5px;line-height:1.5}
+.k-cafe .col-story p{margin:0 0 .9em;break-inside:avoid-column}
+.k-cafe .col-story p b{font:700 12.5px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--brand);display:block;margin-bottom:6px}
+@media (max-width:700px){.k-cafe .col-story{columns:1}}
+.k-cafe .feature{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding-block:26px;text-align:center}
+.k-cafe .feature .big{font-family:var(--serif);font-size:clamp(28px,4.4vw,48px);line-height:1.08;color:var(--brand);max-width:22ch;margin:0 auto;text-wrap:balance}
+
+/* ===== retail centres (sign band, directory) ===== */
+.k-center .signbar{background:var(--brand-2);color:#fff}
+.k-center .signbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px 28px;flex-wrap:wrap;padding-block:12px}
+.k-center .pylon{display:inline-flex;flex-direction:column;background:#fff;color:var(--brand-2);padding:9px 14px 8px;text-decoration:none;border-bottom:4px solid var(--brand)}
+.k-center .pylon b{font-family:var(--arch);font-weight:800;font-size:22px;letter-spacing:.01em;line-height:1;text-transform:uppercase}
+.k-center .pylon span{font:600 11px/1.3 var(--sans);letter-spacing:.08em;text-transform:uppercase;margin-top:5px;color:var(--ink-2)}
+.k-center .pylon img{height:54px;width:auto}
+.k-center .signbar .snav{color:#fff}
+.k-center h1{font-family:var(--arch);font-weight:800;font-size:clamp(30px,4.4vw,52px);letter-spacing:-.02em;line-height:1.03;color:var(--ink);max-width:20ch}
+.k-center h2{font-family:var(--arch);font-weight:800;letter-spacing:-.01em;color:var(--ink);font-size:clamp(22px,2.6vw,30px);text-transform:uppercase}
+.k-center .dir{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:0;border-top:2px solid var(--brand)}
+.k-center .dir div{padding:14px 16px 14px 0;border-bottom:1px solid var(--line);min-width:0}
+.k-center .dir b{display:block;font-family:var(--arch);font-weight:800;font-size:19px;color:var(--ink);line-height:1.15}
+.k-center .dir span{font:13px/1.4 var(--sans);color:var(--mute)}
+.k-center .stripwrap{overflow-x:auto;border-bottom:1px solid var(--line)}
+.k-center .stripwrap svg{min-width:640px}
+
+/* ===== bridal (centred, thin) ===== */
+.k-bridal{--brand:#8C5A56}
+.k-bridal .bh{text-align:center;padding-block:30px 18px;border-bottom:1px solid var(--line)}
+.k-bridal .bh .name{font-family:var(--corm);font-weight:500;font-size:clamp(34px,5.4vw,60px);line-height:1;color:var(--ink)}
+.k-bridal .bh .name i{font-weight:500}
+.k-bridal .bh .sub{font:500 12px/1.4 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--brand);margin-top:12px}
+.k-bridal .bh .snav{justify-content:center;margin-top:16px;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+.k-bridal h1{font-family:var(--corm);font-weight:500;font-style:italic;font-size:clamp(34px,5vw,60px);line-height:1.05;color:var(--ink);text-align:center;max-width:18ch;margin:0 auto;text-wrap:balance}
+.k-bridal h2{font-family:var(--corm);font-weight:500;font-size:clamp(28px,3.4vw,40px);color:var(--ink);text-align:center}
+.k-bridal h2::after{content:"";display:block;width:44px;height:1px;background:var(--brand);margin:14px auto 0}
+.k-bridal .bignum{font-family:var(--corm);font-weight:500;font-size:clamp(84px,14vw,170px);line-height:.85;color:var(--brand);text-align:center}
+.k-bridal .bignum small{display:block;font:500 12px/1.4 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--ink-2);margin-top:14px}
+.k-bridal .prints{display:flex;gap:22px;justify-content:center;align-items:flex-start;flex-wrap:wrap}
+
+/* ===== office park (charcoal, cedar) ===== */
+.k-park{--char:#2B3138}
+.k-park .ph{background:var(--char);color:#fff}
+.k-park .ph .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px 28px;flex-wrap:wrap;padding-block:16px}
+.k-park .ph .name{font:700 18px/1.1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:#fff;text-decoration:none}
+.k-park .ph .name small{display:block;font-weight:500;font-size:11.5px;letter-spacing:.12em;margin-top:6px;color:color-mix(in srgb,var(--brand) 60%,#fff)}
+.k-park .ph .snav{color:#fff}
+.k-park .hero-dark{background:var(--char);color:#fff;padding-block:clamp(28px,5vw,56px) clamp(32px,5vw,60px)}
+.k-park h1{font-family:var(--sans);font-weight:800;font-size:clamp(30px,4.6vw,56px);letter-spacing:-.02em;line-height:1.02;color:#fff;max-width:19ch}
+.k-park .hero-dark p{color:rgba(255,255,255,.82);font:18px/1.5 var(--sans);max-width:60ch;margin-top:16px}
+.k-park h2{font-family:var(--sans);font-weight:800;letter-spacing:-.01em;color:var(--char)}
+.k-park .bigstat{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(255,255,255,.25);margin-top:30px}
+.k-park .bigstat div{padding:16px 16px 0 0}
+.k-park .bigstat b{display:block;font:800 clamp(28px,3.6vw,44px)/1 var(--sans);color:color-mix(in srgb,var(--brand) 55%,#fff)}
+.k-park .bigstat span{font:13px/1.4 var(--sans);color:rgba(255,255,255,.75);display:block;margin-top:6px}
+@media (max-width:640px){.k-park .bigstat{grid-template-columns:1fr 1fr;row-gap:8px}}
+.bldgs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.bldgs div{border:1px solid var(--line);border-top:4px solid var(--brand);padding:16px;font-family:var(--sans);font-size:14.5px;line-height:1.5;min-width:0}
+.bldgs b{display:block;font-size:18px;color:var(--ink);margin-bottom:4px}
+@media (max-width:700px){.bldgs{grid-template-columns:1fr}}
+
+/* ===== medical office (plain, one line header) ===== */
+.k-med .mh{border-bottom:1px solid var(--line)}
+.k-med .mh .wrap{display:flex;justify-content:space-between;align-items:baseline;gap:10px 28px;flex-wrap:wrap;padding-block:18px}
+.k-med .mh .name{font:600 20px/1.2 var(--sans);color:var(--brand);text-decoration:none}
+.k-med .mh .snav{color:var(--ink-2)}
+.k-med h1{font-family:var(--sans);font-weight:300;font-size:clamp(32px,4.8vw,56px);letter-spacing:-.02em;line-height:1.06;color:var(--ink);max-width:20ch}
+.k-med h1 b{font-weight:700;color:var(--brand)}
+.k-med h2{font-family:var(--sans);font-weight:600;color:var(--ink);font-size:clamp(22px,2.6vw,28px)}
+
+/* ===== The 819 (its own logo, indigo) ===== */
+.k-819 .eh{border-bottom:1px solid var(--line)}
+.k-819 .eh .wrap{display:flex;justify-content:space-between;align-items:center;gap:10px 28px;flex-wrap:wrap;padding-block:12px}
+.k-819 .eh .snav{color:var(--brand)}
+.k-819 .hero819{display:grid;grid-template-columns:5fr 7fr;background:var(--brand)}
+.k-819 .hero819 .txt{padding:clamp(28px,5vw,72px) clamp(20px,4vw,56px) clamp(28px,5vw,72px) max(16px,calc((100vw - 1180px)/2 + 16px));color:#fff;display:grid;gap:18px;align-content:center}
+.k-819 .hero819 .kick{font:500 13px/1.4 var(--jost);letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+.k-819 .hero819 h1{font-family:var(--jost);font-weight:400;font-size:clamp(30px,3.6vw,48px);line-height:1.1;color:#fff;letter-spacing:-.01em}
+.k-819 .hero819 .sub{font:300 19px/1.5 var(--jost);opacity:.9;max-width:44ch}
+.k-819 .hero819 .pic img{width:100%;height:100%;min-height:300px;object-fit:cover;display:block}
+.k-819 .btn.ghostw{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.7)}
+.k-819 .btn.ghostw:hover{background:rgba(255,255,255,.12)}
+@media (max-width:860px){.k-819 .hero819{grid-template-columns:1fr}.k-819 .hero819 .txt{padding:32px max(16px,env(safe-area-inset-right,0px)) 32px max(16px,env(safe-area-inset-left,0px))}}
+.k-819 h2{font-family:var(--jost);font-weight:400;color:var(--brand);font-size:clamp(28px,3.4vw,40px);letter-spacing:-.01em}
+.k-819 .checks li{border-bottom-color:var(--line)}
+
+/* ===== Miami Garden (its own logo, green) ===== */
+.k-mg .gh{border-bottom:3px solid var(--brand)}
+.k-mg .gh .wrap{display:flex;justify-content:space-between;align-items:center;gap:10px 28px;flex-wrap:wrap;padding-block:12px}
+.k-mg .gh .snav{color:var(--ink-2)}
+.k-mg .band{position:relative}
+.k-mg .band img{width:100%;height:clamp(260px,44vw,540px);object-fit:cover;display:block}
+.k-mg .band .cap{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(10,30,24,.82));color:#fff;padding-block:90px 24px}
+.k-mg .band h1{font-family:var(--jost);font-weight:600;font-size:clamp(26px,3.8vw,46px);line-height:1.08;color:#fff;max-width:22ch;letter-spacing:.005em}
+.k-mg .band p{font:500 14px/1.4 var(--jost);letter-spacing:.1em;text-transform:uppercase;margin-top:12px;opacity:.9}
+.k-mg h2{font-family:var(--jost);font-weight:600;color:var(--brand);letter-spacing:.06em;text-transform:uppercase;font-size:clamp(22px,2.6vw,28px)}
+.k-mg .checks li{border-bottom-color:var(--line)}
+.rentbox{border:2px solid var(--brand);padding:18px 20px;display:grid;gap:4px}
+.rentbox b{font:600 46px/1 var(--jost);color:var(--brand)}
+.rentbox span{font:14px/1.45 var(--sans);color:var(--ink-2)}
+.gal4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:20px}
+.gal4 figure{margin:0;aspect-ratio:1;overflow:hidden;background:var(--panel-2)}
+.gal4 img{width:100%;height:100%;object-fit:cover}
+@media (max-width:560px){.gal4{grid-template-columns:1fr 1fr}}
+
+/* ===== recovery home (letter) ===== */
+.k-quiet .qh{text-align:center;padding-block:44px 0}
+.k-quiet .qh .name{font-family:var(--serif);font-size:20px;color:var(--brand);letter-spacing:.02em}
+.k-quiet .qh .name::after{content:"";display:block;width:36px;height:1px;background:var(--brand);margin:16px auto 0}
+.k-quiet .letter{max-width:640px;margin:0 auto;padding-block:36px 20px}
+.k-quiet h1{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4.2vw,44px);line-height:1.15;color:var(--ink);text-wrap:balance}
+.k-quiet .letter p{font-size:20px;line-height:1.6;margin-top:1.1em;text-wrap:pretty}
+.k-quiet h2{font-family:var(--serif);font-weight:500;font-size:24px;color:var(--brand);margin-top:44px}
+.k-quiet .snap{margin:34px auto 0}
+
+/* ===== Westwood building pages (inside the Westwood site) ===== */
+.wwb-hero img{width:100%;height:clamp(220px,36vw,460px);object-fit:cover;display:block}
+.fund{display:grid;gap:0;font-family:var(--sans)}
+.fund div{display:grid;grid-template-columns:1fr auto;gap:14px;padding:12px 0;border-bottom:1px solid var(--panel-2);font-size:15.5px}
+.fund div b{font-weight:800;color:var(--brand);white-space:nowrap}
+.tl{display:grid;gap:0;font-family:var(--sans);border-left:2px solid var(--brand);margin-left:6px}
+.tl div{position:relative;padding:0 0 20px 22px;font-size:15.5px;line-height:1.5}
+.tl div::before{content:"";position:absolute;left:-7px;top:5px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--brand)}
+.tl b{display:block;color:var(--brand);font-weight:800}
+
+/* research additions */
+.statrow{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-family:var(--sans)}
+.statrow div{padding:18px 14px;border-right:1px solid var(--line);min-width:0;text-align:center}
+.statrow div:last-child{border-right:0}
+.statrow b{display:block;font-family:var(--corm);font-weight:600;font-size:clamp(32px,4.4vw,48px);line-height:1;color:var(--brand)}
+.statrow span{font-size:13px;color:var(--mute);display:block;margin-top:8px;line-height:1.35}
+@media (max-width:640px){.statrow{grid-template-columns:1fr 1fr}.statrow div:nth-child(2n){border-right:0}.statrow div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+.gal3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gal3 figure{margin:0;min-width:0}
+.gal3 img{width:100%;height:auto;display:block}
+.gal3 figcaption{font:12.5px/1.4 var(--sans);color:var(--mute);margin-top:6px}
+@media (max-width:700px){.gal3{grid-template-columns:1fr}}
+.plans{display:grid;gap:18px;margin-top:22px}
+.plans figure{margin:0;border:1px solid var(--line);padding:12px;background:#fff;min-width:0}
+.plans img{width:100%;height:auto;display:block}
+.plans figcaption{font:600 12px/1.4 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);margin-top:8px}
+.k-park .ph{background:#fff;color:var(--char);border-bottom:3px solid var(--brand)}
+.k-park .ph .name{color:var(--char);display:flex;align-items:center;gap:12px}
+.k-park .ph .name img{height:38px;width:auto;flex:none}
+.k-park .ph .name small{color:var(--brand)}
+.k-park .ph .snav{color:var(--char)}
+.k-park .aerial{background:#0E2C4D;line-height:0}
+.k-park .aerial img{width:100%;height:auto;max-height:520px;object-fit:cover;display:block}
+.k-park .btn.ghostw{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.7)}
+.k-park .btn.ghostw:hover{background:rgba(255,255,255,.12)}
+.k-center .pylon img{max-width:210px;object-fit:contain}
+
 .apply-band{background:var(--brand);color:#fff;padding:clamp(28px,5vw,48px);display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;min-width:0}
 .apply-band>*{min-width:0}
 @media (max-width:700px){.apply-band{grid-template-columns:1fr}}
@@ -352,7 +611,7 @@ form.cf{display:grid;gap:14px;background:var(--panel);padding:24px}
 
 <div id="app"></div>
 
-<script>const IMG = {"bill-bio":"img/bill-bio.jpg","westwood-south":"img/westwood-south.jpg","the-819":"img/the-819.jpg","miami-garden":"img/miami-garden.jpg","madison-heights":"img/madison-heights.jpg","ngop":"img/ngop.jpg","dequindre":"img/dequindre.jpg","wedding-shoppe":"img/wedding-shoppe.jpg","westport":"img/westport.jpg","panera":"img/panera.jpg","port-city":"img/port-city.jpg","pinellas":"img/pinellas.jpg","winter-park":"img/winter-park.jpg","tampa-starbucks":"img/tampa-starbucks.jpg","belvedere":"img/belvedere.jpg","cape-coral":"img/cape-coral.jpg","jensen":"img/jensen.jpg","hudson":"img/hudson.jpg","tampa-walgreens":"img/tampa-walgreens.jpg","underhill":"img/underhill.jpg","ehrlich":"img/ehrlich.jpg","southchase":"img/southchase.jpg","satellite-beach":"img/satellite-beach.jpg","alafaya":"img/alafaya.jpg","indialantic":"img/indialantic.jpg","boynton":"img/boynton.jpg","ross":"img/ross.jpg","ww-1":"img/ww-1.jpg","ww-2":"img/ww-2.jpg","ww-3":"img/ww-3.jpg","ww-4":"img/ww-4.jpg","ww-5":"img/ww-5.jpg","ww-6":"img/ww-6.jpg","ww-7":"img/ww-7.jpg","ww-8":"img/ww-8.jpg","ww-floorplans":"img/ww-floorplans.jpg","ww-drive":"img/ww-drive.jpg","ww-aerial":"img/ww-aerial.jpg","wwn":"img/wwn.jpg","ngop-before":"img/ngop-before.jpg","ngop-after":"img/ngop-after.jpg","ngop-before-front":"img/ngop-before-front.jpg","ngop-after-front":"img/ngop-after-front.jpg","ngop-night":"img/ngop-night.jpg","c-mark":"img/c-mark.png","w-mark":"img/w-mark.png"};</script>
+<script>const IMG = {"bill-bio":"img/bill-bio.jpg","westwood-south":"img/westwood-south.jpg","the-819":"img/the-819.jpg","miami-garden":"img/miami-garden.jpg","madison-heights":"img/madison-heights.jpg","ngop":"img/ngop.jpg","dequindre":"img/dequindre.jpg","wedding-shoppe":"img/wedding-shoppe.jpg","westport":"img/westport.jpg","panera":"img/panera.jpg","port-city":"img/port-city.jpg","pinellas":"img/pinellas.jpg","winter-park":"img/winter-park.jpg","tampa-starbucks":"img/tampa-starbucks.jpg","belvedere":"img/belvedere.jpg","cape-coral":"img/cape-coral.jpg","jensen":"img/jensen.jpg","hudson":"img/hudson.jpg","tampa-walgreens":"img/tampa-walgreens.jpg","underhill":"img/underhill.jpg","ehrlich":"img/ehrlich.jpg","southchase":"img/southchase.jpg","satellite-beach":"img/satellite-beach.jpg","alafaya":"img/alafaya.jpg","indialantic":"img/indialantic.jpg","boynton":"img/boynton.jpg","ross":"img/ross.jpg","ww-1":"img/ww-1.jpg","ww-2":"img/ww-2.jpg","ww-3":"img/ww-3.jpg","ww-4":"img/ww-4.jpg","ww-5":"img/ww-5.jpg","ww-6":"img/ww-6.jpg","ww-7":"img/ww-7.jpg","ww-8":"img/ww-8.jpg","ww-floorplans":"img/ww-floorplans.jpg","ww-drive":"img/ww-drive.jpg","ww-aerial":"img/ww-aerial.jpg","wwn":"img/wwn.jpg","ngop-before":"img/ngop-before.jpg","ngop-after":"img/ngop-after.jpg","ngop-before-front":"img/ngop-before-front.jpg","ngop-after-front":"img/ngop-after-front.jpg","ngop-night":"img/ngop-night.jpg","c-mark":"img/c-mark.png","w-mark":"img/w-mark.png","westport-logo":"img/westport-logo.jpg","wedding-shoppe-2":"img/wedding-shoppe-2.jpg","ww-laundry":"img/ww-laundry.jpg","819-logo":"img/819-logo.jpg","819-day":"img/819-day.jpg","819-night":"img/819-night.jpg","819-floorplan":"img/819-floorplan.jpg","819-siteplan":"img/819-siteplan.jpg","mga-g2":"img/mga-g2.jpg","mga-g3":"img/mga-g3.jpg","mga-g4":"img/mga-g4.jpg","mga-g5":"img/mga-g5.jpg","mga-floorplan":"img/mga-floorplan.jpg","mga-logo":"img/mga-logo.png","ngop-aerial":"img/ngop-aerial.jpg","ngop-plan-551-1":"img/ngop-plan-551-1.jpg","ngop-plan-551-2":"img/ngop-plan-551-2.jpg","ngop-plan-501-2":"img/ngop-plan-501-2.jpg","panera-a":"img/panera-a.jpg","panera-b":"img/panera-b.jpg","panera-c":"img/panera-c.jpg","pcp-logo":"img/pcp-logo.png","ngop-leaf":"img/ngop-leaf.png"};</script>
 <script>
 (function(){
 'use strict';
@@ -381,7 +640,7 @@ const P = [
   {slug:'westwood-south', cat:'multi-family', name:'Westwood Apartments South', city:'Pontiac / Bloomfield', state:'Michigan', owned:true, delivered:'2025', vl:'Total value', value:'$20.0MM', size:'120 apartments', tenant:'Owner-managed', img:'westwood-south', residents:true,
    plan:'Develop 120 new one- and two-bedroom apartments at affordable rental rates on Golf Drive, directly beside Westwood North.',
    risk:'Holding construction costs down far enough to deliver affordable rents during a period of high inflation and shortages of both materials and labor.',
-   result:'Construction finished on budget and on schedule. The community opened in 2025 with support from Oakland County&#x2019;s Oakland Together Housing Trust Fund and was introduced to the public by county officials.'},
+   result:'Built on budget and on schedule. The first buildings opened in June 2025 with support from Oakland County&#x2019;s Oakland Together Housing Trust Fund, and county officials introduced the community to the public.'},
   {slug:'westwood-north', cat:'multi-family', name:'Westwood Apartments North', city:'Pontiac / Bloomfield', state:'Michigan', owned:true, delivered:'December 2022', vl:'Total value', value:'$10.0MM', size:'64 apartments', tenant:'Owner-managed', img:'wwn', residents:true,
    plan:'Develop 64 apartments at affordable rental rates with a washer and dryer in every unit, a patio or balcony on every unit, and live-in maintenance.',
    risk:'The same squeeze every builder faced in 2021 and 2022: keeping costs in line with affordable rents while materials and labor were scarce.',
@@ -436,7 +695,7 @@ const P = [
    plan:'Acquire a vacant Mobil station in Seminole Heights and build an 1,800-square-foot Starbucks.',
    risk:'Contamination stigma. The area read as very low income. The site sat in a historic district under the purview of the city historical commission.',
    result:'Mobil indemnified the site. Our own demographic analysis showed the neighborhood gentrifying, which won Starbucks over, and resident support blocked the commission&#x2019;s attempt to redraw the site plan.',
-   notable:'We obtained a variance allowing the I-75 sign to be refaced. It remains the largest Starbucks sign east of the Mississippi River.'},
+   notable:'We obtained a variance allowing the I-275 sign to be refaced. It remains the largest Starbucks sign east of the Mississippi River.'},
   {slug:'belvedere-walgreens', cat:'pharmacies', name:'Belvedere Walgreens', city:'West Palm Beach', state:'Florida', delivered:'November 2000', vl:'Total cost', value:'$3.9MM', size:'15,000 SF build-to-suit', tenant:'Walgreens', img:'belvedere', small:true,
    plan:'Acquire 1.5 acres out of a 40-acre site that was not on the market and perform a 15,000-square-foot build-to-suit for Walgreens.',
    risk:'Extensive off-site work.',
@@ -672,7 +931,7 @@ function home(){
       <p class="lead">184 new one- and two-bedroom apartments on Golf Drive, beside a golf course and a short walk from Aldi, Menards and Planet Fitness. Washer and dryer in every unit, a patio or balcony on every unit, and a leasing office that answers the phone.</p>
       <div class="btns"><a class="btn" href="#westwood">Visit Westwood Apartments</a><a class="arrow" href="#property-the-819">The 819</a></div>
     </div>
-    <figure class="mat">${img('ww-aerial','Aerial view of Westwood North and Westwood South')}<figcaption class="capbar"><b>Westwood North</b> (815&#x2013;821 Golf Drive, 64 units, 2022) and <b>Westwood South</b> (829&#x2013;837, 120 units, 2025)</figcaption></figure>
+    <figure class="mat">${img('ww-aerial','Aerial view of Westwood North and Westwood South')}<figcaption class="capbar"><b>Westwood North</b> (815&#x2013;821 Golf Drive, 64 units, 2022) and <b>Westwood South</b> (829&#x2013;837, 120 units, from 2025)</figcaption></figure>
   </div></section>
 
   <section class="section"><div class="wrap">
@@ -719,7 +978,7 @@ function about(){
         <li>Brownfield Redevelopment Authority<span class="sans">City of Rochester Hills</span></li>
         <li>Public Safety and Infrastructure Technical Review Committee<span class="sans">City of Rochester Hills</span></li>
         <li>Planning Commissioner<span class="sans">Shelby Township</span></li>
-        <li>Chairman of the Board of Directors<span class="sans">Sacred Heart Rehabilitation Center</span></li>
+        <li>Past Chairman of the Board of Directors<span class="sans">Sacred Heart Rehabilitation Center</span></li>
         <li>Guest speaker on adaptive reuse<span class="sans">Ross School of Business, University of Michigan, 2019</span></li>
       </ul>
     </div>
@@ -751,8 +1010,11 @@ function portfolio(catId){
   </div></section>`;
 }
 
+/* ---------- property sub-sites ---------- */
+const RS = {"westwood-north":{"addr":"815, 817 and 821 Golf Drive, Pontiac, MI 48341","lat":42.61676,"lon":-83.30336,"kv":[["Buildings","Three, at 815, 817 and 821"],["Floor plans","One bedroom, one bath, about 660 SF. Two bedroom, two bath, about 1,025 SF"],["Architect","Scott Monchnik &amp; Associates, Troy"],["Civil engineer","Desine Inc., Brighton"]],"timeline":[["September 8, 2021","Pontiac&#x2019;s Planning Commission takes up site plan SPR 21-19, &#x201C;Golf Drive Phase II&#x201D;: the first two three-story buildings, 48 apartments on 3.65 acres zoned R-3."],["October 2021","Planned construction start, per the application."],["December 2022","Westwood North complete: 64 apartments in three buildings."]],"facts":[["No subsidy","The developer told the city this phase needed no rezoning, no variances and no government subsidies."],["The land","A 3.65-acre parcel zoned R-3 multiple family, vacant before construction."],["Jobs","The application estimated that more than 200 tradesmen and tradeswomen would work on the buildings."],["Rent","One-bedrooms from $1,150 and two-bedrooms from $1,350 a month on Apartments.com, checked November 2026."],["Pets and parking","Pets are accepted for a fee. Surface parking carries no monthly charge."],["Schools","Pontiac City School District."]],"history":["The land is the former campus of Midwestern Baptist College, founded in Pontiac in 1953 on more than 55 acres.","The college planned its move to Orion Township for 2010. The 819 next door was its dormitory."],"near":[["The Links at Crystal Lake","18-hole public golf course, 800 Golf Drive","next door"],["PACE Southeast Michigan","Elder-care program on the same former campus","across the lot"],["Village at Bloomfield","Aldi, Menards, Planet Fitness","0.5 mi"],["United Wholesale Mortgage","Pontiac headquarters","under 3 mi"],["Trinity Health Oakland Hospital","","1.7 mi"],["Pontiac Amtrak station","","1.9 mi"]],"quotes":[{"q":"You are doing a great job. I was by a few days ago and it looks great.","w":"Tim Greimel","t":"Mayor of Pontiac"}],"press":[{"o":"City of Pontiac Planning Commission, September 2021","t":"Site plan review SPR 21-19, Golf Drive Phase II","h":"https://cms3.revize.com/revize/pontiacminew/Document%20Center/Agendas%20&%20Minutes/Planning%20Commission/2021/planningagendapack-090821.pdf","s":"The city&#x2019;s packet for the first two Westwood North buildings."},{"o":"CBS News Detroit, June 2025","t":"Oakland County officials introduce new apartment complex in Pontiac","h":"https://www.cbsnews.com/detroit/news/oakland-county-pontiac-westwood-south-apartments/","s":""}],"sources":[["City of Pontiac Planning Commission packets","https://cms3.revize.com/revize/pontiacminew/Document%20Center/Agendas%20&%20Minutes/Planning%20Commission/2021/planningagendapack-090821.pdf"],["Apartments.com","https://www.apartments.com/westwood-apartments-pontiac-mi/ms03w6l/"],["Oakland County","https://www.oaklandcountymi.gov/government/news/2025/06/23/new-mixed-income-housing-development-opens-in-pontiac-with-support-from-oakland-together-housing-trust-fund"],["Wikipedia","https://en.wikipedia.org/wiki/Midwestern_Baptist_College"],["The Links at Crystal Lake","https://linksatcrystallake.teesnap.net/"],["CBS News Detroit","https://www.cbsnews.com/detroit/news/oakland-county-pontiac-westwood-south-apartments/"]]},"westwood-south":{"addr":"829 through 837 Golf Drive, Pontiac, MI 48341","lat":42.61676,"lon":-83.30336,"kv":[["Buildings","Five three-story buildings, 829 through 837"],["At the June 2025 opening","72 apartments in three buildings"],["Floor plans","One bedroom, one bath, about 660 SF. Two bedroom, two bath, about 1,025 SF"],["Rent at opening","$1,150 to $1,450 a month"]],"fund":[["Oakland Together Housing Trust Fund, gap loan","$2.5 million"],["Apartments reserved for voucher holders through the Pontiac Housing Commission","18"],["Remaining apartments aimed at 60% to 120% of area median income","not income restricted"]],"fundNote":"The county describes its $2.5 million as a loan that closed the gap construction inflation had opened. The trust fund was seeded with $20 million of American Rescue Plan Act money.","timeline":[["March 2, 2022","Pontiac&#x2019;s Planning Commission approves site plan SPR22-032 for 829 Golf Drive."],["May 2023","The developer asks the city to reduce on-site parking from the 231 spaces the code requires to 162, with 49 more by easement."],["December 2024","Oakland County lists Westwood South among its Housing Trust Fund projects."],["June 23, 2025","Ribbon cutting with County Executive Dave Coulter. Two buildings are open and full, with a third due that September."],["2026","Four of the five buildings are open. The fifth, 829, is slated for fall."]],"facts":[["Who it is for","Eighteen apartments are reserved for voucher holders. The rest are aimed at working households earning 60% to 120% of area median income, without income restrictions."],["Vouchers","Housing Choice Vouchers and Veterans Affairs Supportive Housing participants are accepted."],["Who lives here","Bill Chalmers told The Oakland Press that 60% of Westwood renters work at United Wholesale Mortgage, less than three miles away."],["PACE","Construction included 12 overnight beds for the PACE elder-care program next door."],["Developer entity","819 South, LLC, care of Cartessa Real Estate Company."]],"history":["The land is the former campus of Midwestern Baptist College, founded in Pontiac in 1953 on more than 55 acres.","The college planned its move to Orion Township for 2010. The 819 next door was its dormitory.","Chalmers credited former Pontiac planning manager Vern Gustafsson, economic development manager Deborah Younger and Councilwoman Melanie Rutherford with helping the project through."],"near":[["The Links at Crystal Lake","18-hole public golf course, 800 Golf Drive","next door"],["PACE Southeast Michigan","Elder-care program on the same former campus","across the lot"],["Village at Bloomfield","Aldi, Menards, Planet Fitness","0.5 mi"],["United Wholesale Mortgage","Pontiac headquarters","under 3 mi"],["Trinity Health Oakland Hospital","","1.7 mi"],["Pontiac Amtrak station","","1.9 mi"]],"quotes":[{"q":"This is what progress looks like, public and private partners coming together to create affordable housing that offers stability for our residents.","w":"Dave Coulter","t":"Oakland County Executive"},{"q":"One apartment, one home at a time.","w":"Melanie Rutherford","t":"Pontiac City Councilwoman"}],"press":[{"o":"Oakland County news release, June 23, 2025","t":"New Mixed-Income Housing Development Opens in Pontiac with Support from Oakland Together Housing Trust Fund","h":"https://www.oaklandcountymi.gov/government/news/2025/06/23/new-mixed-income-housing-development-opens-in-pontiac-with-support-from-oakland-together-housing-trust-fund","s":""},{"o":"The Oakland Press, June 23, 2025","t":"Oakland County's latest affordable-housing project opens","h":"https://www.theoaklandpress.com/2025/06/23/oakland-countys-latest-affordable-housing-project-opens-2/","s":""},{"o":"CBS News Detroit, June 2025","t":"Oakland County officials introduce new apartment complex in Pontiac","h":"https://www.cbsnews.com/detroit/news/oakland-county-pontiac-westwood-south-apartments/","s":""},{"o":"Crain&#x2019;s Detroit Business, June 23, 2025","t":"Mixed-income housing development opens in Pontiac","h":"https://www.crainsdetroit.com/real-estate/mixed-income-westwood-apartments-opens-pontiac/","s":""},{"o":"The Detroit News, June 23, 2025","t":"$2.5M grant opens way for latest Oakland Co. affordable housing project","h":"https://www.detroitnews.com/story/news/local/oakland-county/2025/06/23/2-5m-grant-opens-way-latest-oakland-county-affordable-housing-project/84322529007/","s":""}],"opened":"First buildings, June 2025","sources":[["Oakland County","https://www.oaklandcountymi.gov/government/news/2025/06/23/new-mixed-income-housing-development-opens-in-pontiac-with-support-from-oakland-together-housing-trust-fund"],["The Oakland Press","https://www.theoaklandpress.com/2025/06/23/oakland-countys-latest-affordable-housing-project-opens-2/"],["City of Pontiac Planning Commission packets","https://cms3.revize.com/revize/pontiacminew/planningagendapack-051023a.pdf"],["Oakland County Blog","https://oaklandcountyblog.com/2024/12/27/neighborhood-housing-development-celebrated-housing-trust-fund/"],["Wikipedia","https://en.wikipedia.org/wiki/Midwestern_Baptist_College"],["CBS News Detroit","https://www.cbsnews.com/detroit/news/oakland-county-pontiac-westwood-south-apartments/"]]},"the-819":{"addr":"819 Golf Drive, Pontiac, MI 48341","lat":42.6165812,"lon":-83.30228,"units":"26: 24 two-bedroom and 2 one-bedroom","kv":[["Zoning","R-3 multiple family"]],"history":["The building was the dormitory of Midwestern Baptist College, founded in Pontiac in 1953 on a campus of more than 55 acres.","The college planned its move to Orion Township for 2010, and the campus was later sold.","Westwood North and South now stand on the same former campus."],"near":[["The Links at Crystal Lake","18-hole public golf course, formerly Pontiac Municipal","next door"],["Westwood Apartments","Cartessa&#x2019;s newer buildings on the same campus","next door"],["Village at Bloomfield","Aldi, Menards, Planet Fitness, by the access drive","0.5 mi"],["Trinity Health Oakland Hospital","","1.7 mi"],["Pontiac Amtrak station","","1.8 mi"],["Oakland University","","8.6 mi"]],"press":[{"o":"The Oakland Press, June 23, 2025","t":"Oakland County&#x2019;s latest affordable-housing project opens","h":"https://www.theoaklandpress.com/2025/06/23/oakland-countys-latest-affordable-housing-project-opens-2/","s":"Reports that the wider project began with gutting and renovating the former college dormitory."}],"sources":[["City of Pontiac Planning Commission packets","https://cms3.revize.com/revize/pontiacminew/Document%20Center/Agendas%20&%20Minutes/Planning%20Commission/2021/planningagendapack-090821.pdf"],["GolfPass","https://www.golfpass.com/travel-advisor/courses/7867-the-links-at-crystal-lake"],["Wikipedia","https://en.wikipedia.org/wiki/Midwestern_Baptist_College"],["Apartments.com","https://www.apartments.com/westwood-apartments-pontiac-mi/ms03w6l/"],["LoopNet","https://www.loopnet.com/Listing/819-Golf-Dr-Pontiac-MI/8695203/"]]},"miami-garden":{"addr":"665 North Miami Avenue, Ypsilanti Township, MI 48198","lat":42.249141,"lon":-83.584864,"kv":[["Built","1962, single story"],["Building","7,800 SF on 0.75 acre"],["Zoning","R5, Ypsilanti Township"]],"near":[["Sunshine Shopping Center","Neighborhood shopping","0.7 mi"],["Michigan Center East","Shopping center","0.8 mi"],["Eastern Michigan University","","3.8 mi"],["Washtenaw Community College","","4.9 mi"],["University of Michigan","Ann Arbor","9.9 mi"],["Detroit Metro Airport","","17 mi"]],"sources":[["LoopNet","https://www.loopnet.com/Listing/665-N-Miami-Ave-Ypsilanti-MI/11759911/"],["Apartments.com","https://www.apartments.com/665-n-miami-ave-ypsilanti-mi/xy64e1q/"]]},"dequindre-medical-office":{"addr":"28303 Dequindre Road, Madison Heights, MI 48071","corner":"West side of Dequindre Road, across from Universal Shopping Center","q":"28303 Dequindre Road, Madison Heights, MI","today":"An outpatient treatment clinic occupies the whole building.","todayShort":"Single-tenant outpatient clinic","bldg":"9,000 SF on two stories, built 1970","lot":"1.18 acres","kv":[["Parking","53 surface spaces"],["Zoning","O-1 office"]],"facts":[["Growth","The tenant took one suite in 2019 and the remaining suites in 2020."],["Renovation","About three quarters of the interior was rebuilt to the tenant&#x2019;s specifications, and the exterior was repainted in fall 2020."],["Across the street","Universal Shopping Center in Warren, which opened in 1965 as Universal City."]],"near":[["Universal Shopping Center","Target, Burlington, Marshalls","across Dequindre"],["I-696","","short drive"]],"sources":[["LoopNet","https://www.loopnet.com/Listing/28303-Dequindre-Rd-Madison-Heights-MI/22312380/"],["Cityfeet listing","https://www.cityfeet.com/cont/listing/28303-dequindre-rd-madison-heights-mi-48071/cs22312380"],["Wikipedia","https://en.wikipedia.org/wiki/Universal_Shopping_Center"]]},"madison-heights-recovery-home":{"context":["A 2016 joint statement from HUD and the Justice Department says people in recovery from addiction are protected as persons with disabilities under the Fair Housing Act, and that local governments may not act on neighbors&#x2019; fears or stereotypes about who will live in a home.","In Michigan, recovery residences can be certified to a national standard through the Michigan Association of Recovery Resources."],"sources":[["National Alliance for Recovery Residences","https://narronline.org/affiliate/michigan-association-of-recovery-resources/"],["Michigan Association of Recovery Resources","https://michiganarr.com/"],["U.S. Department of Justice and HUD joint statement","https://www.justice.gov/media/867036/dl?inline"]]},"north-greenfield-office-park":{"addr":"29451, 29501 and 29551 Greenfield Road, Southfield, MI 48076","corner":"West side of Greenfield Road, just north of 12 Mile Road","q":"29551 Greenfield Road, Southfield, MI","today":"Henry Ford Eastwood Recovery Center occupies 29451. The other two buildings are leased as office suites to counseling and therapy practices, a law office, home care agencies and other small businesses.","todayShort":"Henry Ford Eastwood Recovery Center and small office suites","bldgs":[["29451 Greenfield","The anchor building. Rebuilt for the Eastwood Recovery Center in 108 days, with sleeping rooms, a dining room and a fenced outdoor lounge under a wood pergola. Now Henry Ford Eastwood Recovery Center."],["29501 Greenfield","Office suites. The 2017 renovation brought new paint, lighting and flooring inside, and new landscaping, parking lot, signage and paint outside."],["29551 Greenfield","Office suites and the leasing address. Two stories, 12,178 SF, built in 1972, with 40 parking spaces."]],"kv":[["Partner","EDS Investment Properties"],["Leasing","bchalmers@cartessallc.com or 586.604.4740"]],"facts":[["The anchor today","Henry Ford Health and Ascension Michigan combined on October 1, 2024, which is why the Eastwood Recovery Center now carries the Henry Ford name."],["Partner","Cartessa redeveloped the park with EDS Investment Properties and signed the anchor&#x2019;s long-term lease during the contract period."],["One building in detail","29551 Greenfield is a two-story, 12,178 SF building from 1972 on 1.7 acres, with 40 surface parking spaces."]],"history":["The buildings were already multi-tenant offices. One tenant has been in the park since 2002, under four landlords.","Before the 2017 purchase the complex was mostly vacant and blighted."],"near":[["12 Mile Road","","just south"],["Corewell Health William Beaumont University Hospital","Royal Oak","under a mile"],["I-696, M-10 and I-75","Freeways named in the leasing material","short drive"]],"sources":[["2025 sale listing","https://images1.showcase.com/d2/LxHRIBKoHdYPP0hzUX3x1GlH2ezDfAKt6f6xUuQlIwo/document.pdf"],["Henry Ford Health","https://www.henryford.com/locations/recovery-center-southfield"],["EDS Investments","https://www.edsinvestments.com/home/north-greenfield-office-park"],["LoopNet","https://www.loopnet.com/Listing/29551-Greenfield-Rd-Southfield-MI/12863619/"],["Showcase leasing flyer","https://www.showcase.com/29551-greenfield-rd-southfield-mi-48076/12863619/"]]},"the-wedding-shoppe":{"addr":"2186 Coolidge Highway, Berkley, MI 48072","corner":"On Coolidge between 11 Mile and 12 Mile, in downtown Berkley","q":"2186 Coolidge Highway, Berkley, MI","today":"The Wedding Shoppe still operates here: an 8,000 SF boutique with nine private bridal suites and a champagne lounge in the lobby. The owner unveiled a full interior remodel in 2025 for the store&#x2019;s 25th anniversary.","todayShort":"The Wedding Shoppe, open here since August 2017","facts":[["The shop","Michelle McFarland opened The Wedding Shoppe in December 1999 as a bridal accessories store. It added gowns in 2008."],["The move","The store outgrew its previous location and gave 2186 Coolidge as its address from August 11, 2017. FOX 2 broadcast from the new store a week later."],["Inside","Private bridal suites and more than 400 gowns in store at opening, according to FOX 2."],["Since then","By 2025 the owner counted more than 17,000 brides who had found their dress here."],["Awards","The Knot lists the store as a 13-time Best of Weddings winner and a member of its Hall of Fame."],["City review","Berkley site plan review SP-01-17 covered the facade change at 2186 Coolidge."]],"history":["Berkley tested a road diet on Coolidge between 11 Mile and 12 Mile in 2019, adding bike lanes and on-street parking. The City Council voted in November 2022 to keep it."],"near":[["Downtown Berkley","The Coolidge Highway shopping corridor","on the corridor"],["Berkley High School","","about 0.25 mi"],["Detroit Zoo","Royal Oak","about 1.6 mi"]],"press":[{"o":"Nearlywed Magazine, January 2024","t":"The Wedding Shoppe Helps Brides Find The One","h":"https://nearlywed.com/vendors-blog/the-wedding-shoppe-helps-brides-find-the-one/","s":"Profile tracing the store from a 1999 accessories shop to the move into the renovated Berkley building."},{"o":"VOWS Magazine, June 2025","t":"The Wedding Shoppe celebrates 25 years with Style","h":"https://www.vowsmagazine.com/the-wedding-shoppe-25-anniversary-celebration","s":"Trade interview on the 25th anniversary and the remodeled boutique."}],"stats":[["1999","the year Michelle McFarland opened the shop"],["9","private bridal suites"],["17,000+","brides, by the owner&#x2019;s 2025 count"],["13","The Knot Best of Weddings awards"]],"sources":[["The Wedding Shoppe","https://theweddingshoppe.net/our-lovely-lobby-lounge"],["VOWS Magazine","https://www.vowsmagazine.com/the-wedding-shoppe-25-anniversary-celebration"],["The Knot","https://www.theknot.com/marketplace/the-wedding-shoppe-berkley-mi-584923"],["Nearlywed Magazine","https://nearlywed.com/vendors-blog/the-wedding-shoppe-helps-brides-find-the-one/"],["FOX 2 Detroit","https://www.fox2detroit.com/mornings/the-wedding-shoppe-in-berkley-moves-to-new-location"],["C&amp;G Newspapers","https://candgnews.com/news/berkley-approves-recommendations-for-coolidge-highway-complete-streets-1315"]]},"panera-plaza":{"addr":"36808&#x2013;36824 Van Dyke Avenue, Sterling Heights, MI 48312","corner":"East side of Van Dyke (M-53), just south of Metropolitan Parkway, on an outlot of the Meijer at 36600 Van Dyke","lat":42.5631299,"lon":-83.0287367,"today":"Panera Bread, now with a drive-thru, is still the anchor, and the facade has been remodeled since 2005. Cartessa has since sold the center.","todayShort":"Panera Bread with drive-thru. Center since sold","bldg":"About 9,300 SF of leasable area, built 2005","kv":[["Zoning","C-3 General Business"],["Contractor","Turner Construction"]],"facts":[["Opening","The Macomb Daily reported on March 12, 2005 that the Panera had opened that week."],["A first","Chalmers told the paper it was the first Panera in Sterling Heights, and among the first anywhere built with the chain&#x2019;s new design."],["Developer","Pursuit Development, Chalmers&#x2019; earlier company. This was its first Michigan project after the office moved from Florida to Shelby Township."],["Opening tenants","Panera Bread and a Countrywide Home Loans office, with a T-Mobile store expected soon after."],["Traffic","A 2026 leasing listing counts more than 48,000 vehicles a day on Van Dyke Avenue."]],"history":["The site was a piece of the Meijer parking lot. Meijer had only recently begun allowing outlots at its stores.","Chalmers credited Sterling Heights city planner Dean Martindale for how the city handled the project."],"near":[["Meijer","36600 Van Dyke Avenue","same lot"],["Metropolitan Parkway (16 Mile)","","just north"],["The Home Depot","37000 Van Dyke","0.3 mi"],["Stellantis Sterling Stamping Plant","Across Van Dyke","0.4 mi"]],"press":[{"o":"The Macomb Daily, March 12, 2005","t":"In Pursuit of development","h":"https://cartessarep.com/wp-content/uploads/2015/12/Print-Macomb-Daily031205.pdf","s":"Business-section lead on Pursuit Development finishing its first Michigan project."},{"o":"GlobeSt.com, March 10, 2005","t":"Developer Completes First Michigan Project","h":"https://www.globest.com/2005/03/10/developer-completes-first-michigan-project","s":"Trade brief on the outlot center, naming Turner Construction as contractor."}],"tenants":[["Panera Bread","Bakery-cafe, the anchor"],["Countrywide","Home loans office, 2005"],["T-Mobile","Joined soon after opening"]],"dirNote":"The lineup as the center opened in March 2005. Later tenants have included Vibe Credit Union and SVS Vision.","pullq":{"q":"This is the first Panera in Sterling Heights and among the first anywhere to open using their complete new design, inside and out.","w":"Bill Chalmers","t":"The Macomb Daily, March 12, 2005"},"sources":[["LoopNet","https://www.loopnet.com/Listing/36808-36824-Van-Dyke-Ave-Sterling-Heights-MI/39238354/"],["Panera Bread","https://www.panerabread.com/en-us/cafe/locations/mi/sterling-heights/36808-van-dyke-avenue"],["MapQuest","https://www.mapquest.com/us/michigan/meijer-363040083"],["CPIX listing","https://cpix.net/listings/ad187c5f-panera-plaza/"],["OpenStreetMap","https://www.openstreetmap.org/way/70855176"],["The Macomb Daily, March 12, 2005","https://cartessarep.com/wp-content/uploads/2015/12/Print-Macomb-Daily031205.pdf"],["GlobeSt.com","https://www.globest.com/2005/03/10/developer-completes-first-michigan-project"]]},"port-city-plaza":{"addr":"4865&#x2013;4885 24th Avenue, Fort Gratiot Township, MI 48059","corner":"West side of 24th Avenue (M-25), in front of the Walmart Supercenter at 4845 24th Avenue","lat":43.0496352,"lon":-82.4579034,"today":"Listings in 2026 name Hungry Howie&#x2019;s, Great Clips and Jersey Mike&#x2019;s as tenants, with an Edward Jones office also at the address. Great Clips has been here since the center opened.","todayShort":"Hungry Howie&#x2019;s, Great Clips, Jersey Mike&#x2019;s, Edward Jones","bldg":"10,020 SF of leasable area, built 2008","lot":"1.43 acres","lotSF":62291,"bldgSF":10020,"kv":[["Parking","47 spaces"],["Signage","Pylon sign and monument sign"]],"facts":[["Township","The address is in Fort Gratiot Township, just north of the City of Port Huron."],["Host store","Walmart Supercenter #1611, the Fort Gratiot Supercenter."],["Traffic","The leasing listing counts more than 20,000 cars a day on 24th Avenue."],["Trade area","More than 36,800 residents within five miles. The listing calls Fort Gratiot the main retail hub of the Blue Water Area."]],"history":["In March 2005 Chalmers told The Macomb Daily his company was looking at opportunities in Port Huron.","A 2007 company brochure shows the center in design, with permits filed."],"near":[["Walmart Supercenter","4845 24th Avenue","same lot"],["Meijer","4775 24th Avenue","0.3 mi"],["Birchwood Mall","","about 1 mi"],["Blue Water Bridge","Crossing to Sarnia, Ontario","about 3.9 mi"]],"tenants":[["Hungry Howie&#x2019;s","Pizza"],["Great Clips","Hair salon, here since opening"],["Jersey Mike&#x2019;s","Subs"],["Edward Jones","Financial advisor"]],"dirNote":"Tenants named in 2026 listings. GameStop, one of the two original tenants, is no longer in the center.","sources":[["LoopNet","https://www.loopnet.com/Listing/4865-24Th-Ave-Fort-Gratiot-MI/31448528"],["Crexi","https://www.crexi.com/lease/properties/796363/michigan-port-city-plaza"],["Walmart","https://www.walmart.com/store/1611"],["CommercialCafe","https://www.commercialcafe.com/commercial-property/us/mi/fort-gratiot/port-city-plaza/"],["Great Clips","https://salons.greatclips.com/us/mi/fort-gratiot/4865-24th-ave"],["Jersey Mike&#x2019;s","https://www.jerseymikes.com/31040/fort-gratiot-mi"],["Hungry Howie&#x2019;s","https://hungryhowies.com/location/hungry-howie-s-pizza-00592-2689223"]]},"lake-underhill-amsouth":{"addr":"7350 Lake Underhill Road, Orlando, FL 32822","corner":"Southwest corner of Lake Underhill Road and Goldenrod Road, just south of the SR 408 interchange","lat":28.538715,"lon":-81.286289,"today":"The building operates as the Regions Bank Rio Pinar branch, with a lobby, drive-thru and ATM. AmSouth became Regions in November 2006.","todayShort":"Regions Bank, Rio Pinar branch","bldg":"3,853 SF enclosed, 5,701 SF with canopy and porch (county record)","lot":"49,896 SF, about 1.15 acres","lotSF":49896,"bldgSF":3853,"kv":[["Zoning","C-2 commercial, unincorporated Orange County"],["Parking","27 spaces"]],"facts":[["Former station","Florida DEP lists the address as Mobil #10524, a retail station that is now closed."],["Timeline","The site changed hands by deed on April 20, 2004. The branch opened seven months later."],["Traffic","A 2025 leasing flyer for the lot next door counts about 35,000 vehicles a day on Goldenrod Road and about 178,000 on SR 408."]],"near":[["Goldenrod Road (SR 551)","The cross street","at the corner"],["SR 408, East-West Expressway","Ramps at Goldenrod Road","0.1 mi north"],["AdventHealth East Orlando","Hospital","0.4 mi east"]],"press":[{"o":"Florida Real Estate Journal, January 2006","t":"Oil industry experience keeps Pursuit Development running","h":"https://cartessarep.com/wp-content/uploads/2015/12/Print-FREJ-011506.pdf","s":"Profile of Chalmers&#x2019; Florida company and its niche: turning service stations into pharmacies, coffee shops and bank branches."}],"opened":"November 22, 2004, as AmSouth&#x2019;s Rio Pinar branch (FDIC)","sources":[["Florida DEP facility records","https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/DWM_STCM/MapServer/1/query?where=FACILITY_ID%3D8512971&outFields=*&returnGeometry=false&f=json"],["Regions Bank branch locator","https://www.regions.com/locator/fl/orlando/full-service-branch-7350-lake-underhill-rd"],["Orange County Property Appraiser","https://prc.ocpafl.org/Searches/vabparcel.aspx/PDF/false/PID/302235640002445"],["FDIC BankFind","https://api.fdic.gov/banks/history?filters=UNINUM%3A443205&fields=INSTNAME,OFF_NAME,OFF_PADDR,OFF_PCITY,CHANGECODE_DESC,EFFDATE&format=json"],["JLL leasing flyer","https://res.cloudinary.com/jll-global-sandbox/image/upload/v1763560534/MyListing/public/prod/property-734851/500-s-goldenrod-rd-flyer-11-19-25.pdf"]]},"southchase-amsouth":{"addr":"12301 South Orange Blossom Trail, Orlando, FL 32837","corner":"Southeast corner of Orange Blossom Trail (US 441) and Wetherbee Road, on Lot 2 of Southchase Village","lat":28.386658,"lon":-81.403956,"today":"The building operates as the Regions Bank Southchase branch, with a lobby, drive-thru and drive-up ATM.","todayShort":"Regions Bank, Southchase branch","bldg":"3,221 SF enclosed, 4,691 SF with canopy and porch (county record)","lot":"About 43,300 SF, just under one acre","lotSF":43300,"bldgSF":3221,"kv":[["Zoning","Planned development, unincorporated Orange County"],["Parking","28 spaces"]],"facts":[["Former station","Florida DEP lists the address as Chevron #200933, a retail station that is now closed."],["Cleanup","A 1996 petroleum discharge received No Further Action status in June 2005, and DEP marks the cleanup completed in October 2006."],["Neighbors","Southchase Village, a 229,410 SF shopping center, wraps the bank lot on two sides."]],"near":[["Southchase Village","Shopping center with Aldi and Ross","adjoining"],["Publix at Southchase","Grocery-anchored center","under 0.2 mi"],["Florida&#x2019;s Turnpike","Crosses Wetherbee Road","0.8 mi east"]],"press":[{"o":"Florida Real Estate Journal, January 2006","t":"Oil industry experience keeps Pursuit Development running","h":"https://cartessarep.com/wp-content/uploads/2015/12/Print-FREJ-011506.pdf","s":"Profile of Chalmers&#x2019; Florida company and its niche: turning service stations into pharmacies, coffee shops and bank branches."}],"opened":"March 2006, as AmSouth&#x2019;s Southchase branch (FDIC)","sources":[["Florida DEP facility records","https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/DWM_STCM/MapServer/1/query?where=FACILITY_ID%3D9100512&outFields=*&returnGeometry=false&f=json"],["Regions Bank branch locator","https://www.regions.com/locator/fl/orlando/full-service-branch-12301-south-orange-blossom-trail"],["Orange County Property Appraiser","https://prc.ocpafl.org/Searches/vabparcel.aspx/PDF/false/PID/292422813900020"],["FDIC BankFind","https://api.fdic.gov/banks/history?filters=UNINUM%3A453495&fields=INSTNAME,OFF_NAME,OFF_PADDR,OFF_PCITY,CHANGECODE_DESC,EFFDATE&format=json"],["REBusinessOnline","https://rebusinessonline.com/hff-brokers-21-1m-sale-of-shopping-center-in-orlando/"]]},"alafaya-amsouth":{"addr":"11 Alexandria Boulevard, Oviedo, FL 32765","corner":"Southeast corner of Alafaya Trail (SR 434) and Alexandria Boulevard","lat":28.651884,"lon":-81.207658,"today":"The building operates as the Regions Bank Alafaya Woods branch. In 2021 Regions closed its east Oviedo branch and folded it into this one.","todayShort":"Regions Bank, Alafaya Woods branch","bldg":"3,859 SF, single story (county record)","lot":"1.05 acres","lotSF":45738,"bldgSF":3859,"kv":[["Building permit","Issued April 1, 2005. Certificate of occupancy March 6, 2006"],["Zoning","PUD, City of Oviedo"]],"facts":[["Former station","Florida DEP lists the site as Chevron Alafaya Woods, a retail station that is now closed. City permits show a canopy in 1993 and a car wash dryer in 1995."],["Cleanup","DEP closed the site&#x2019;s petroleum cleanup with a rehabilitation completion in August 2009."],["Plat","Lots 5 and 6 of the Alafaya Woods Shopping Center plat."],["Traffic","A 2025 leasing flyer for the center next door counts about 46,000 vehicles a day on Alafaya Trail."]],"near":[["Alafaya Square","Publix-anchored shopping center","0.2 mi"],["Oviedo Police Department","","0.3 mi east"],["University of Central Florida","","about 3 mi south"]],"press":[{"o":"Florida Real Estate Journal, January 2006","t":"Oil industry experience keeps Pursuit Development running","h":"https://cartessarep.com/wp-content/uploads/2015/12/Print-FREJ-011506.pdf","s":"Profile of Chalmers&#x2019; Florida company and its niche: turning service stations into pharmacies, coffee shops and bank branches."},{"o":"Orlando Business Journal, June 2021","t":"Regions Bank closes two local branches, as it plans to open new ones later this year","h":"https://www.bizjournals.com/orlando/news/2021/06/17/regions-bank-closes-two-metro-orlando-branches.html","s":"Regions merged its east Oviedo branch into the Alafaya Woods branch."}],"opened":"March 13, 2006, as AmSouth&#x2019;s Alafaya Woods branch (FDIC)","sources":[["Seminole County Property Appraiser","https://scpafl.org/search/parcels/details/?PID=22213150300000050"],["Regions Bank branch locator","https://www.regions.com/locator/fl/oviedo/full-service-branch-11-alexandria-blvd"],["FDIC BankFind","https://api.fdic.gov/banks/history?filters=UNINUM%3A453509&fields=INSTNAME,OFF_NAME,OFF_PADDR,OFF_PCITY,CHANGECODE_DESC,EFFDATE&format=json"],["JLL leasing flyer","https://res.cloudinary.com/jll-global-sandbox/image/upload/v1755286900/MyListing/public/prod/property-625764/alafaya-square-flyer-08-15-25.pdf"],["Florida DEP facility records","https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/DWM_STCM/MapServer/1/query?where=FACILITY_ID%3D8944146&outFields=*&returnGeometry=false&f=json"],["Orlando Business Journal","https://www.bizjournals.com/orlando/news/2021/06/17/regions-bank-closes-two-metro-orlando-branches.html"]]},"ehrlich-amsouth":{"addr":"5252 Ehrlich Road, Tampa, FL 33624","corner":"Southeast corner of Ehrlich Road and West Village Drive, a signalized intersection","lat":28.084151,"lon":-82.539169,"today":"Regions closed the branch in March 2015. The building, with its three-lane drive-through, has since been marketed for retail, restaurant, bank or office use.","todayShort":"Former branch, closed March 2015","bldg":"3,053 SF heated, 4,212 SF with canopies (county record)","lot":"1.12 acres (48,802 SF)","lotSF":48802,"bldgSF":3053,"kv":[["Ground lease","20 years from January 23, 2005, with four five-year renewal options"],["Zoning","Planned development, unincorporated Hillsborough County"]],"facts":[["Former station","Florida DEP lists the address as a Shell station, now closed."],["Cleanup","DEP closed the site&#x2019;s remaining petroleum discharges with a rehabilitation completion in March 2018."],["Construction","The county issued a demolition permit in February 2006 and a building permit for AmSouth that August."],["Merger","AmSouth merged into Regions in November 2006, while the branch was under construction."],["Traffic","A 2021 offering memorandum counts more than 22,500 vehicles a day on Ehrlich Road."]],"near":[["Chase Bank","Facing the site","across the intersection"],["Westfield Citrus Park","Regional mall","under 3 mi"]],"press":[{"o":"Florida Real Estate Journal, January 2006","t":"Oil industry experience keeps Pursuit Development running","h":"https://cartessarep.com/wp-content/uploads/2015/12/Print-FREJ-011506.pdf","s":"Profile of Chalmers&#x2019; Florida company and its niche: turning service stations into pharmacies, coffee shops and bank branches."}],"opened":"February 26, 2007 (FDIC)","sources":[["Hillsborough County Property Appraiser","https://gis.hcpafl.org/CommonServices/property/search/ParcelData?pin=182806ZZZ000000807300U"],["Broker listing","https://www.loopingcloud.com/commercial/5252-ehrlich-rd-tampa-florida-33624/13483"],["Marcus &amp; Millichap offering memorandum","https://www.thezylberglaitgroup.com/wp-content/uploads/2021/02/Regions-Bank-Ground-Lease-Offering-Memorandum-TENX.pdf"],["FDIC BankFind","https://api.fdic.gov/banks/history?filters=UNINUM%3A467026&fields=INSTNAME,OFF_NAME,OFF_PADDR,OFF_PCITY,CHANGECODE_DESC,EFFDATE&format=json"],["Florida DEP facility records","https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/DWM_STCM/MapServer/1/query?where=FACILITY_ID%3D8943631&outFields=*&returnGeometry=false&f=json"],["Alabama State Banking Department","https://banking.alabama.gov/wp-content/uploads/2023/06/AnnualReport_07.pdf"]]},"westport-shoppes":{"addr":"1756&#x2013;1782 SW St. Lucie West Boulevard, Port St. Lucie, FL 34986","corner":"St. Lucie West Boulevard at Peacock Boulevard, just off Interstate 95","lat":27.310665,"lon":-80.406278,"today":"Cartessa still owns the center, through BC of St Lucie West LLC. The Vitamin Shoppe, Chipotle and Panda Express are all operating in 2026.","todayShort":"Owned by Cartessa. Vitamin Shoppe, Chipotle and Panda Express open","bldg":"11,662 SF, built 2009 (state tax roll)","lot":"1.77 acres","lotSF":77101,"bldgSF":11662,"kv":[["Signage","Pylon and freestanding signs"],["Traffic","28,400 vehicles a day (2017 leasing flyer)"]],"facts":[["The bays","A 2017 leasing plan shows The Vitamin Shoppe in 3,451 SF, Chipotle in 2,378 SF, Panda Express in 2,150 SF, RE/MAX in 1,335 SF and MetroPCS in 905 SF."],["A first","This was Port St. Lucie&#x2019;s only Panda Express until a second one opened in Tradition in April 2017."],["Trade area","About 50,000 people and 19,000 households within three miles, on the flyer&#x2019;s 2018 figures."],["Owner","The 2026 tax roll lists BC of St Lucie West LLC, with a Rochester Hills, Michigan mailing address."]],"near":[["Interstate 95","The St. Lucie West Boulevard interchange","just west"],["Town Center at St. Lucie West","Shopping center","adjacent"],["New York Mets spring training complex","On Peacock Boulevard","nearby"],["Indian River State College and Florida Atlantic University","About 8,500 students combined","within half a mile"],["McDonald&#x2019;s","1750 SW St. Lucie West Boulevard","next parcel"]],"press":[{"o":"TCPalm, April 2017","t":"Panda Express opens second location in Port St. Lucie","h":"https://www.tcpalm.com/story/entertainment/2017/04/17/panda-express-opens-second-location-port-st-lucie/100282824/","s":"Notes that the city&#x2019;s first Panda Express is the one at Westport Shoppes."}],"dirNote":"The lineup on Cartessa&#x2019;s project sheet. The Vitamin Shoppe, Chipotle and Panda Express are listed as open in 2026.","sources":[["The Vitamin Shoppe store locator","https://locations.vitaminshoppe.com/fl/portst-lucie/"],["Florida statewide parcel data","https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0"],["Colliers leasing flyer, 2017","https://listingsprod.blob.core.windows.net/ourlistings-usa/44a5d384-86b0-4795-926d-e431d5103b17/75ec56f8-c483-4d58-b579-31792847df35"],["TCPalm","https://www.tcpalm.com/story/entertainment/2017/04/17/panda-express-opens-second-location-port-st-lucie/100282824/"]]},"pinellas-groves-plaza":{"addr":"2401 East Bay Drive, Largo, FL 33771","corner":"Southwest corner of East Bay Drive (SR 686) and Starkey Road, a signalized intersection","q":"2401 East Bay Drive, Largo, FL 33771","today":"Starbucks is still the anchor after more than two decades, and has extended its lease through 2031 with options to 2051. Goldflower, a medical cannabis dispensary, has the other unit. The center changed hands in May 2026, within a day of being listed.","todayShort":"Starbucks and Goldflower, fully leased","bldg":"4,784 heated SF, built 2004 (county record)","lot":"0.80 acre","lotSF":34918,"bldgSF":4784,"kv":[["Parking","33 spaces"],["Drive-thru","Yes"],["Plat","Pinellas Groves Plaza, Lot 1"]],"facts":[["Former station","Florida DEP lists the address as Mobil #02-GDM, a retail station that is now closed, with cleanup marked completed in June 2017."],["Tenants","Starbucks has 3,050 SF across two units. Goldflower has 1,610 SF. Both are on triple-net leases."],["Traffic","Colliers counted more than 62,500 vehicles a day at the intersection in 2026."],["Recent work","County permits show remodels in 2015 and 2024, and a new roof in 2026."]],"history":["Dutch Bros opened across the intersection in November 2025. A local paper called the result a clash of the coffee titans on East Bay Drive."],"near":[["Dutch Bros Coffee","Opened November 2025","across the intersection"],["East Bay Drive","The leasing agent calls it the densest retail corridor in mid-Pinellas","on the corridor"]],"press":[{"o":"Tampa Bay Beacons, May 2026","t":"Clash of the coffee titans on East Bay Drive","h":"https://www.tampabaybeacons.com/2026/05/20/clash-of-the-coffee-titans-on-east-bay-drive","s":"Feature on the coffee chains crowding East Bay Drive, with this Starbucks at the center of it."}],"tenants":[["Starbucks","Anchor, 3,050 SF with drive-thru"],["Goldflower","Dispensary, 1,610 SF"]],"dirNote":"Tenants in 2026.","sources":[["Pinellas County Property Appraiser","https://www.pcpao.gov/property-details?s=152936710530000010"],["St. Pete Catalyst","https://stpetecatalyst.com/places-this-week-gulfport-estate-lists-for-5-7-million/"],["Leasing agent&#x2019;s listing","https://brucestrumpf.com/property/pinellas-groves-plaza/"],["Colliers","https://www.colliers.com/en/news/tampa-bay/colliers-brokers-2-6-million-sale-of-largo-fl-retail-center-in-24-hours"],["Florida DEP facility records","https://prodenv.dep.state.fl.us/DepNexus/public/electronic-documents/8515141/gis-facility!search"],["Tampa Bay Beacons","https://www.tampabaybeacons.com/2026/05/20/clash-of-the-coffee-titans-on-east-bay-drive"]]},"winter-park-starbucks":{"addr":"1900 Aloma Avenue, Winter Park, FL 32792","corner":"Southeast corner of Aloma Avenue (SR 426) and Lakemont Avenue, beside the Walgreens at 1920 Aloma","lat":28.6001879,"lon":-81.3276145,"today":"Starbucks moved about half a mile east in February 2015, to a drive-thru store at 2519 Aloma Avenue that still carries the name Aloma Ave &amp; Lakemont Rd. The county now lists this building as a Verizon Wireless store.","todayShort":"Verizon store. Starbucks moved east in 2015","opened":"by July 2004","bldg":"1,576 SF enclosed plus a 424 SF patio (county record)","lot":"10,970 SF, about a quarter acre","lotSF":10970,"bldgSF":1576,"kv":[["Zoning","C-1, City of Winter Park"],["Parking","16 spaces"],["Frontage","102 feet on Lakemont and 130 feet on Aloma, less right-of-way"]],"facts":[["Former station","Florida DEP lists the address as Exxon #46462, a retail station that is now closed."],["Vacant for a decade","The Florida Real Estate Journal reported that the former Exxon site had sat vacant for more than ten years."],["Why it was bought","Chalmers told the Journal he bought the lot as extra parking for the Walgreens behind it, then learned Starbucks wanted a store there."],["The move","In July 2014 Starbucks sought approval for a drive-thru store at 2519 Aloma, a former Jiffy Lube. A site that tracks Starbucks stores dates the switch to February 2015."]],"history":["The corner still draws projects. In June 2024 the City Commission approved a two-story medical office on the last wooded parcel at the same intersection."],"near":[["Walgreens","1920 Aloma Avenue","adjacent"],["Starbucks today","Drive-thru store at 2519 Aloma Avenue","half a mile east"]],"quotes":[{"q":"We bought it to just use it for parking for the Walgreens behind it, but we found out Starbucks was interested in a location there.","w":"Bill Chalmers","t":"Florida Real Estate Journal, January 2006"}],"press":[{"o":"Florida Real Estate Journal, January 2006","t":"Oil industry experience keeps Pursuit Development running","h":"https://cartessarep.com/wp-content/uploads/2015/12/Print-FREJ-011506.pdf","s":"Profile of Chalmers&#x2019; Florida company and its niche: turning service stations into pharmacies, coffee shops and bank branches."},{"o":"Winter Park Voice, July 2024","t":"Medical office approved on corner of Aloma and Lakemont","h":"https://winterparkvoice.com/medical-office-approved-on-corner-of-aloma-and-lakemont/","s":"The City Commission approves a medical office on the vacant corner across the intersection."}],"sources":[["Orange County Property Appraiser","https://prc.ocpafl.org/Searches/vabparcel.aspx/PDF/false/PID/302209012098013"],["Florida DEP facility records","https://prodenv.dep.state.fl.us/DepNexus/public/electronic-documents/8512888/gis-facility!search"],["Florida Real Estate Journal, January 2006","https://cartessarep.com/wp-content/uploads/2015/12/Print-FREJ-011506.pdf"],["City of Winter Park Planning and Zoning Board","https://cityofwinterpark.org/docs/government/boards/historical-archive/staff-reports/PZB-report-2014-07-01.pdf"],["StarbucksEverywhere.net","http://www.starbuckseverywhere.net/bigimages/08/DSCN8531.htm"],["Winter Park Voice","https://winterparkvoice.com/medical-office-approved-on-corner-of-aloma-and-lakemont/"]]},"tampa-starbucks":{"addr":"502 East Hillsborough Avenue, Tampa, FL 33604","corner":"Northeast corner of Hillsborough Avenue and Central Avenue, one block west of the Interstate 275 interchange","q":"502 East Hillsborough Avenue, Tampa, FL 33604","today":"Still a Starbucks with a drive-thru. The city issued permits to renovate the store in 2017 and again in 2023.","todayShort":"Starbucks, still open","opened":"April 7, 2006","bldg":"1,811 heated SF (county record)","lot":"21,572 SF, about half an acre","lotSF":21572,"bldgSF":1811,"kv":[["Zoning","Planned development"]],"signNote":"Starbucks wanted the two tall poles that had carried the Mobil sign, so drivers on Interstate 275 could see its own. A variance let the old sign be refaced instead of taken down.","timeline":[["Spring 2004","Chalmers announces the plan for the former Mobil lot. Neighbors had already helped block a car wash and a Krystal restaurant proposed for the same site."],["December 2004","At an Old Seminole Heights Neighborhood Association meeting, all but one member back the project in a mock vote."],["February to April 2005","Pursuit Development asks to rezone the site. The Architectural Review Commission wants the building turned to face Central Avenue. The City Council approves the rezoning over its objections."],["July 13, 2005","The Architectural Review Commission approves the final certificate of appropriateness, 4 to 1."],["December 2005","The city issues the building permits."],["April 7, 2006","The store opens."],["July 2006","Three months in, the store manager ranks it first or second in sales in the Tampa area, about triple what was expected."]],"facts":[["Design","Plans showed an 1,800 SF building with a raised, columned portico echoing the neighborhood&#x2019;s porches, a two-lane drive-through and a patio."],["The sign poles","Starbucks insisted on reusing the two tall poles from the Mobil sign. Chalmers called that a potential deal breaker, because historic rules and zoning might forbid it."],["The lease","Chalmers planned to buy the lot from ExxonMobil and lease it to Starbucks for ten years."],["Access","Entrances on both Central and Hillsborough avenues."]],"near":[["Interstate 275","Interchange at Hillsborough Avenue","one block east"],["Old Seminole Heights Historic District","The Tribune called the corner a gateway into it","at its edge"],["Florida Avenue","The neighborhood&#x2019;s restaurant row","short drive west"]],"quotes":[{"q":"We&#x2019;re not interested in going into areas where the neighbors don&#x2019;t want us.","w":"Bill Chalmers","t":"St. Petersburg Times, December 3, 2004"},{"q":"The residents proved an unstoppable force.","w":"Kathy Steele","t":"Tampa Tribune, July 18, 2005"},{"q":"In the Seminole Heights area, a Starbucks opening Means Something.","w":"Michael Canning","t":"St. Petersburg Times, July 7, 2006"}],"press":[{"o":"St. Petersburg Times, December 3, 2004","t":"Neighbors give approving nod to proposed Starbucks","h":"https://cartessarep.com/wp-content/uploads/2015/12/Print-Pursuit-Starbucks120304.pdf","s":"Neighborhood association members back the plan. The sign poles and historic review remain hurdles."},{"o":"Tampa Tribune, July 18, 2005","t":"Seminole Heights Is Abuzz","h":"http://seminoleheights.blogspot.com/2005/07/trib-and-starbucks.html","s":"Front-page story on the review board&#x2019;s approval and what residents hoped the store would do for the corridor."},{"o":"St. Petersburg Times, July 7, 2006","t":"It's just coffee, but still ...","h":"https://www.tampabay.com/archive/2006/07/07/it-s-just-coffee-but-still/","s":"Three months after opening, the store is among the busiest in the area and is lifting its neighbors."},{"o":"Florida Real Estate Journal, January 2006","t":"Oil industry experience keeps Pursuit Development running","h":"https://cartessarep.com/wp-content/uploads/2015/12/Print-FREJ-011506.pdf","s":"Profile of Chalmers&#x2019; Florida company and its niche: turning service stations into pharmacies, coffee shops and bank branches."}],"sources":[["Hillsborough County Property Appraiser","https://gis.hcpafl.org/propertysearch/#/parcel/basic/1828364FW000029000070A"],["StarbucksEverywhere.net","https://starbuckseverywhere.net/Tampa.htm"],["St. Petersburg Times","https://www.tampabay.com/archive/2006/07/07/it-s-just-coffee-but-still/"],["Old Seminole Heights newsletter, December 2004","https://cartessarep.com/wp-content/uploads/2015/12/Print-Pursuit-Starbucks120304.pdf"],["Tampa Tribune, reposted on the Seminole Heights blog","https://seminoleheights.blogspot.com/2005/04/starbucks.html"]]},"belvedere-walgreens":{"addr":"1010 North Military Trail, West Palm Beach, FL 33409","corner":"Northeast corner of Military Trail and Belvedere Road","lat":26.69252,"lon":-80.11124,"today":"The Walgreens has closed. In November 2021 the county approved a gas station and convenience store for the corner, and Murphy USA built one in 2025.","todayShort":"Walgreens closed. Murphy USA since 2025","lot":"1.44 acres","kv":[["Zoning","MUPD, unincorporated Palm Beach County"]],"facts":[["Parent development","The corner belongs to a county planned development first approved in 1993 and known in county records as BMC/Wal-Mart."],["Site plan","The county commission approved a reconfigured site plan for the development on October 26, 2000."],["Off-site work","County conditions included a contribution toward the Military Trail and Belvedere Road intersection, turn lanes and a median opening on Belvedere Road, and building Country Club Road as a three-lane section."],["Next door","The Walmart at 4375 Belvedere Road, in the same plat, followed in 2004."],["The store","Walgreens #04080. A hobbyist&#x2019;s record dates the building to 2000 and its opening to 2001."]],"near":[["Walmart Supercenter","4375 Belvedere Road, same planned development","adjacent"],["Military Trail","North-south arterial","west frontage"],["Belvedere Road","East-west arterial","south frontage"]],"press":[{"o":"Palm Beach County Commission, October 26, 2000","t":"Resolution R-2000-1708, BMC planned development","h":"https://discover.pbc.gov/pzb/zoning/Resolutions-1993-2003/R-2000-1708.pdf","s":"The county resolution that reconfigured the site plan and restated its road conditions."},{"o":"Palm Beach County Commission, November 22, 2021","t":"Resolution R-2021-1756, BMC/Wal-Mart","h":"https://discover.pbc.gov/pzb/zoning/Resolutions-2015-Current/R-2021-1756.pdf","s":"The approval that let a gas station replace the former drugstore."}],"sources":[["Palm Beach County Property Appraiser","https://pbcpao.gov/Property/Details?parcelId=00424325310010030"],["Palm Beach County zoning resolutions","https://discover.pbc.gov/pzb/zoning/Resolutions-2015-Current/R-2021-1756.pdf"],["The Wag, a Walgreens hobbyist blog","http://walgreensblog.blogspot.com/2014/04/walgreens-military-belvedere-west-palm.html"]]},"cape-coral-walgreens":{"addr":"1606 Del Prado Boulevard South, Cape Coral, FL 33990","corner":"Northwest corner of Del Prado Boulevard and SE 16th Terrace","lat":26.62265673,"lon":-81.94125571,"today":"Still a Walgreens, store #7028.","todayShort":"Walgreens #7028, open","bldg":"15,599 SF (county record)","lot":"1.42 acres","facts":[["Next door","A 34,482 SF medical office building stands on 2.39 acres immediately to the north, at 1528 Del Prado. Millennium Physician Group runs a multi-specialty office, walk-in clinic and lab there."],["The split","The two parcels share Cape Coral block 637 and together cover about 3.8 acres. The Walgreens lot carries the kind of lettered parcel number a split produces."],["Pep Boys today","Pep Boys now operates a few blocks south, at 1820 Del Prado Boulevard."]],"near":[["Millennium Physician Group","The medical office on the former Pep Boys land","adjacent, north"],["Del Prado Boulevard","Cape Coral&#x2019;s main north-south commercial road","frontage"]],"sources":[["Walgreens store locator","https://www.walgreens.com/locator/walgreens-1606+del+prado+blvd+s-cape+coral-fl-33990/id=7028"],["Lee County Property Appraiser","https://www.leepa.org/Display/DisplayParcel.aspx?FolioID=10169535"],["Florida statewide parcel data","https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0/query?where=PARCEL_ID%3D%27194424C3006370000%27&outFields=*&returnGeometry=false&f=json"],["Millennium Physician Group","https://millenniumphysician.com/location/cape-coral-1528-del-prado-s/"]]},"jensen-beach-walgreens":{"addr":"4420 NW Federal Highway, Jensen Beach, FL 34957","corner":"Northwest corner of US 1 and Westmoreland Boulevard, a signalized intersection","lat":27.25932322,"lon":-80.28227436,"today":"Still a Walgreens, store #7330.","todayShort":"Walgreens #7330, open","bldg":"14,560 SF, built 2005 (2025 listing)","kv":[["Zoning","PUD-WJ, the West Jensen planned unit development"],["Signage","Pylon and building signs on US 1"]],"facts":[["The lease","Walgreens signed its lease on January 18, 2005. It runs 75 years, to 2080, with termination options every five years from 2030."],["Traffic","A 2025 listing counts 72,500 vehicles a day on US 1 and 12,000 on Westmoreland Boulevard."],["Plat","A single platted lot inside the West Jensen planned unit development."]],"near":[["Treasure Coast Square","Regional mall","close by"],["Lowe&#x2019;s, BJ&#x2019;s Wholesale and Aldi","Around the US 1 and Westmoreland intersection","same corner"],["US 1","The Treasure Coast&#x2019;s main commercial highway","frontage"]],"press":[{"o":"Florida Real Estate Journal, January 2006","t":"Oil industry experience keeps Pursuit Development running","h":"https://cartessarep.com/wp-content/uploads/2015/12/Print-FREJ-011506.pdf","s":"Profile of Chalmers&#x2019; Florida company and its niche: turning service stations into pharmacies, coffee shops and bank branches."}],"sources":[["Walgreens store locator","https://www.walgreens.com/locator/walgreens-4420+nw+federal+hwy-jensen+beach-fl-34957/id=7330"],["2025 sale listing","https://images1.showcase.com/d2/PQ5k6few6qztluNF90qNb4uYTriis8-JzsBAJW7lwv4/document.pdf"],["Florida statewide parcel data","https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0/query?where=PARCEL_ID%3D%2718-37-41-007-000-00010-0%27&outFields=*&returnGeometry=false&f=json"]]},"hudson-walgreens":{"addr":"14217 US Highway 19, Hudson, FL 34667","corner":"Southwest corner of US 19 and Hudson Avenue","lat":28.36380077,"lon":-82.6945129,"today":"Still a Walgreens, store #7466, with a drive-thru pharmacy.","todayShort":"Walgreens #7466, open","bldg":"About 14,800 SF under sprinklers (county record)","lot":"1.67 acres","kv":[["Zoning","C-2, unincorporated Pasco County"]],"facts":[["Burger King","Burger King is still next door at 14139 US 19, on a 0.64-acre parcel whose number is a sibling of the Walgreens parcel."],["The deeds","The Walgreens land deed was recorded in August 2004. Two quit claim deeds followed on the Burger King parcel that December."],["Frontage","The parcel runs along the south side of Hudson Avenue and the west side of US 19 in one piece."]],"near":[["Burger King","The neighbor that traded 12,000 SF for site improvements","adjacent, south"],["US 19","The main commercial highway of west Pasco County","frontage"],["Hudson Avenue","","north frontage"]],"press":[{"o":"Florida Real Estate Journal, January 2006","t":"Oil industry experience keeps Pursuit Development running","h":"https://cartessarep.com/wp-content/uploads/2015/12/Print-FREJ-011506.pdf","s":"Profile of Chalmers&#x2019; Florida company and its niche: turning service stations into pharmacies, coffee shops and bank branches."}],"sources":[["Walgreens store locator","https://www.walgreens.com/locator/walgreens-14217+us+highway+19-hudson-fl-34667/id=7466"],["Pasco County Property Appraiser","https://search.pascopa.com/parcel.aspx?parcel=1624270000013000000"]]},"tampa-walgreens":{"addr":"13317 North Boulevard, Tampa, FL 33612","corner":"Southeast corner of North Boulevard and Fletcher Avenue","lat":28.06878178,"lon":-82.46692104,"today":"Still a Walgreens, store #1925. The county&#x2019;s parcel map labels the building Walgreens &amp; McNatt&#x2019;s Dry Cleaners.","todayShort":"Walgreens #1925 and McNatt&#x2019;s Dry Cleaners","bldg":"14,890 heated SF: a 13,690 SF drugstore and a separate 1,200 SF section (county record)","lot":"1.49 acres","kv":[["Zoning","Planned development, unincorporated Hillsborough County"]],"facts":[["The cleaner","The county issued the permit to add McNatt&#x2019;s Dry Cleaners on the same day as the Walgreens permit, September 22, 2005. The old cleaners came down under a December 2005 permit, after its new space was approved."],["Stormwater","A permit for a storm water vault was issued on April 28, 2005, five months before the building permits."],["The assembly","The legal description combines part of a North Tampa Heights lot with two lots of the Croteau Subdivision."]],"near":[["Fletcher Avenue","East-west arterial","north frontage"],["North Boulevard","","west frontage"],["Interstate 275","The Bearss Avenue and I-275 area of north Tampa","nearby"]],"press":[{"o":"Florida Real Estate Journal, January 2006","t":"Oil industry experience keeps Pursuit Development running","h":"https://cartessarep.com/wp-content/uploads/2015/12/Print-FREJ-011506.pdf","s":"Profile of Chalmers&#x2019; Florida company and its niche: turning service stations into pharmacies, coffee shops and bank branches."}],"sources":[["Hillsborough County Property Appraiser","https://gis.hcpafl.org/CommonServices/property/search/ParcelData?pin=1828120TD000004000020U"],["Walgreens store locator","https://www.walgreens.com/locator/walgreens-13317+n+boulevard-tampa-fl-33612/id=1925"],["Hillsborough County parcel map","https://maps.hillsboroughcounty.org/arcgis/rest/services/InfoLayers/HC_Parcels/MapServer/0/query?where=FOLIO%3D%270180060000%27&outFields=*&returnGeometry=false&f=json"]]},"satellite-beach-amsouth":{"addr":"191 East Eau Gallie Boulevard, Indian Harbour Beach, FL 32937","corner":"South side of Eau Gallie Boulevard, on the beach side of the causeway","lat":28.137958,"lon":-80.599004,"today":"An operating Regions Bank branch, which the bank calls Indian Harbour Beach. Full service, with a lobby and drive-thru.","todayShort":"Regions Bank, Indian Harbour Beach branch","opened":"December 17, 2007, under the Regions name (FDIC)","bldg":"3,757 SF plus a 1,288 SF drive-thru canopy (county record)","lot":"0.89 acre","lotSF":38768,"bldgSF":3757,"kv":[["Construction","One story, brick, shingle roof"]],"facts":[["Former station","Florida DEP lists the address as Chevron-Eau Gallie, a retail station that is now closed."],["The name on the sign","AmSouth merged into Regions in November 2006, while this deal was under way. The branch opened as Regions, and a county photo from January 2008 shows the new building with Now Open banners."],["Deposits","FDIC data show the branch&#x2019;s deposits doubling between June 2008 and June 2009."],["Cleanup","DEP marks the site&#x2019;s petroleum cleanup completed, effective March 2025."],["Jurisdiction","The parcel has a 32937 beachside ZIP code and is taxed in the City of Melbourne district."]],"near":[["Wells Fargo","200 East Eau Gallie Boulevard","across the boulevard"],["Bank of America","202 East Eau Gallie Boulevard","across the boulevard"],["Truist and TD Bank","Two more branches on the same boulevard","quarter mile east"]],"press":[{"o":"Florida Real Estate Journal, January 2006","t":"Oil industry experience keeps Pursuit Development running","h":"https://cartessarep.com/wp-content/uploads/2015/12/Print-FREJ-011506.pdf","s":"Profile of Chalmers&#x2019; Florida company and its niche: turning service stations into pharmacies, coffee shops and bank branches."}],"sources":[["Brevard County Property Appraiser","https://www.bcpao.us/api/v1/account/2716556"],["BankBranchLocator","https://bankbranchlocator.com/regions-bank-indian-harbour-beach-branch.html"],["FDIC BankFind","https://api.fdic.gov/banks/sod?filters=YEAR%3A2009%20AND%20STALPBR%3AFL%20AND%20STCNTYBR%3A12009%20AND%20CERT%3A(26800%20OR%2012368)&fields=NAMEFULL,NAMEBR,ADDRESBR,CITYBR,ZIPBR,DEPSUMBR,SIMS_ESTABLISHED_DATE,BRNUM,UNINUMBR,SIMS_LATITUDE,SIMS_LONGITUDE&limit=500&format=json"],["Florida DEP facility records","https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/DWM_STCM/MapServer/1/query?where=FACILITY_ID%3D8501352&outFields=*&returnGeometry=false&f=json"]]},"indialantic-amsouth":{"addr":"200 Fifth Avenue, Indialantic, FL 32903","corner":"North side of Fifth Avenue, the stretch of US 192 that runs through Indialantic","lat":28.09102,"lon":-80.569259,"today":"Space Coast Credit Union&#x2019;s Indialantic branch operates in the building, with a lobby, drive-thru and ATMs.","todayShort":"Space Coast Credit Union branch","lot":"20,038 SF (0.46 acre)","lotSF":20038,"bldgSF":2000,"kv":[["Construction","One story, stucco over masonry, tile roof"],["Plat","Lots 13 to 16, Block 20, Indialantic By The Sea"]],"facts":[["Former station","Florida DEP lists the address as Chevron PC#127 Indialantic, a retail station that is now closed."],["Cleanup","DEP marks the site&#x2019;s petroleum cleanup completed, effective October 2013."],["The lot","The county counts about 10,100 SF of asphalt paving and four light poles on a lot of 20,038 SF."],["In print","A January 2006 trade article lists an AmSouth branch in Indialantic among the projects Pursuit had completed or was delivering."]],"near":[["PNC Bank","305 Fifth Avenue","0.15 mi west"],["Bank of America","333 Fifth Avenue","0.2 mi west"],["Chase","503 Fifth Avenue","0.4 mi west"]],"press":[{"o":"Florida Real Estate Journal, January 2006","t":"Oil industry experience keeps Pursuit Development running","h":"https://cartessarep.com/wp-content/uploads/2015/12/Print-FREJ-011506.pdf","s":"Profile of Chalmers&#x2019; Florida company and its niche: turning service stations into pharmacies, coffee shops and bank branches."}],"sources":[["Brevard County Property Appraiser","https://www.bcpao.us/api/v1/account/2731074"],["Space Coast Credit Union","https://www.sccu.com/about-sccu/locations/indialantic"],["Florida statewide parcel data","https://services9.arcgis.com/Gh9awoU677aKree0/arcgis/rest/services/Florida_Statewide_Cadastral/FeatureServer/0/query?where=CO_NO%3D15%20AND%20PHY_CITY%3D%27INDIALANTIC%27%20AND%20DOR_UC%3D%27023%27&outFields=PARCEL_ID,OWN_NAME,PHY_ADDR1,ACT_YR_BLT,TOT_LVG_AR,LND_SQFOOT&returnGeometry=false&f=json"],["Florida DEP facility records","https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/DWM_STCM/MapServer/1/query?where=FACILITY_ID%3D8500980&outFields=*&returnGeometry=false&f=json"],["Florida Real Estate Journal, January 2006","https://cartessarep.com/wp-content/uploads/2015/12/Print-FREJ-011506.pdf"],["FDIC BankFind","https://api.fdic.gov/banks/locations?filters=STALP%3AFL%20AND%20ZIP%3A(32937%20OR%2032903)&fields=NAME,OFFNAME,ADDRESS,CITY,ZIP,ESTYMD,UNINUM,LATITUDE,LONGITUDE,SERVTYPE_DESC&limit=200&format=json"]]},"boynton-trail-bank-atlantic":{"addr":"9846 South Military Trail, Boynton Beach, FL 33436","corner":"East side of Military Trail at Boynton Trail Centre, just north of Boynton Beach Boulevard","lat":26.530192,"lon":-80.122253,"today":"No bank operates here now. The freestanding branch building has been marketed for sublease as a bank branch since October 2022.","todayShort":"Branch building offered for sublease","bldg":"3,562 SF branch with drive-thru lanes (county record)","lot":"1.32 acres","lotSF":57329,"bldgSF":3562,"kv":[["Zoning","CG General Commercial, unincorporated Palm Beach County"]],"facts":[["Former station","Florida DEP lists the address as Tom&#x2019;s Citgo, a retail station that is now closed."],["Cleanup","DEP marks the petroleum cleanup completed, effective June 2009."],["Plat","Parcel C of the Boynton Trail Centre plat, plus strips of two access tracts."],["Drive-thru","The sublease listing describes three covered drive-thru lanes, one uncovered lane and a bypass lane, with five teller stations inside."]],"near":[["Boynton Trail Centre","Walmart Neighborhood Market, Planet Fitness and Boynton Cinemas","same center"],["Bank of America","9760 South Military Trail","500 ft north"],["Truist","9879 South Military Trail","across Military Trail"],["Chase","At the Boynton Beach Boulevard corner","0.2 mi south"]],"sources":[["Palm Beach County Property Appraiser","https://pbcpao.gov/Property/Details?parcelId=00424524220030000"],["LoopNet","https://www.loopnet.com/Listing/9846-S-Military-Trl-Boynton-Beach-FL/26836081/"],["Florida DEP facility records","https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/DWM_STCM/MapServer/1/query?where=FACILITY_ID%3D8513928&outFields=*&returnGeometry=false&f=json"],["FDIC BankFind","https://api.fdic.gov/banks/locations?filters=STALP%3AFL%20AND%20ZIP%3A33436&fields=NAME,OFFNAME,ADDRESS,CITY,ZIP,ESTYMD,UNINUM,LATITUDE,LONGITUDE&limit=200&format=json"]]}};
+const MAPS = {"westwood-north":{"h":767,"cap":"Westwood on Golf Drive, with The Links at Crystal Lake to the north and east and the Telegraph Road shops to the south."},"westwood-south":{"h":767,"cap":"Westwood on Golf Drive, with The Links at Crystal Lake to the north and east and the Telegraph Road shops to the south."},"the-819":{"h":614,"cap":"The 819 on Golf Drive in Pontiac, with The Links at Crystal Lake across the road and wrapping to the east."},"miami-garden":{"h":633,"cap":"Miami Garden Apartments and the blocks around it."},"dequindre-medical-office":{"h":659,"cap":"Dequindre Medical Office Building: west side of Dequindre Road, across from Universal Shopping Center."},"north-greenfield-office-park":{"h":659,"cap":"North Greenfield Office Park: west side of Greenfield Road, just north of 12 Mile Road."},"the-wedding-shoppe":{"h":686,"cap":"The Wedding Shoppe: on Coolidge between 11 Mile and 12 Mile, in downtown Berkley."},"panera-plaza":{"h":722,"cap":"Panera Plaza: east side of Van Dyke (M-53), just south of Metropolitan Parkway, on an outlot of the Meijer at 36600 Van Dyke."},"port-city-plaza":{"h":683,"cap":"Port City Plaza: west side of 24th Avenue (M-25), in front of the Walmart Supercenter at 4845 24th Avenue."},"lake-underhill-amsouth":{"h":516,"cap":"Lake Underhill AmSouth: southwest corner of Lake Underhill Road and Goldenrod Road, just south of the SR 408 interchange."},"southchase-amsouth":{"h":516,"cap":"Southchase AmSouth: southeast corner of Orange Blossom Trail (US 441) and Wetherbee Road, on Lot 2 of Southchase Village."},"alafaya-amsouth":{"h":516,"cap":"Alafaya AmSouth: southeast corner of Alafaya Trail (SR 434) and Alexandria Boulevard."},"ehrlich-amsouth":{"h":516,"cap":"Ehrlich AmSouth: southeast corner of Ehrlich Road and West Village Drive, a signalized intersection."},"westport-shoppes":{"h":722,"cap":"Westport Shoppes: st. Lucie West Boulevard at Peacock Boulevard, just off Interstate 95."},"pinellas-groves-plaza":{"h":722,"cap":"Pinellas Groves Plaza: southwest corner of East Bay Drive (SR 686) and Starkey Road, a signalized intersection."},"winter-park-starbucks":{"h":700,"cap":"Winter Park Starbucks: southeast corner of Aloma Avenue (SR 426) and Lakemont Avenue, beside the Walgreens at 1920 Aloma."},"tampa-starbucks":{"h":700,"cap":"Tampa Starbucks: northeast corner of Hillsborough Avenue and Central Avenue, one block west of the Interstate 275 interchange."},"belvedere-walgreens":{"h":703,"cap":"Belvedere Walgreens: northeast corner of Military Trail and Belvedere Road."},"cape-coral-walgreens":{"h":703,"cap":"Cape Coral Walgreens: northwest corner of Del Prado Boulevard and SE 16th Terrace."},"jensen-beach-walgreens":{"h":703,"cap":"Jensen Beach Walgreens: northwest corner of US 1 and Westmoreland Boulevard, a signalized intersection."},"hudson-walgreens":{"h":703,"cap":"Hudson Walgreens: southwest corner of US 19 and Hudson Avenue."},"tampa-walgreens":{"h":703,"cap":"Tampa Walgreens: southeast corner of North Boulevard and Fletcher Avenue."},"satellite-beach-amsouth":{"h":516,"cap":"Satellite Beach AmSouth: south side of Eau Gallie Boulevard, on the beach side of the causeway."},"indialantic-amsouth":{"h":516,"cap":"Indialantic AmSouth: north side of Fifth Avenue, the stretch of US 192 that runs through Indialantic."},"boynton-trail-bank-atlantic":{"h":516,"cap":"Boynton Trail Bank Atlantic: east side of Military Trail at Boynton Trail Centre, just north of Boynton Beach Boulevard."}};
 const TAGS = {
- 'westwood-south':'120 new apartments at affordable rents, finished on budget and on schedule.',
+ 'westwood-south':'120 new apartments at affordable rents, built on budget and on schedule.',
  'westwood-north':'64 apartments with a washer and dryer in every unit.',
  'the-819':'A college dormitory rebuilt as 26 apartments beside the golf course.',
  'miami-garden':'A renovated apartment building for Ypsilanti residents who need housing.',
@@ -764,7 +1026,7 @@ const TAGS = {
  'panera-plaza':'A Meijer outlot turned into 10,000 square feet anchored by Panera Bread.',
  'port-city-plaza':'A Walmart outlot turned into a strip center for GameStop and Great Clips.',
  'pinellas-groves-plaza':'A Mobil station vacant since 1987, now a Starbucks-anchored center.',
- 'winter-park-starbucks':'A 10,000-square-foot former Exxon lot, now a stand-alone Starbucks.',
+ 'winter-park-starbucks':'A 10,000-square-foot former Exxon lot, rebuilt as a stand-alone Starbucks.',
  'tampa-starbucks':'A vacant Mobil station in Seminole Heights, now a neighborhood Starbucks.',
  'belvedere-walgreens':'1.5 acres carved out of a 40-acre site for a Walgreens build-to-suit.',
  'cape-coral-walgreens':'A vacant Miami Subs and a slice of the Pep Boys next door, now a Walgreens.',
@@ -772,148 +1034,472 @@ const TAGS = {
  'hudson-walgreens':'A Mobil station, a warehouse and a house, assembled into one Walgreens site.',
  'tampa-walgreens':'An Exxon station, a dry cleaner and two houses, assembled for Walgreens.',
  'lake-underhill-amsouth':'A decrepit Mobil station rebuilt as an AmSouth branch.',
- 'ehrlich-amsouth':'A decrepit Shell station, now an AmSouth branch on a ground lease.',
+ 'ehrlich-amsouth':'A decrepit Shell station, ground-leased to AmSouth for a new branch.',
  'southchase-amsouth':'An off-market Chevron station rebuilt as an AmSouth branch.',
- 'satellite-beach-amsouth':'An off-market Chevron station, now an AmSouth branch on a ground lease.',
+ 'satellite-beach-amsouth':'An off-market Chevron station, ground-leased to AmSouth for a new branch.',
  'alafaya-amsouth':'An operating Chevron station freed from a gas-only deed restriction for AmSouth.',
  'indialantic-amsouth':'A custom AmSouth branch on a 20,000-square-foot former Chevron lot.',
  'boynton-trail-bank-atlantic':'A former Citgo station ground-leased to Bank Atlantic.'
 };
-const R819 = [{q:'Living adjacent to a golf course is serene and beautiful.', w:'Haley S.', t:'Oakland University &#x2019;21'},{q:'I will recommend The 819 to everybody.', w:'Chris K.', t:'Resident since 2020'},{q:'Thank you for providing more than exceptional community and living environment.', w:'Austin S.', t:'Resident'}];
-function siteExtras(p){
-  const T = QUOTES.tenants, x = {quotes:[], press:[]};
-  switch(p.slug){
-    case 'the-wedding-shoppe': x.quotes=[T[4]]; x.press=[ARTICLES[7]]; break;
-    case 'westport-shoppes': x.quotes=[T[0],T[1],T[3],T[8]]; break;
-    case 'panera-plaza': x.quotes=[T[2]]; break;
-    case 'north-greenfield-office-park': x.quotes=[T[5],T[6],T[7]]; break;
-    case 'the-819': x.quotes=R819; break;
-    case 'westwood-south': x.quotes=[QUOTES.community[2],WW_REVIEWS[4],WW_REVIEWS[2]]; x.press=ARTICLES.slice(0,6); break;
-    case 'westwood-north': x.quotes=[QUOTES.community[2],WW_REVIEWS[0],WW_REVIEWS[1]]; break;
-    case 'tampa-starbucks': x.press=[ARTICLES[9]]; break;
-  }
-  return x;
+const BANK_SEQ = ['lake-underhill-amsouth','southchase-amsouth','alafaya-amsouth','ehrlich-amsouth','indialantic-amsouth','satellite-beach-amsouth'];
+const SITE = {
+ 'westwood-north': {kind:'wwb'},
+ 'westwood-south': {kind:'wwb'},
+ 'the-819': {kind:'819', accent:'#1E0F52'},
+ 'miami-garden': {kind:'mg', accent:'#417165'},
+ 'madison-heights-recovery-home': {kind:'quiet', accent:'#3F5568'},
+ 'north-greenfield-office-park': {kind:'park', accent:'#556B2F', bldgs:[
+   ['Anchor building','Fully improved for the Eastwood Recovery Center. Permit to certificate of occupancy in 108 days.'],
+   ['Building two','Limited improvements, so executive office users could move straight in.'],
+   ['Building three','Limited improvements, so executive office users could move straight in.']]},
+ 'dequindre-medical-office': {kind:'med', accent:'#1F6F78'},
+ 'the-wedding-shoppe': {kind:'bridal', accent:'#8C5A56'},
+ 'westport-shoppes': {kind:'center', accent:'#A8620B', logo:'westport-logo', photoCap:' from the air',
+   tenants:[['Vitamin Shoppe','Vitamins and supplements'],['Chipotle','Mexican grill'],['Panda Express','Chinese kitchen'],['Little Caesars','Pizza'],['MetroPCS','Wireless'],['RE/MAX','Real estate office']]},
+ 'panera-plaza': {kind:'center', accent:'#9E2B25', gallery:[['panera-a','From Van Dyke Avenue, with the pylon sign'],['panera-b','The storefronts'],['panera-c','From above, with the Meijer lot behind']], tenants:[['Panera Bread','Bakery-cafe, 5,000 SF'],['Shop space','5,000 SF beside it']],
+   outlot:{parent:'Meijer', label:'Panera Plaza', sub:'10,000 SF', aria:'Panera Plaza on an outlot at the front of a Meijer supercenter parking field', cap:'Schematic, not to scale. Panera gave up parking so a second 5,000 SF could be built beside it.'}},
+ 'port-city-plaza': {kind:'center', accent:'#1F5D8C', logo:'pcp-logo', tenants:[['GameStop','Video games'],['Great Clips','Hair salon']],
+   outlot:{parent:'Walmart', label:'Port City Plaza', sub:'10,000 SF', connector:'connector Walmart owed', aria:'Port City Plaza on an outlot at the front of a Walmart supercenter, with the unbuilt connector drive shown dashed', cap:'Schematic, not to scale. Finishing the promised connector drive is what unlocked the outlot.'}},
+ 'pinellas-groves-plaza': {kind:'center', accent:'#1F6B4F', tenants:[['Starbucks','Anchor, with patio'],['Shop space','In line']]},
+ 'winter-park-starbucks': {kind:'cafe', accent:'#1F6B4F', was:'Exxon station, vacant', deal:'Stand-alone build-to-suit lease', hood:'Winter Park, Florida', featureNav:'The lot',
+   deck:'The lot was 10,000 square feet with a drainage problem. Walgreens next door would not pay enough to take it, so Starbucks got its own building.',
+   feature: () => `<div class="cols2" style="align-items:center"><div class="stack"><h2>A very small lot</h2><p style="font-size:19px;line-height:1.5">Ten thousand square feet is a tight site for a drive-up coffee shop. The city agreed to let the old gas station&#x2019;s underground drainage system be reused, which is what made the building fit.</p></div><div>${lotDiagram((RS['winter-park-starbucks'] || {}).lotSF || 10000, (RS['winter-park-starbucks'] || {}).bldgSF || 1500, {bldgLabel:'Starbucks'})}</div></div>`},
+ 'tampa-starbucks': {kind:'cafe', accent:'#9A3324', was:'Mobil station, vacant', deal:'Build-to-suit lease', hood:'Seminole Heights, Tampa', featureNav:'The sign',
+   deck:'A historic district, a tenant unsure about the neighborhood, and a commission that wanted to redraw the plan. The neighbors backed the project.',
+   feature: () => `<div class="feature"><p class="kicker">The sign</p><p class="big">The largest Starbucks sign east of the Mississippi River.</p><p class="deck" style="font-size:18px">${(RS['tampa-starbucks'] || {}).signNote || 'A variance let the gas station&#x2019;s old interstate sign be refaced instead of taken down.'}</p></div>`},
+ 'belvedere-walgreens': {kind:'rx', accent:'#1F4E8C', deal:'Build-to-suit lease', chips:[['1.5','acres bought'],['40','acres in the parent parcel'],['1st','Walgreens build-to-suit by Trammell Crow Company']],
+   diagram: () => carve(40, 1.5, 'Walgreens site', 'Parent parcel'),
+   ledger:[['Extensive off-site work','A recapture agreement with the seller and Walgreens relieved a substantial share of the cost.']]},
+ 'cape-coral-walgreens': {kind:'rx', accent:'#1F4E8C', deal:'Build-to-suit lease', chips:[['2','properties bought'],['1','acre split off for the store'],['2','acres rezoned and sold']],
+   diagram: () => assembly({aria:'A vacant Miami Subs and a three-acre Pep Boys, re-split into a Walgreens site and a medical office site', verb:'bought, then re-split', before:[{l:'Miami Subs', s:'vacant', w:1},{l:'Pep Boys', s:'25,000 SF store on 3 acres', w:3}], after:[{l:'Walgreens', s:'15,000 SF', w:2, main:true, note:'The Miami Subs lot plus one acre from Pep Boys'},{l:'Former Pep Boys', s:'now medical office', w:2, note:'Two acres rezoned and sold to a local developer'}]}),
+   ledger:[['The site was too small for the prototype store','Bought the Pep Boys next door and split one acre onto the Walgreens site.'],['Three acres and a 25,000 SF building left over','Rezoned the remainder from retail to medical office, which cut the parking requirement, and sold it to a local medical office developer.']]},
+ 'jensen-beach-walgreens': {kind:'rx', accent:'#1F4E8C', deal:'Build-to-suit lease (began as a fee development)', chips:[['2','acres, never on the market'],['15,000','square foot store'],['2005','delivered in July']],
+   diagram: () => lotDiagram(87120, 15000, {bldgLabel:'Walgreens'}),
+   ledger:[['Extensive off-site work','The property seller agreed to bear a substantial portion of the cost.'],['Construction costs rising with global raw-material shortages','The deal was renegotiated from a fee development into a build-to-suit lease.']]},
+ 'hudson-walgreens': {kind:'rx', accent:'#1F4E8C', deal:'Build-to-suit lease', chips:[['4','pieces of land'],['0','of them for sale'],['12,000','square feet from Burger King']],
+   diagram: () => assembly({aria:'An operating Mobil station, a warehouse, a house and a strip of Burger King land assembled into one Walgreens site', before:[{l:'Mobil station', s:'operating', w:2},{l:'Warehouse', w:1.5},{l:'House', w:1},{l:'Burger King', s:'12,000 SF', w:1.1}], after:[{l:'Walgreens', s:'15,000 SF', w:1, main:true, note:'Burger King traded its 12,000 SF for site improvements.'}]}),
+   ledger:[['Mobil did not want to sell an operating station','Walgreens committed to rent that justified ending Mobil&#x2019;s operations.'],['Contamination stigma','Contamination was lighter than assumed, and Mobil indemnified the site.'],['Still too small after three acquisitions','Another 12,000 square feet came from the Burger King next door in exchange for site improvements.']]},
+ 'tampa-walgreens': {kind:'rx', accent:'#1F4E8C', deal:'Build-to-suit lease', chips:[['4','parcels, none listed'],['1,200','square feet built for the dry cleaner'],['3','monitoring wells to design around']],
+   diagram: () => assembly({aria:'An Exxon station, a dry cleaner and two houses assembled into one Walgreens site with an attached dry cleaner', before:[{l:'Exxon station', s:'decrepit', w:2},{l:'Dry cleaner', s:'stand-alone', w:1.3},{l:'House', w:1},{l:'House', w:1}], after:[{l:'Walgreens', s:'15,000 SF', w:1, main:true, add:'Dry cleaner 1,200 SF', note:'Rezoned to a planned unit development. Stormwater retention is underground, and the design works around three monitoring wells.'}]}),
+   ledger:[['Contamination stigma','Exxon indemnified the site, and the design works around three monitoring wells.'],['The dry cleaner would not move','A 1,200 square foot attachment to the prototype store, leased back to the cleaner.'],['Neighbors opposed the rezoning','Neighbor support was negotiated and the planned unit development was approved.'],['No room for on-site retention','Stormwater retention was designed underground and budgeted.']]},
+ 'lake-underhill-amsouth': {kind:'bank', accent:'#7B3F31', was:'Mobil station, vacant and decrepit', deal:'Build-to-suit lease',
+   ledger:[['Contamination stigma','Mobil indemnified the site, and an environmental insurance policy protected both ownership and tenant.'],['A tenant that had never done a build-to-suit','Cartessa invested in a master build-to-suit lease, then reused it five more times.']]},
+ 'southchase-amsouth': {kind:'bank', accent:'#7B3F31', was:'Chevron station, vacant and off the market', deal:'Build-to-suit lease',
+   ledger:[['Contamination stigma','Testing showed lighter contamination than assumed.'],['No indemnity from a major oil company','An environmental insurance policy protected ownership and tenant.']]},
+ 'alafaya-amsouth': {kind:'bank', accent:'#7B3F31', was:'Chevron station, operating and off the market', deal:'Build-to-suit lease',
+   ledger:[['Contamination stigma','Environmental insurance was placed.'],['A deed restriction limited the site to gasoline station use','The shopping center owner lifted it in exchange for a negotiated common-area maintenance contribution.']]},
+ 'ehrlich-amsouth': {kind:'bank', accent:'#7B3F31', was:'Shell station, decrepit', deal:'Ground lease',
+   ledger:[['Contamination stigma','Shell indemnified the site and environmental insurance was placed.'],['Site and building too small to support a build-to-suit rent','The deal became a ground lease, and the bank built its own branch.']]},
+ 'indialantic-amsouth': {kind:'bank', accent:'#1F6F78', was:'Chevron station, decrepit and off the market', deal:'Build-to-suit lease, non-prototype building',
+   ledger:[['Contamination with no indemnity from big oil','Environmental insurance was placed.'],['No bank prototype fits a 20,000 square foot lot','A one-off 2,000 square foot building, designed to the bank&#x2019;s standards.']]},
+ 'satellite-beach-amsouth': {kind:'bank', accent:'#2C6E5A', was:'Chevron station, decrepit and off the market', deal:'Ground lease',
+   ledger:[['Contamination stigma','Indemnity and environmental insurance were both in place.'],['Deposit projections too weak for a build-to-suit rent','The deal became a ground lease, and the bank built its own branch.']]},
+ 'boynton-trail-bank-atlantic': {kind:'bank', accent:'#23496B', imgCap:'Architect&#x2019;s rendering', was:'Citgo station, off the market', deal:'Ground lease',
+   ledger:[['Contamination stigma','Testing showed lighter contamination than assumed.'],['No indemnity from a major oil company','An environmental insurance policy protected ownership and tenant.']]}
+};
+
+const rs = p => RS[p.slug] || {};
+const cfg = p => SITE[p.slug] || {};
+const nf = n => Number(n).toLocaleString('en-US');
+const shortDate = s => (String(s).match(/^(by )?[A-Z][a-z]+ (\d{1,2}, )?\d{4}/) || [s])[0];
+function sec(id, cls, inner){ return `<section class="sx ${cls || ''}" id="sec-${id}"><div class="wrap">${inner}</div></section>`; }
+function mapFig(p, cap){
+  const m = MAPS[p.slug]; if(!m) return '';
+  return `<figure class="mapfig"><img src="maps/${p.slug}.svg" width="1000" height="${m.h}" alt="Street map of the blocks around ${p.name}" loading="lazy"><figcaption>${cap || m.cap} Map data &#xA9; OpenStreetMap contributors.</figcaption></figure>`;
 }
-function siteKind(p){ return p.slug.indexOf('westwood') === 0 ? 'westwood' : p.cat; }
-function siteSections(p){
-  const x = siteExtras(p), out = [['story','The story'],['facts','At a glance']];
-  if(p.ngop) out.push(['photos','Before and after']);
-  if(p.residents) out.push(['living', p.slug === 'the-819' ? 'Living here' : 'Leasing']);
-  if(x.quotes.length) out.push(['words','In their words']);
-  if(x.press.length) out.push(['press','Press']);
-  if(p.slug !== 'madison-heights-recovery-home') out.push(['location','Location']);
+function snap(key, alt, cap, cls){ return IMG[key] ? `<figure class="snap ${cls || ''}">${img(key, alt)}<figcaption>${cap}</figcaption></figure>` : ''; }
+function kv(rows){ return `<table class="kv"><tbody>${rows.filter(r => r && r[1]).map(r => `<tr><th scope="row">${r[0]}</th><td>${r[1]}</td></tr>`).join('')}</tbody></table>`; }
+function particulars(p, extra){
+  const r = rs(p), s = cfg(p);
+  return kv([['Address', r.addr], ['Corner', r.corner], ['Before', s.was], ['Delivered', p.delivered], ['Opened', r.opened], [p.vl, p.value], ['Building', r.bldg || p.size], ['Lot', r.lot], ['Structure', s.deal], ['Built for', p.tenant], ['Today', r.todayShort]].concat(extra || []));
+}
+function ledger(rows, h1, h2){ return `<table class="ledger"><thead><tr><th scope="col">${h1}</th><th scope="col">${h2}</th></tr></thead><tbody>${rows.map(r => `<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join('')}</tbody></table>`; }
+function memo(p){ return `<dl class="memo" style="margin-top:0"><dt style="margin-top:0">Plan</dt><dd>${p.plan}</dd><dt>Potential deal breakers</dt><dd>${p.risk}</dd><dt>Result</dt><dd>${p.result}</dd>${p.notable ? `<dt>Notable</dt><dd>${p.notable}</dd>` : ''}</dl>`; }
+function factsList(list){ return list && list.length ? `<ul class="facts-list">${list.map(f => `<li><b>${f[0]}</b><span>${f[1]}</span></li>`).join('')}</ul>` : ''; }
+function plainList(list){ return list && list.length ? `<ul class="plain-list">${list.map(t => `<li>${t}</li>`).join('')}</ul>` : ''; }
+function nearList(list){ return list && list.length ? `<div class="near">${list.map(n => `<div>${n[0]}${n[1] ? `<small>${n[1]}</small>` : ''}</div><div>${n[2] || ''}</div>`).join('')}</div>` : ''; }
+function pressRows(list){ return list && list.length ? `<div class="pressrow">${list.map(a => `<a href="${a.h}"${ext}><span class="t">${a.t}</span><span class="o">${a.o}</span>${a.s ? `<span class="s">${a.s}</span>` : ''}</a>`).join('')}</div>` : ''; }
+function todayNote(p){ const r = rs(p); return r.today ? `<div class="today"><i></i><div><b>Today.</b> ${r.today}</div></div>` : ''; }
+function wasIs(a, b, c){ return `<div class="wasis"><div><span>Before</span><b>${a}</b></div><div><span>Delivered</span><b>${b}</b></div>${c ? `<div><span>Today</span><b>${c}</b></div>` : ''}</div>`; }
+function pull(x){ return `<p class="pull">&#x201C;${x.q}&#x201D;</p><p class="pull-by"><b>${x.w}</b>${x.t ? ', ' + x.t : ''}</p>`; }
+function sources(p){
+  const r = rs(p); if(!r.sources || !r.sources.length) return '';
+  return `<section class="sx rule" style="padding-block:28px"><div class="wrap"><p class="srcs"><b>Sources.</b> Project history, costs and dates are Cartessa&#x2019;s own. Addresses, public records and present-day details come from: ${r.sources.map(s => `<a href="${s[1]}"${ext}>${s[0]}</a>`).join(', ')}.</p></div></section>`;
+}
+function recordBlocks(p, titles){
+  const r = rs(p), t = Object.assign({facts:'On the public record', history:'How the site got here', near:'Around the corner', press:'In the press'}, titles || {}), out = [];
+  if(r.facts && r.facts.length) out.push(['record', t.facts, factsList(r.facts)]);
+  if(r.history && r.history.length) out.push(['history', t.history, plainList(r.history)]);
+  if(r.near && r.near.length) out.push(['nearby', t.near, nearList(r.near)]);
+  if(r.press && r.press.length) out.push(['press', t.press, pressRows(r.press)]);
   return out;
 }
-function initials(name){ const w = name.replace(/^The /,'').split(/\s+/).filter(x => /^[A-Z0-9]/.test(x)); return /^\d/.test(w[0]) ? w[0] : w.slice(0,2).map(x => x[0]).join(''); }
-function siteHeader(p){
-  const mark = siteKind(p) === 'westwood' ? `<img src="${IMG['w-mark']}" alt="">` : `<span class="mono">${initials(p.name)}</span>`;
-  return `<header class="mast"><div class="wrap mast-in">
-    <a class="lockup" href="#property-${p.slug}">${mark}<span><span class="lk-name">${p.name}</span><span class="lk-sub">${p.city}, ${p.state}</span></span></a>
-    <div class="tagline"><a href="#home">A Cartessa Real Estate Company project</a></div>
-    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
-  </div>
-  <nav class="navbar" id="nav"><div class="wrap">${siteSections(p).map(l => `<a href="#property-${p.slug}~${l[0]}">${l[1]}</a>`).join('')}<a class="right" href="#portfolio-${p.cat}">All ${catName(p.cat)} projects</a></div></nav></header>`;
+function sibLinks(p){ return `<div class="sibs">${byCat(p.cat).filter(y => y !== p).map(y => `<a href="#property-${y.slug}">${y.name}</a>`).join('')}</div>`; }
+function backbar(p){ return `<div class="backbar"><div class="wrap"><a href="#home">&#x2190; Cartessa Real Estate Company</a><a href="#portfolio-${p.cat}">${catName(p.cat)} portfolio</a></div></div>`; }
+function snav(p, nav){ return `<nav class="snav" aria-label="${p.name}">${nav.map(n => `<a href="#property-${p.slug}~${n[0]}">${n[1]}</a>`).join('')}</nav>`; }
+function ctaBand(p, h, t, btnLabel, btnHref){
+  return `<section class="sx" style="padding-top:0"><div class="wrap"><div class="apply-band"><div class="stack" style="gap:10px"><h2 style="color:#fff;font-family:var(--serif);font-weight:500;text-transform:none;letter-spacing:0;text-align:left">${h}</h2><p style="font-family:var(--sans);font-size:16px;line-height:1.5;max-width:52ch;opacity:.92">${t}</p></div><div class="btns"><a class="btn white" href="${btnHref}">${btnLabel}</a></div></div></div></section>`;
 }
+const devCta = p => ctaBand(p, 'Have a site like this one?', `Bill looks at vacant, blighted and hard-to-finance sites. Reach him at ${CO.email}.`, 'Contact Cartessa', '#contact');
+
+/* ----- diagrams (inline SVG so they take the site colours) ----- */
+function tl(x, y, text, max, cls, anchor, lh){
+  const words = String(text).split(' '), lines = []; let cur = '';
+  words.forEach(w => { if((cur + ' ' + w).trim().length > max && cur){ lines.push(cur); cur = w; } else cur = (cur + ' ' + w).trim(); });
+  if(cur) lines.push(cur);
+  return `<text x="${x}" y="${y}" class="${cls}" text-anchor="${anchor || 'start'}">${lines.map((l, i) => `<tspan x="${x}" dy="${i ? (lh || 15) : 0}">${l}</tspan>`).join('')}</text>`;
+}
+const FT = 0.6; /* px per foot, the same on every project page */
+function lotDiagram(lotSF, bldgSF, o){
+  o = o || {};
+  const side = Math.sqrt(lotSF) * FT, bw = Math.sqrt(bldgSF * 1.5) * FT, bh = Math.sqrt(bldgSF / 1.5) * FT;
+  const H = Math.max(side + 62, 150), x0 = 10, y0 = 14, tx = x0 + Math.max(side, 60) + 22;
+  const ac = lotSF / 43560, cov = Math.round(bldgSF / lotSF * 100);
+  return `<svg class="dg" style="max-width:520px" viewBox="0 0 520 ${H.toFixed(0)}" role="img" aria-label="Lot of ${nf(lotSF)} square feet with a ${nf(bldgSF)} square foot building drawn to scale">
+    <rect class="lot" x="${x0}" y="${y0}" width="${side.toFixed(1)}" height="${side.toFixed(1)}"/>
+    <rect class="bld" x="${(x0 + side * 0.1).toFixed(1)}" y="${(y0 + side * 0.1).toFixed(1)}" width="${bw.toFixed(1)}" height="${bh.toFixed(1)}"/>
+    <text x="${tx}" y="${y0 + 14}" class="tb">Lot</text>
+    <text x="${tx}" y="${y0 + 32}" class="t">${nf(Math.round(lotSF))} SF (${ac >= 1 ? ac.toFixed(ac % 1 ? 1 : 0) + ' acres' : ac.toFixed(2) + ' acre'})</text>
+    <text x="${tx}" y="${y0 + 62}" class="tb">${o.bldgLabel || 'Building'}</text>
+    <text x="${tx}" y="${y0 + 80}" class="t">${nf(bldgSF)} SF, ${cov}% of the lot</text>
+    <path class="ln" d="M${x0} ${H - 20}v6h${100 * FT}v-6"/><text x="${x0 + 50 * FT}" y="${H - 2}" class="ts" text-anchor="middle">100 ft</text>
+  </svg><p class="dgcap">${o.cap || 'Lot and building drawn as simple shapes of the right area, at the same scale on every Cartessa project page. Actual outlines differ.'}</p>`;
+}
+function assembly(spec){
+  const W = 520, x0 = 10, tw = 500, by = 26, bh = 64, ay = 150, ah = 112;
+  const bt = spec.before.reduce((a, b) => a + b.w, 0), at = spec.after.reduce((a, b) => a + b.w, 0);
+  let x = x0, before = '', after = '';
+  spec.before.forEach(b => { const w = tw * b.w / bt; const mc = Math.max(6, Math.floor(w / 7.2));
+    before += `<rect class="old" x="${x.toFixed(1)}" y="${by}" width="${(w - 4).toFixed(1)}" height="${bh}"/>` + tl((x + w / 2 - 2).toFixed(1), by + (b.s ? 24 : 32), b.l, mc, 'tb', 'middle') + (b.s ? tl((x + w / 2 - 2).toFixed(1), by + (b.l.length > mc ? 52 : 42), b.s, mc + 2, 'ts', 'middle', 13) : '');
+    x += w; });
+  x = x0;
+  spec.after.forEach(a => { const w = tw * a.w / at; const mc = Math.max(8, Math.floor((w - 40) / 7.4));
+    after += `<rect class="lot" x="${x.toFixed(1)}" y="${ay}" width="${(w - 4).toFixed(1)}" height="${ah}"/>`;
+    const bx = x + 14, bw2 = (w - 4) * (a.main ? 0.62 : 0.7), bh2 = a.main ? 62 : 50, byy = ay + 14;
+    after += `<rect class="${a.main ? 'bld' : 'bld2'}" x="${bx.toFixed(1)}" y="${byy}" width="${bw2.toFixed(1)}" height="${bh2}"/>` + tl((bx + 10).toFixed(1), byy + 22, a.l, Math.floor(bw2 / 7.6), a.main ? 'tw' : 'tb') + (a.s ? tl((bx + 10).toFixed(1), byy + (a.l.length > Math.floor(bw2 / 7.6) ? 52 : 40), a.s, Math.floor(bw2 / 6.4), a.main ? 'tws' : 'ts', 'start', 13) : '');
+    if(a.add){ const axx = bx + bw2 + 4; after += `<rect class="bld2" x="${axx.toFixed(1)}" y="${byy + 18}" width="${Math.min(70, w - bw2 - 40).toFixed(1)}" height="44"/>` + tl((axx + 6).toFixed(1), byy + 34, a.add, 9, 'ts', 'start', 12); }
+    if(a.note) after += tl((x + 14).toFixed(1), ay + ah - 22, a.note, Math.floor((w - 30) / 6.2), 'ts', 'start', 13);
+    x += w; });
+  return `<svg class="dg" viewBox="0 0 ${W} ${ay + ah + 8}" role="img" aria-label="${spec.aria}">
+    <text x="${x0}" y="14" class="ta">BEFORE</text>${before}
+    <path class="ln" d="M260 ${by + bh + 8}v26m-7 -8l7 8l7 -8"/><text x="274" y="${by + bh + 27}" class="ts">${spec.verb || 'assembled into one site'}</text>
+    <text x="${x0}" y="${ay - 8}" class="ta">AFTER</text>${after}
+  </svg><p class="dgcap">${spec.cap || 'Schematic, not to scale. Parcel order is illustrative.'}</p>`;
+}
+function carve(parentAc, pieceAc, a, b){
+  const S = 236, s = S * Math.sqrt(pieceAc / parentAc);
+  return `<svg class="dg" viewBox="0 0 520 262" role="img" aria-label="${pieceAc} acres shown to scale inside a ${parentAc} acre parcel">
+    <rect class="old" x="10" y="12" width="${S}" height="${S}"/><rect class="bld" x="10" y="${(12 + S - s).toFixed(1)}" width="${s.toFixed(1)}" height="${s.toFixed(1)}"/>
+    <path class="ln" d="M${(10 + s + 4).toFixed(1)} ${(12 + S - s / 2).toFixed(1)}H276"/>
+    <text x="282" y="${(12 + S - s / 2 - 6).toFixed(1)}" class="tb">${a}</text><text x="282" y="${(12 + S - s / 2 + 12).toFixed(1)}" class="t">${pieceAc} acres, ${(pieceAc / parentAc * 100).toFixed(1)}% of the parcel</text>
+    <text x="282" y="34" class="tb">${b}</text><text x="282" y="52" class="t">${parentAc} acres, not on the market</text>
+  </svg><p class="dgcap">Areas drawn to scale as squares. Actual parcel outlines differ.</p>`;
+}
+function strip(tenants){
+  const n = tenants.length, W = 1000, x0 = 24, bw = (W - 48) / n; let bays = '';
+  tenants.forEach((t, i) => { const x = x0 + i * bw, fs = Math.min(17, (bw - 22) / (t.length * 0.6));
+    bays += `<rect x="${(x + 6).toFixed(1)}" y="74" width="${(bw - 12).toFixed(1)}" height="34" fill="#fff" stroke="var(--brand)" stroke-width="1.2"/>
+      <text x="${(x + bw / 2).toFixed(1)}" y="${(91 + fs * 0.36).toFixed(1)}" text-anchor="middle" style="font-family:var(--arch);font-weight:800;font-size:${fs.toFixed(1)}px;fill:var(--brand-2)">${t.toUpperCase()}</text>
+      <path d="M${(x + 10).toFixed(1)} 118h${(bw - 20).toFixed(1)}l-6 14h-${(bw - 32).toFixed(1)}z" fill="var(--brand)"/>
+      <rect x="${(x + 16).toFixed(1)}" y="136" width="${(bw - 32).toFixed(1)}" height="58" fill="var(--panel-2)" stroke="var(--brand-2)" stroke-width="1"/>
+      <path d="M${(x + bw / 2 - 14).toFixed(1)} 136v58M${(x + bw / 2 + 14).toFixed(1)} 136v58" stroke="var(--brand-2)" stroke-width="1"/>
+      ${i ? `<path d="M${x.toFixed(1)} 58v136" stroke="var(--line)" stroke-width="1"/>` : ''}`; });
+  return `<div class="stripwrap"><svg class="dg" viewBox="0 0 ${W} 214" role="img" aria-label="Storefront elevation showing ${tenants.join(', ')}">
+    <rect x="${x0}" y="58" width="${W - 48}" height="136" fill="#fff" stroke="var(--brand-2)" stroke-width="1.5"/>
+    <rect x="${x0 - 6}" y="50" width="${W - 36}" height="10" fill="var(--brand-2)"/>
+    ${bays}<path d="M0 195h${W}" stroke="var(--brand-2)" stroke-width="2"/><path d="M0 206h${W}" stroke="var(--line)" stroke-width="6"/>
+  </svg></div>`;
+}
+function outlot(o){
+  return `<svg class="dg" viewBox="0 0 520 300" role="img" aria-label="${o.aria}">
+    <rect class="old" x="10" y="10" width="500" height="238"/>
+    <rect class="bld2" x="60" y="24" width="400" height="74"/><text x="260" y="58" class="tb" text-anchor="middle">${o.parent}</text><text x="260" y="76" class="ts" text-anchor="middle">supercenter</text>
+    ${[118, 138, 158, 178, 198].map(y => `<path d="M40 ${y}H${y > 170 ? 330 : 480}" stroke="var(--line)" stroke-width="5" stroke-dasharray="2 9"/>`).join('')}
+    <text x="40" y="232" class="ts">parking field</text>
+    <rect class="bld" x="352" y="176" width="150" height="64"/><text x="427" y="203" class="tw" text-anchor="middle">${o.label}</text><text x="427" y="221" class="tws" text-anchor="middle">${o.sub}</text>
+    ${o.connector ? `<path d="M352 208H150V250" class="ln" stroke-dasharray="7 5"/><text x="160" y="200" class="ta">${o.connector}</text>` : ''}
+    <rect class="rd" x="0" y="256" width="520" height="26"/><text x="260" y="274" class="ts" text-anchor="middle">${o.road || 'road frontage'}</text>
+  </svg><p class="dgcap">${o.cap || 'Schematic of the outlot arrangement, not to scale.'}</p>`;
+}
+function stepsDiagram(vals, labels){
+  return `<svg class="dg" viewBox="0 0 520 200" role="img" aria-label="Share of the building leased by the anchor tenant: ${vals.join(' percent, ')} percent">
+    ${vals.map((v, i) => { const x = 14 + i * 170; return `<rect class="old" x="${x}" y="24" width="150" height="110"/><rect class="bld" x="${x}" y="24" width="${150 * v / 100}" height="110"/>
+      <text x="${x + 75}" y="162" text-anchor="middle" style="font:800 28px var(--sans);fill:var(--brand)">${v}%</text><text x="${x + 75}" y="182" class="ts" text-anchor="middle">${labels[i]}</text>
+      ${i < vals.length - 1 ? `<path class="ln" d="M${x + 154} 79h10m-5 -5l5 5l-5 5"/>` : ''}`; }).join('')}
+  </svg>`;
+}
+function daysBar(rows, max){
+  const x0 = 120, w = 380;
+  return `<svg class="dg" viewBox="0 0 520 ${34 + rows.length * 46}" role="img" aria-label="${rows.map(r => r.l + ' ' + r.d + ' days').join(', ')}">
+    ${rows.map((r, i) => { const y = 14 + i * 46, bw = w * r.d / max; return `<text x="${x0 - 12}" y="${y + 19}" class="tb" text-anchor="end">${r.l}</text><rect class="${r.main ? 'bld' : 'bld2'}" x="${x0}" y="${y}" width="${bw.toFixed(1)}" height="28"/><text x="${(x0 + bw - 10).toFixed(1)}" y="${y + 19}" class="${r.main ? 'tw' : 'tb'}" text-anchor="end">${r.d} days</text>${r.note ? `<text x="${(x0 + bw + 8).toFixed(1)}" y="${y + 19}" class="ta">${r.note}</text>` : ''}`; }).join('')}
+    <path class="ln" d="M${x0} ${14 + rows.length * 46}h${w}" stroke-width="1"/><text x="${x0}" y="${30 + rows.length * 46}" class="ts">day 0</text><text x="${x0 + w}" y="${30 + rows.length * 46}" class="ts" text-anchor="end">day ${max}</text>
+  </svg>`;
+}
+
+/* ----- shared footer for sub-sites ----- */
 function siteFooter(p){
-  const sibs = byCat(p.cat).filter(x => x !== p).slice(0,6);
+  const sibs = byCat(p.cat).filter(x => x !== p).slice(0, 6);
   return `<footer class="foot"><div class="wrap">
     <div class="foot-grid">
-      <div><span class="lk-name" style="font-family:var(--serif);font-size:24px;letter-spacing:0">${p.name}</span><span class="lk-sub" style="font-family:var(--sans);font-size:13px">${p.city}, ${p.state}</span><p class="epi">${TAGS[p.slug] || ''}</p></div>
+      <div><span class="lk-name" style="font-family:var(--serif);font-size:24px;letter-spacing:0">${p.name}</span><span class="lk-sub" style="font-family:var(--sans);font-size:13px">${rs(p).addr || p.city + ', ' + p.state}</span><p class="epi">${TAGS[p.slug] || ''}</p></div>
       <div><h4>Cartessa Real Estate Company</h4><ul><li>${CO.addr1}</li><li>${CO.addr2}</li><li><a href="mailto:${CO.email}">${CO.email}</a></li><li><a href="#home">Cartessa home</a></li></ul></div>
       <div><h4>More ${catName(p.cat)}</h4><ul>${sibs.map(x => `<li><a href="#property-${x.slug}">${x.name}</a></li>`).join('')}<li><a href="#portfolio">Full development portfolio</a></li></ul></div>
     </div>
     <div class="fine"><span>&#xA9; 2026 Cartessa Real Estate Company, LLC.</span>${p.residents ? EHO : ''}<span>Redesign concept prepared for Bill and Billy Chalmers by Jason Kemp.</span></div>
   </div></footer>`;
 }
-function propertySite(slug){
-  const p = P.find(x => x.slug === slug);
-  if(!p) return notFound();
-  const x = siteExtras(p), sibs = byCat(p.cat).filter(y => y !== p);
-  const cap = `<b>${p.name}</b>, ${p.city}, ${p.state}`;
-  const photo = p.ngop
-    ? `<div class="mat">${beforeAfter('ngop-before','ngop-after','North Greenfield Office Park','At acquisition, 2017','108 days later')}<span class="capbar"><b>Drag to compare.</b> The rear elevation at acquisition and after redevelopment.</span></div>`
-    : `<figure class="mat ${p.small ? 'narrow' : ''}">${img(p.img, p.name)}<figcaption class="capbar">${cap}</figcaption></figure>`;
-  const who = p.owned ? 'Owned and managed by Cartessa Real Estate Company.' : 'Developed by Bill Chalmers.';
-  const contactBtn = p.residents
-    ? (p.slug === 'the-819' ? `<a class="btn" href="#property-the-819~living">Leasing information</a>` : `<a class="btn" href="#westwood">Visit Westwood Apartments</a>`)
-    : `<a class="btn" href="#property-${p.slug}~story">Read the story</a>`;
-  const mapq = encodeURIComponent(p.name + ' ' + p.city.split(' / ')[0] + ' ' + p.state);
-  const living = !p.residents ? '' : (p.slug === 'the-819' ? `
-  <section class="section" id="sec-living"><div class="wrap two even">
-    <div class="stack"><h2 class="sec">Living at The 819</h2>
-      <p class="lead">Twenty-six apartments in a fully rebuilt building on the edge of a golf course in Pontiac, managed by the same family as Westwood next door. For availability, reach the leasing office.</p>
-      <div class="btns"><a class="btn" href="mailto:${WW.email}">Email the leasing office</a><a class="btn ghost" href="${WW.tel}">${WW.phone}</a></div>
-      <p class="small">${WW.email}</p></div>
-    <figure class="mat narrow">${img('the-819','The 819 Apartments beside the golf course')}<figcaption class="capbar">The 819, on the edge of the golf course</figcaption></figure>
-  </div></section>` : `
-  <section class="section" id="sec-living"><div class="wrap two even">
-    <div class="stack"><h2 class="sec">Now leasing</h2>
-      <p class="lead">One- and two-bedroom apartments with a washer and dryer in every unit and a patio or balcony on every unit. Features, floor plans, reviews and the application are on the Westwood Apartments site.</p>
-      <div class="btns"><a class="btn" href="#westwood">Westwood Apartments</a><a class="btn ghost" href="${WW.tel}">${WW.phone}</a></div></div>
-    <figure class="mat">${img('ww-6','Kitchen at Westwood Apartments')}<figcaption class="capbar">A Westwood kitchen with stainless appliances</figcaption></figure>
-  </div></section>`);
-  return `
-  <section class="hero"><div class="wrap two">
-    <div class="stack" style="gap:20px">
-      <p class="label">${catName(p.cat)} &#xB7; ${p.city}, ${p.state} &#xB7; Delivered ${p.delivered}</p>
-      <h1>${TAGS[p.slug] || p.name}</h1>
-      <p class="lead">${p.size}. ${who}</p>
-      <div class="btns">${contactBtn}${p.links ? p.links.map(l => `<a class="arrow" href="${l.href}"${ext}>${l.label}</a>`).join('') : ''}</div>
-    </div>
-    ${photo}
+
+/* ===== bank branches ===== */
+function bankSite(p){
+  const r = rs(p), s = cfg(p), seq = BANK_SEQ.indexOf(p.slug), rec = recordBlocks(p, {facts:'Public record', history:'The corner before the bank'});
+  const nav = [['file','The file'],['particulars','Particulars'],['program', seq >= 0 ? 'AmSouth program' : 'Bank program']].concat(rec.map(x => [x[0], x[1]]));
+  const hasMap = !!MAPS[p.slug];
+  const plaque = `<div class="plaque"><b>${r.addr ? r.addr.split(',')[0] : p.name}</b>${r.addr ? r.addr.split(',').slice(1).join(',').trim() + '<br>' : p.city + ', ' + p.state + '<br>'}${r.corner ? r.corner + '<br>' : ''}Delivered ${p.delivered}${r.opened ? '<br>Branch opened ' + shortDate(r.opened) : ''}${r.todayShort ? '<br>Today: ' + r.todayShort : ''}</div>`;
+  const head = backbar(p) + `<header class="bhead"><div class="wrap"><div class="name">${p.name}</div><div class="sub">${s.was ? 'Formerly a ' + s.was.replace(/,.*/, '') + ' &#xB7; ' : ''}${p.city}, ${p.state} &#xB7; ${p.delivered}</div>${snav(p, nav)}</div></header>`;
+  const body = `
+  <section class="sx" style="padding-top:0"><div class="wrap">
+    <div class="plaque-wrap">${hasMap ? mapFig(p) : ''}${plaque}${snap(p.img, p.name, s.imgCap || 'The finished branch')}</div>
   </div></section>
-
-  <section class="section panel" id="sec-story"><div class="wrap story">
-    <div class="stack"><h2 class="sec">The story</h2><p class="small">Told the way Bill writes every deal memo: the plan, what could have killed it, and how it came out.</p></div>
-    <dl class="memo">
-      <dt>Plan</dt><dd>${p.plan}</dd>
-      <dt>Potential deal breakers</dt><dd>${p.risk}</dd>
-      <dt>Result</dt><dd>${p.result}</dd>
-      ${p.notable ? `<dt>Notable</dt><dd>${p.notable}</dd>` : ''}
-    </dl>
-  </div></section>
-
-  <section class="section" id="sec-facts"><div class="wrap">
-    <h2 class="sec">At a glance</h2>
-    <dl class="glance" style="margin-top:26px">
-      <div><dt>Delivered</dt><dd>${p.delivered}</dd></div>
-      <div><dt>${p.vl}</dt><dd>${p.value}</dd></div>
-      <div><dt>Size</dt><dd>${p.size}</dd></div>
-      <div><dt>${p.tenant.indexOf(',') > 0 ? 'Tenants' : 'Tenant'}</dt><dd style="font-size:19px">${p.tenant}</dd></div>
-    </dl>
-  </div></section>
-
-  ${p.ngop ? `<section class="section panel" id="sec-photos"><div class="wrap">
-    <h2 class="sec">Before and after</h2>
-    <div class="pair">
-      <figure class="mat">${img('ngop-before-front','North Greenfield front elevation before redevelopment')}<figcaption class="capbar">Front elevation, pre-acquisition condition</figcaption></figure>
-      <figure class="mat">${img('ngop-after-front','North Greenfield front elevation after redevelopment')}<figcaption class="capbar">Front elevation, 108 days from permit to certificate of occupancy</figcaption></figure>
-    </div>
-    <figure class="mat" style="margin-top:20px">${img('ngop-night','North Greenfield at night with the windows lit')}<figcaption class="capbar">The anchor building at night, fully occupied</figcaption></figure>
-  </div></section>` : ''}
-  ${living}
-  ${x.quotes.length ? `<section class="section panel" id="sec-words"><div class="wrap">
-    <h2 class="sec">In their words</h2>
-    <div class="quotes" style="margin-top:28px">${x.quotes.map(quote).join('')}</div>
-  </div></section>` : ''}
-  ${x.press.length ? `<section class="section" id="sec-press"><div class="wrap">
-    <h2 class="sec">Press</h2>
-    <div class="press" style="margin-top:24px">${x.press.map(a => `<a href="${a.h}"${ext}><span class="t">${a.t}</span><span class="o">${a.o}</span></a>`).join('')}</div>
-  </div></section>` : ''}
-  ${p.slug !== 'madison-heights-recovery-home' ? `<section class="section" id="sec-location"><div class="wrap two even">
-    <div class="stack"><h2 class="sec">Location</h2>
-      <p class="lead">${p.city}, ${p.state}.${siteKind(p) === 'westwood' ? ' ' + WW.addr + '.' : ''}</p>
-      <div class="btns"><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=${mapq}"${ext}>Open in maps</a></div></div>
-    <div class="stack"><p class="label">More ${catName(p.cat)} projects</p><div class="more">${sibs.map(y => `<a href="#property-${y.slug}">${y.name}</a>`).join('')}</div></div>
-  </div></section>` : ''}
-
-  <section class="section" style="padding-top:0"><div class="wrap">
-    <div class="apply-band">
-      <div class="stack" style="gap:10px"><h2 style="color:#fff">${p.residents ? 'Looking for an apartment?' : 'Have a building like this one?'}</h2><p style="font-family:var(--sans);font-size:16px;line-height:1.5;max-width:52ch;opacity:.92">${p.residents ? `The leasing office answers at ${WW.phone} and ${WW.email}.` : `Bill looks at vacant, blighted and hard-to-finance sites. Reach him at ${CO.email}.`}</p></div>
-      <div class="btns"><a class="btn white" href="${p.residents ? 'mailto:' + WW.email : '#contact'}">${p.residents ? 'Email the leasing office' : 'Contact Cartessa'}</a></div>
-    </div>
-  </div></section>`;
+  <section class="sx" style="padding-top:0"><div class="wrap">${wasIs(s.was || 'Gasoline station', p.tenant.replace(' Bank','') + ' branch, ' + (s.deal || '').toLowerCase().replace(/,.*/, ''), r.todayShort)}</div></section>
+  ${sec('file', 'tint', `<div class="cols2 wide-r"><div class="stack"><h2>The file</h2><p style="font-size:19px;line-height:1.5">${p.plan}</p><p class="small">${p.result}</p></div><div>${ledger(s.ledger || [], 'What could have killed it', 'How it was handled')}</div></div>`)}
+  ${sec('particulars', '', `<div class="cols2"><div class="stack"><h2>Particulars</h2>${particulars(p)}</div><div class="stack">${r.lotSF && r.bldgSF ? `<h2>The lot</h2>${lotDiagram(r.lotSF, r.bldgSF, {bldgLabel:'Branch'})}` : ''}${todayNote(p)}</div></div>`)}
+  ${sec('program', 'tint', seq >= 0
+    ? `<h2>The AmSouth program</h2><p style="font-size:19px;line-height:1.5;max-width:64ch;margin-top:18px">The bank had never leased a build-to-suit branch before Lake Underhill. The master lease written for that first deal was reused five more times, each on a former gasoline station.</p><div class="prog">${BANK_SEQ.map(sl => { const q = P.find(y => y.slug === sl); return `<a href="#property-${sl}" class="${sl === p.slug ? 'on' : ''}"><b>${q.name.replace(' AmSouth','')}</b>${q.delivered}</a>`; }).join('')}</div>`
+    : `<h2>Seven branches, seven gas stations</h2><p style="font-size:19px;line-height:1.5;max-width:64ch;margin-top:18px">Boynton Trail was the last of seven bank branches built on former gasoline stations, and the only one for Bank Atlantic. The six before it were for AmSouth.</p><div class="prog">${BANK_SEQ.map(sl => { const q = P.find(y => y.slug === sl); return `<a href="#property-${sl}"><b>${q.name.replace(' AmSouth','')}</b>${q.delivered}</a>`; }).join('')}</div>`)}
+  ${rec.map((x, i) => sec(x[0], i % 2 ? 'tint' : '', `<div class="cols2 wide-r"><h2>${x[1]}</h2><div>${x[2]}</div></div>`)).join('')}
+  ${sources(p)}${devCta(p)}`;
+  return {head, body};
 }
+
+/* ===== pharmacies ===== */
+function rxSite(p){
+  const r = rs(p), s = cfg(p), rec = recordBlocks(p, {facts:'Site data', history:'Site history'});
+  const nav = [['assembly','The assembly'],['site','The site'],['answers','Problems and answers']].concat(rec.map(x => [x[0], x[1]]));
+  const head = backbar(p) + `<header class="tb"><div class="wrap"><div class="name">${p.name}<small>${r.addr || p.city + ', ' + p.state}</small></div><dl><div><dt>Delivered</dt><dd>${p.delivered}</dd></div><div><dt>${p.vl}</dt><dd>${p.value}</dd></div><div><dt>Store</dt><dd>15,000 SF</dd></div></dl></div></header><div class="tbnav"><div class="wrap">${snav(p, nav)}</div></div>`;
+  const body = `
+  <section class="sx" id="sec-assembly"><div class="wrap cols2">
+    <div class="stack" style="gap:20px"><h1>${TAGS[p.slug]}</h1><p class="lead" style="font-size:19px">${p.plan}</p>${s.chips ? `<div class="chips">${s.chips.map(c => `<div><b>${c[0]}</b><span>${c[1]}</span></div>`).join('')}</div>` : ''}</div>
+    <div class="sheet">${s.diagram ? s.diagram() : ''}</div>
+  </div></section>
+  ${sec('site', 'tint', `<div class="cols2 wide-l"><div>${mapFig(p) || snap(p.img, p.name, 'The finished store')}</div><div class="stack">${MAPS[p.slug] ? snap(p.img, p.name, 'The finished store') : ''}<h2>The site</h2>${kv([['Address', r.addr], ['Corner', r.corner], ['Lot', r.lot], ['Store', r.bldg || '15,000 SF with drive-thru pharmacy'], ['Structure', s.deal], ['Today', r.todayShort]])}${todayNote(p)}</div></div>`)}
+  ${sec('answers', '', `<h2>Problems and answers</h2><div style="margin-top:22px">${ledger(s.ledger || [], 'Problem', 'Answer')}</div>${p.notable ? `<p class="pull" style="margin-top:32px;max-width:30ch">${p.notable}</p>` : ''}`)}
+  ${rec.map((x, i) => sec(x[0], i % 2 ? '' : 'tint', `<div class="cols2 wide-r"><h2>${x[1]}</h2><div>${x[2]}</div></div>`)).join('')}
+  ${sec('more', 'rule', `<p class="kicker">The other four Walgreens</p>${sibLinks(p)}`)}
+  ${sources(p)}${devCta(p)}`;
+  return {head, body};
+}
+
+/* ===== cafe corners ===== */
+function cafeSite(p){
+  const r = rs(p), s = cfg(p), rec = recordBlocks(p, {near:'The neighborhood', history:'The corner before the coffee'});
+  const nav = [['story','The story']].concat(s.feature ? [['feature', s.featureNav]] : []).concat(r.timeline ? [['timeline','Timeline']] : []).concat([['corner','The corner']]).concat(rec.map(x => [x[0], x[1]]));
+  const head = backbar(p) + `<header class="paper"><div class="wrap"><div class="name">${p.name}</div><div class="dateline"><span>${s.hood || p.city + ', ' + p.state}</span><span>${r.opened ? 'Opened ' + shortDate(r.opened) : 'Delivered ' + p.delivered}</span><span>${p.size}</span></div>${snav(p, nav)}</div></header>`;
+  const body = `
+  <section class="sx"><div class="wrap"><h1>${TAGS[p.slug]}</h1><p class="deck">${s.deck || ''}</p></div></section>
+  <section class="sx" id="sec-story" style="padding-top:0"><div class="wrap cols2 wide-r" style="align-items:start">
+    <div class="stack" style="justify-items:center">${snap(p.img, p.name, p.name, 'tilt')}${todayNote(p)}</div>
+    <div class="col-story"><p><b>The plan</b>${p.plan}</p><p><b>What stood in the way</b>${p.risk}</p><p><b>How it came out</b>${p.result}</p></div>
+  </div></section>
+  ${s.feature ? `<section class="sx" id="sec-feature" style="padding-top:0"><div class="wrap">${s.feature()}</div></section>` : ''}
+  ${r.timeline ? sec('timeline', '', `<div class="cols2 wide-r"><div class="stack"><h2>How it got approved</h2><p class="small">Dates from newspaper coverage and county records.</p></div><div class="tl">${r.timeline.map(t => `<div><b>${t[0]}</b>${t[1]}</div>`).join('')}</div></div>`) : ''}
+  ${r.quotes && r.quotes.length ? `<section class="sx" style="padding-top:0"><div class="wrap">${r.quotes.length === 1 ? `<div style="max-width:720px;margin:0 auto;text-align:center">${pull(r.quotes[0])}</div>` : `<div class="quotes">${r.quotes.map(quote).join('')}</div>`}</div></section>` : ''}
+  ${sec('corner', 'tint', `<div class="cols2 wide-l"><div>${mapFig(p)}</div><div class="stack"><h2>The corner</h2>${particulars(p)}</div></div>`)}
+  ${rec.map((x, i) => sec(x[0], i % 2 ? 'tint' : '', `<div class="cols2 wide-r"><h2>${x[1]}</h2><div>${x[2]}</div></div>`)).join('')}
+  ${sources(p)}${devCta(p)}`;
+  return {head, body};
+}
+
+/* ===== retail centres ===== */
+function centerSite(p){
+  const r = rs(p), s = cfg(p), rec = recordBlocks(p, {facts:'Center data'}), tenants = r.tenants || s.tenants || [], dirNote = r.dirNote || s.dirNote;
+  const qs = siteQuotes(p);
+  const nav = [['directory','Directory'],['site','The site'],['story','The story']].concat(qs.length ? [['words','Tenants']] : []).concat(rec.map(x => [x[0], x[1]]));
+  const head = `<header class="signbar"><div class="wrap"><a class="pylon" href="#property-${p.slug}">${s.logo ? `<img src="${IMG[s.logo]}" alt="${p.name}">` : `<b>${p.name}</b><span>${p.city}, ${p.state}</span>`}</a>${snav(p, nav)}<a href="#home" style="color:#fff;font:13px var(--sans);opacity:.85;text-decoration:none">A Cartessa center</a></div></header>`;
+  const body = `
+  <section class="sx" style="padding-bottom:0"><div class="wrap"><p class="kicker">${p.city}, ${p.state} &#xB7; ${p.size} &#xB7; Delivered ${p.delivered}</p><h1>${TAGS[p.slug]}</h1></div>
+    <div class="wrap" style="margin-top:28px">${strip(tenants.map(t => t[0]))}</div></section>
+  ${sec('directory', '', `<div class="cols2 wide-l"><div><h2>Directory</h2><div class="dir" style="margin-top:18px">${tenants.map(t => `<div><b>${t[0]}</b><span>${t[1]}</span></div>`).join('')}</div>${dirNote ? `<p class="small" style="margin-top:12px">${dirNote}</p>` : ''}</div><div class="stack">${snap(p.img, p.name, p.name + (s.photoCap || ''))}${todayNote(p)}</div></div>`)}
+  ${s.gallery ? `<section class="sx" style="padding-top:0"><div class="wrap"><div class="gal3">${s.gallery.map(g => `<figure>${img(g[0], p.name + ': ' + g[1])}<figcaption>${g[1]}</figcaption></figure>`).join('')}</div></div></section>` : ''}
+  ${sec('site', 'tint', `<div class="cols2"><div>${mapFig(p) || ''}</div><div class="stack"><h2>The site</h2>${s.outlot ? outlot(s.outlot) : ''}${particulars(p)}</div></div>`)}
+  ${sec('story', '', `<h2>The story</h2><div class="cols3" style="margin-top:22px"><div><p class="kicker">Plan</p><p>${p.plan}</p></div><div><p class="kicker">Potential deal breakers</p><p>${p.risk}</p></div><div><p class="kicker">Result</p><p>${p.result}</p></div></div>`)}
+  ${r.pullq ? `<section class="sx" style="padding-top:0"><div class="wrap"><div style="max-width:760px;margin:0 auto;text-align:center">${pull(r.pullq)}</div></div></section>` : ''}
+  ${qs.length ? sec('words', 'tint', `<h2>From the tenants</h2><div class="quotes" style="margin-top:26px">${qs.map(quote).join('')}</div>`) : ''}
+  ${rec.map((x, i) => sec(x[0], i % 2 ? 'tint' : '', `<div class="cols2 wide-r"><h2>${x[1]}</h2><div>${x[2]}</div></div>`)).join('')}
+  ${sources(p)}${ctaBand(p, p.owned ? 'Leasing and management' : 'Have a site like this one?', p.owned ? `${p.name} is owned and managed by Cartessa. Reach Bill at ${CO.email}.` : `Bill looks at outlots and corners other developers pass over. Reach him at ${CO.email}.`, 'Contact Cartessa', '#contact')}`;
+  return {head, body};
+}
+function siteQuotes(p){
+  const T = QUOTES.tenants;
+  return ({'the-wedding-shoppe':[T[4]], 'westport-shoppes':[T[0],T[1],T[3],T[8]], 'panera-plaza':[T[2]], 'north-greenfield-office-park':[T[5],T[6],T[7]]})[p.slug] || [];
+}
+
+/* ===== The Wedding Shoppe ===== */
+function bridalSite(p){
+  const r = rs(p), rec = recordBlocks(p, {facts:'About the shop and the building', history:'The street since', near:'On Coolidge'});
+  const nav = [['days','120 days'],['story','The story'],['street','The street']].concat(rec.map(x => [x[0], x[1].replace('About the shop and the building','The shop')]));
+  const head = backbar(p) + `<header class="bh"><div class="wrap"><div class="name">The <i>Wedding</i> Shoppe</div><div class="sub">${r.addr ? r.addr.replace(/, MI.*/, ', Michigan') : 'Coolidge Highway, Berkley, Michigan'}</div>${snav(p, nav)}</div></header>`;
+  const press = [{o:'FOX 2 Detroit, August 18, 2017', t:'The Wedding Shoppe in Berkley moves to new location', h:'https://www.fox2detroit.com/mornings/the-wedding-shoppe-in-berkley-moves-to-new-location', s:'Morning-show segment broadcast from the new store a week after the move.'}].concat(r.press || []);
+  const body = `
+  <section class="sx"><div class="wrap"><h1>${TAGS[p.slug]}</h1>
+    <div class="prints" style="margin-top:36px">${snap(p.img, 'The Wedding Shoppe after renovation', 'The finished building on Coolidge', 'tilt')}${snap('wedding-shoppe-2', 'Site plan review and design development for The Wedding Shoppe', 'Site plan review SP-01-17 and design development with the owner')}</div></div></section>
+  ${sec('days', 'tint', `<div class="bignum">120<small>days, from a gutted shell to a finished store</small></div><div style="max-width:560px;margin:34px auto 0">${daysBar([{l:'Scheduled', d:155}, {l:'Delivered', d:120, main:true, note:'5 weeks early'}], 155)}<p class="dgcap" style="text-align:center">The tenant moved in five weeks ahead of schedule.</p></div>`)}
+  ${sec('quote', '', `<div style="max-width:720px;margin:0 auto;text-align:center">${pull(QUOTES.tenants[4])}</div>${r.stats ? `<div class="statrow" style="margin-top:44px">${r.stats.map(x => `<div><b>${x[0]}</b><span>${x[1]}</span></div>`).join('')}</div>` : ''}`)}
+  ${sec('story', 'tint', `<h2>The story</h2><div class="cols3" style="margin-top:26px"><div><p class="kicker">Plan</p><p>${p.plan}</p></div><div><p class="kicker">Potential deal breakers</p><p>${p.risk}</p></div><div><p class="kicker">Result</p><p>${p.result}</p></div></div>`)}
+  ${sec('street', '', `<div class="cols2 wide-l"><div>${mapFig(p)}</div><div class="stack"><h2 style="text-align:left">The street</h2>${particulars(p)}${todayNote(p)}</div></div>`)}
+  ${rec.filter(x => x[0] !== 'press').map((x, i) => sec(x[0], i % 2 ? '' : 'tint', `<h2>${x[1]}</h2><div style="max-width:760px;margin:24px auto 0">${x[2]}</div>`)).join('')}
+  ${sec('press', '', `<h2>Press</h2><div style="max-width:760px;margin:24px auto 0">${pressRows(press)}</div>`)}
+  ${sources(p)}${devCta(p)}`;
+  return {head, body};
+}
+
+/* ===== North Greenfield Office Park (leasing site, from northgreenfieldoffices.com) ===== */
+const LNG = {phone:'586.604.4740', tel:'tel:+15866044740', email:'bchalmers@cartessallc.com', tour:'https://vimeo.com/454321334'};
+const FNG = ['Internet included in the rent, with no contract and no fees','Exterior windows in every office','Heating and cooling you control from your own office','Renovated in 2017: new paint, lighting and flooring inside, new landscaping, parking lot and signage outside','A conference room available to tenants','Security cameras around the buildings'];
+const QNG = [{q:'I&#x2019;ve been through four landlords at this building since 2002 and I want you to know that you are the best, by far.', w:'Allen G.', t:'In the building since 2002'},
+  {q:'I love my office space here and plan to stay indefinitely. The building is clean and well-kept, plus Bill is an incredibly responsive landlord.', w:'Amy P., LMSW', t:'Tenant since 2021'},
+  {q:'Welcome to the community, you&#x2019;ll love it here. Bill is the best landlord you&#x2019;ll ever have.', w:'Caitlyn W., LMSW', t:'Tenant since 2018'},
+  {q:'The buildings are clean and well kept and the prices are completely fair and you get a lot of value with your rent.', w:'Cassie F.', t:'Tenant since 2023'},
+  {q:'VERY HAPPY with the internet here, Bill.', w:'Ken S.', t:'Tenant since 2024'},
+  {q:'Best. Landlords. Ever. We had to handle snow and ice ourselves with the previous owners.', w:'Cherry K.', t:'Tenant'}];
+function parkSite(p){
+  const r = rs(p), s = cfg(p), rec = recordBlocks(p, {facts:'Building data'}), qs = QNG.concat(siteQuotes(p));
+  const nav = [['offices','Offices'],['compare','Before and after'],['buildings','Three buildings'],['plans','Floor plans'],['tenants','Tenants'],['location','Location']];
+  const head = `<header class="ph"><div class="wrap"><a class="name" href="#property-${p.slug}">${IMG['ngop-leaf'] ? `<img src="${IMG['ngop-leaf']}" alt="">` : ''}<span>North Greenfield<small>Office Park &#xB7; Southfield, Michigan</small></span></a>${snav(p, nav)}<a class="btn" style="padding:11px 14px" href="${LNG.tel}">${LNG.phone}</a></div></header>`;
+  const plans = [['ngop-plan-551-1','29551 Greenfield, first floor'],['ngop-plan-551-2','29551 Greenfield, second floor'],['ngop-plan-501-2','29501 Greenfield, second floor']].filter(x => IMG[x[0]]);
+  const body = `
+  <section class="aerial">${img('ngop-aerial', 'North Greenfield Office Park from the air: three office buildings in a row along Greenfield Road')}</section>
+  <section class="hero-dark"><div class="wrap">
+    <h1>Offices for rent on Greenfield Road, in a park that was mostly empty in 2017.</h1>
+    <p>${r.addr ? r.addr + '. ' : ''}Three buildings and 33,000 square feet, rebuilt around an anchor tenant and full within three years.</p>
+    <div class="btns" style="margin-top:22px"><a class="btn white" href="mailto:${LNG.email}">Email Bill about availability</a><a class="btn ghostw" href="${LNG.tour}"${ext}>Watch the video tour</a></div>
+    <div class="bigstat"><div><b>33,000</b><span>square feet in three buildings</span></div><div><b>108</b><span>days from permit to certificate of occupancy</span></div><div><b>100%</b><span>occupied in under three years</span></div><div><b>$5.0MM</b><span>total value</span></div></div>
+  </div></section>
+  ${sec('offices', '', `<div class="cols2 wide-l"><div><h2>What comes with an office</h2>${checks(FNG)}</div><div class="stack"><figure class="mat">${img('ngop-night','The anchor building at night with the windows lit')}<figcaption class="capbar" style="background:var(--char)">The anchor building at night</figcaption></figure>${todayNote(p)}</div></div>`)}
+  ${sec('compare', 'tint', `<div class="cols2 wide-r" style="align-items:center"><div class="stack"><h2>Before and after</h2><p style="font-size:19px;line-height:1.5">The anchor building went from building permit to certificate of occupancy in 108 days.</p>${daysBar([{l:'Permit to C of O', d:108, main:true}], 120)}</div>
+    <div class="mat">${beforeAfter('ngop-before','ngop-after','North Greenfield Office Park','At acquisition, 2017','108 days later')}<span class="capbar" style="background:var(--char)"><b>Drag to compare.</b> The rear elevation at acquisition and after redevelopment.</span></div></div>`)}
+  ${sec('buildings', '', `<h2>Three buildings, two strategies</h2><div class="bldgs" style="margin-top:22px">${(r.bldgs || s.bldgs || []).map(b => `<div><b>${b[0]}</b>${b[1]}</div>`).join('')}</div>
+    <div class="pair"><figure class="mat">${img('ngop-before-front','Front elevation before redevelopment')}<figcaption class="capbar" style="background:var(--char)">Front elevation, pre-acquisition condition</figcaption></figure><figure class="mat">${img('ngop-after-front','Front elevation after redevelopment')}<figcaption class="capbar" style="background:var(--char)">The same elevation after redevelopment</figcaption></figure></div>`)}
+  ${plans.length ? sec('plans', 'tint', `<h2>Floor plans</h2><p class="small" style="margin-top:8px">Suites run along a central corridor, so every office has an outside wall.</p><div class="plans">${plans.map(x => `<figure>${img(x[0], 'Floor plan, ' + x[1])}<figcaption>${x[1]}</figcaption></figure>`).join('')}</div>`) : ''}
+  ${sec('story', '', `<div class="cols2 wide-r"><div class="stack"><h2>The story</h2>${p.links ? p.links.map(l => `<a class="arrow" href="${l.href}"${ext} style="justify-self:start">${l.label}</a>`).join('') : ''}</div>${memo(p)}</div>`)}
+  ${sec('tenants', 'tint', `<h2>What the tenants say</h2><div class="quotes" style="margin-top:26px">${qs.map(quote).join('')}</div>`)}
+  ${sec('location', '', `<div class="cols2 wide-l"><div>${mapFig(p)}</div><div class="stack"><h2>Location</h2>${particulars(p)}${nearList(r.near)}</div></div>`)}
+  ${rec.filter(x => x[0] !== 'nearby').map((x, i) => sec(x[0], i % 2 ? '' : 'tint', `<div class="cols2 wide-r"><h2>${x[1]}</h2><div>${x[2]}</div></div>`)).join('')}
+  ${sources(p)}${ctaBand(p, 'Leasing', `Email Bill for current office availability at ${LNG.email}, or call ${LNG.phone}.`, 'Email Bill', 'mailto:' + LNG.email)}`;
+  return {head, body};
+}
+
+/* ===== Dequindre medical office ===== */
+function medSite(p){
+  const r = rs(p), rec = recordBlocks(p, {facts:'Building data'});
+  const nav = [['search','The search'],['growth','The growth'],['building','The building']].concat(rec.map(x => [x[0], x[1]]));
+  const head = `<header class="mh"><div class="wrap"><a class="name" href="#property-${p.slug}">${p.name}</a>${snav(p, nav)}<a href="#home" class="small" style="text-decoration:none">Cartessa Real Estate Company</a></div></header>`;
+  const body = `
+  <section class="sx" id="sec-growth"><div class="wrap cols2" style="align-items:center">
+    <div><p class="kicker">${r.addr || p.city + ', ' + p.state} &#xB7; Delivered ${p.delivered}</p><h1>The anchor took <b>half</b> the building, then <b>all</b> of it.</h1><p class="lead" style="font-family:var(--sans);font-size:18px;margin-top:18px">${p.result}</p></div>
+    <div>${stepsDiagram([50, 75, 100], ['at move-in', 'first expansion', 'within a year'])}<p class="dgcap">Share of the building leased by the anchor tenant.</p></div>
+  </div></section>
+  ${sec('search', 'tint', `<div class="cols2"><div class="stack"><h2>The search</h2><p style="font-size:19px;line-height:1.5">${p.plan}</p><p class="small">${p.risk}</p></div><div><p class="kicker">The building had to be</p>${plainList(['Within one mile of the clinic&#x2019;s old location', 'Inside Oakland County', 'Correctly zoned for outpatient treatment', 'Priced low enough to absorb the tenant&#x2019;s heavy build-out'])}</div></div>`)}
+  ${sec('building', '', `<div class="cols2 wide-l"><div>${mapFig(p)}</div><div class="stack">${snap(p.img, p.name, 'The building on Dequindre Road')}<h2>The building</h2>${particulars(p)}${todayNote(p)}</div></div>`)}
+  ${rec.map((x, i) => sec(x[0], i % 2 ? '' : 'tint', `<div class="cols2 wide-r"><h2>${x[1]}</h2><div>${x[2]}</div></div>`)).join('')}
+  ${sources(p)}${devCta(p)}`;
+  return {head, body};
+}
+
+/* ===== The 819 (leasing site, from the819sla.com) ===== */
+const L819 = {phone:'(586) 453-1719', tel:'tel:+15864531719', email:'management@the819sla.com', apply:'https://www.the819sla.com/application-form/'};
+const R819 = [{q:'This is the nicest unit I have ever seen (at this price point).', w:'Tamara M.', t:'Affordable housing facilitator'},{q:'Living adjacent to a golf course is serene and beautiful, leaving amazing views to wake up to.', w:'Haley S.', t:'Resident, Oakland University &#x2019;21'},{q:'This is hands-down the best place I&#x2019;ve ever lived.', w:'Chris B.', t:'Resident since 2020'},{q:'One of the on-site managers is even an OU student! I am so happy Bill and Billy did this for our community!!', w:'Kathleen S.', t:'Special Instructor, School of Nursing, Oakland University'},{q:'I want to stay for ten years!', w:'Sonya', t:'Resident since 2022'},{q:'You should feel really proud of this project. You have done a lot to provide a quality living environment for people.', w:'Paula N.', t:'Chief Executive Officer, Sacred Heart Rehabilitation Center'}];
+const F819 = ['Water, gas and high-speed internet included in rent','Parking included at no extra cost','Owner-managed: deal directly with the owner, not a third-party manager','Ample on-site laundry','Building locked 24/7','Golf course access and views next door','Fully renovated units with all new appliances'];
+function checks(list){ return `<ul class="checks" style="margin-top:22px">${list.map(f => `<li>${CHECK}<span>${f}</span></li>`).join('')}</ul>`; }
+function site819(p){
+  const r = rs(p), rec = recordBlocks(p, {facts:'The building', history:'From dormitory to apartments'});
+  const nav = [['features','Features'],['plans','Plans'],['rebuild','The rebuild'],['neighborhood','Neighborhood'],['words','Residents']];
+  const head = `<header class="eh"><div class="wrap"><a href="#property-${p.slug}"><img src="${IMG['819-logo']}" alt="The 819" style="height:46px;width:auto"></a>${snav(p, nav)}<a class="btn" style="padding:11px 14px" href="${L819.tel}">${L819.phone}</a></div></header>`;
+  const body = `
+  <section class="hero819"><div class="txt"><p class="kick">819 Golf Drive &#xB7; Pontiac / Bloomfield, Michigan</p><h1>Moderately priced two-bedroom apartments beside the golf course.</h1><p class="sub">Twenty-six apartments in a college dormitory that was taken down to the studs and rebuilt in 2020. Full since the day it opened.</p><div class="btns"><a class="btn white" href="${L819.apply}"${ext}>Apply online</a><a class="btn ghostw" href="#property-the-819~plans">See the floor plan</a></div></div>
+    <div class="pic">${img('819-day', 'The 819 from the air, with the golf course behind it')}</div></section>
+  ${sec('features', '', `<div class="cols2 wide-l"><div><h2>What the rent includes</h2>${checks(F819)}</div><figure class="mat">${img('819-night', 'The 819 at night with the parking lot lit')}<figcaption class="capbar" style="background:var(--brand)">The building and its parking at night</figcaption></figure></div>`)}
+  ${sec('plans', 'tint', `<h2>Plans</h2><div class="cols2" style="margin-top:22px"><figure class="mat">${img('819-floorplan', 'Floor plan of a two-bedroom apartment at The 819')}<figcaption class="capbar" style="background:var(--brand)">Two-bedroom floor plan</figcaption></figure><figure class="mat">${img('819-siteplan', 'Site plan showing The 819, its parking and the neighboring buildings')}<figcaption class="capbar" style="background:var(--brand)">Site plan</figcaption></figure></div>`)}
+  ${sec('rebuild', '', `<div class="cols2"><div class="stack"><h2>The rebuild</h2>${memo(p)}</div><div class="stack">${kv([['Address', r.addr || '819 Golf Drive, Pontiac, MI 48341'], ['Apartments', r.units || '26'], ['Before', 'Dormitory of Midwestern Baptist College'], ['Delivered', p.delivered], [p.vl, p.value], ['Occupancy', '100% since opening']].concat(r.kv || []))}${plainList(r.history)}</div></div>`)}
+  ${sec('neighborhood', 'tint', `<div class="cols2 wide-l"><div>${mapFig(p)}</div><div class="stack"><h2>Neighborhood</h2>${nearList(r.near)}</div></div>`)}
+  ${sec('words', '', `<h2>From residents and neighbors</h2><div class="quotes" style="margin-top:26px">${R819.map(quote).join('')}</div>`)}
+  ${rec.filter(x => x[0] === 'press').map(x => sec(x[0], 'tint', `<div class="cols2 wide-r"><h2>${x[1]}</h2><div>${x[2]}</div></div>`)).join('')}
+  ${sources(p)}${ctaBand(p, 'Leasing moves fast', `Contact Billy for availability: ${L819.phone} or ${L819.email}. To request a specific apartment, put its number in the comments on your application.`, 'Apply online', L819.apply)}`;
+  return {head, body};
+}
+
+/* ===== Miami Garden (leasing site, from mga734.com) ===== */
+const LMG = {phone:'(586) 453-1719', tel:'tel:+15864531719', email:'management@mga734.com', apply:'https://www.mga734.com/application-form/'};
+const FMG = ['Every apartment is two bedroom, one bath, 623 to 690 square feet','Newly renovated, each with a private entrance','Security cameras on the building','New on-site smart laundry equipment','Dishwashers in most units','Ample parking','Owner-managed: deal directly with the owner','Voucher friendly and inspection ready'];
+function unitPlan(){
+  const top = [['2',690],['3',623],['4',623],['5',623],['6',623],['LR',0],['7',623],['8',623],['9',623],['10',623],['11',690]];
+  let x = 12, out = '';
+  top.forEach(u => { const w = u[1] === 690 ? 60 : (u[1] ? 53 : 24);
+    out += `<rect class="${u[1] ? 'bld2' : 'old'}" x="${x}" y="16" width="${w - 3}" height="66"/>` + (u[1] ? `<text x="${x + w / 2 - 1.5}" y="44" class="tb" text-anchor="middle">#${u[0]}</text><text x="${x + w / 2 - 1.5}" y="62" class="ts" text-anchor="middle">${u[1]}</text>` : `<text x="${x + w / 2 - 1.5}" y="53" class="ts" text-anchor="middle">L</text>`);
+    if(u[0] === '2') out += `<rect class="bld2" x="${x}" y="85" width="${w - 3}" height="58"/><text x="${x + w / 2 - 1.5}" y="110" class="tb" text-anchor="middle">#1</text><text x="${x + w / 2 - 1.5}" y="128" class="ts" text-anchor="middle">690</text>`;
+    if(u[0] === '11') out += `<rect class="bld2" x="${x}" y="85" width="${w - 3}" height="58"/><text x="${x + w / 2 - 1.5}" y="110" class="tb" text-anchor="middle">#12</text><text x="${x + w / 2 - 1.5}" y="128" class="ts" text-anchor="middle">690</text>`;
+    x += w; });
+  return `<svg class="dg" viewBox="0 0 600 156" role="img" aria-label="Layout of the twelve apartments: ten in a row with a laundry room in the middle, and one more at each end">${out}<text x="300" y="118" class="ts" text-anchor="middle">parking and private entrances</text></svg><p class="dgcap">The twelve apartments, with size in square feet. L is the laundry room.</p>`;
+}
+function mgSite(p){
+  const r = rs(p);
+  const nav = [['features','Features'],['units','The apartments'],['story','The story'],['location','Location']];
+  const head = `<header class="gh"><div class="wrap"><a href="#property-${p.slug}"><img src="${IMG['mga-logo']}" alt="Miami Garden Apartments" style="height:52px;width:auto"></a>${snav(p, nav)}<a class="btn" style="padding:11px 14px" href="${LMG.tel}">${LMG.phone}</a></div></header>`;
+  const body = `
+  <section class="band">${img(p.img, 'Miami Garden Apartments, a single-story building with private entrances')}<div class="cap"><div class="wrap"><h1>Twelve newly renovated two-bedroom apartments in Ypsilanti Township.</h1><p>${r.addr || '665 North Miami Avenue, Ypsilanti Township, MI 48198'}</p></div></div></section>
+  ${sec('features', '', `<div class="cols2 wide-l"><div><h2>Features</h2>${checks(FMG)}</div><div class="stack"><div class="rentbox"><b>$1,200</b><span>a month, water included, per the property&#x2019;s own listing in November 2026</span></div><p class="small">Miami Garden cannot accept animals, because of legal liability and insurance costs.</p><div class="btns"><a class="btn" href="${LMG.apply}"${ext}>Apply online</a><a class="btn ghost" href="mailto:${LMG.email}">Email the owner</a></div></div></div>`)}
+  ${sec('units', 'tint', `<h2>The apartments</h2><div class="cols2 wide-l" style="margin-top:22px"><div>${unitPlan()}<div class="gal4">${['mga-g3','mga-g4','mga-g2','mga-g5'].map((k, i) => `<figure>${img(k, ['Kitchen with white cabinets','Living room with wood floor','Bedroom with ceiling fan','Bathroom'][i])}</figure>`).join('')}</div></div><figure class="mat">${img('mga-floorplan', 'Floor plan: two bedrooms, living room, kitchen and bath')}<figcaption class="capbar" style="background:var(--brand)">Typical floor plan</figcaption></figure></div>`)}
+  ${sec('story', '', `<div class="cols2"><div class="stack"><h2>The story</h2>${memo(p)}</div><div class="stack">${kv([['Address', r.addr], ['Apartments', '12, all two bedroom and one bath'], ['Delivered', p.delivered], [p.vl, p.value]].concat(r.kv || []))}${todayNote(p)}</div></div>`)}
+  ${sec('location', 'tint', `<div class="cols2 wide-l"><div>${mapFig(p)}</div><div class="stack"><h2>Location</h2>${nearList(r.near)}</div></div>`)}
+  ${sources(p)}${ctaBand(p, 'Ask about an apartment', `Miami Garden is owner-managed. Call ${LMG.phone} or write to ${LMG.email}.`, 'Apply online', LMG.apply)}`;
+  return {head, body};
+}
+
+/* ===== Madison Heights Recovery Home ===== */
+function quietSite(p){
+  const r = rs(p);
+  const head = backbar(p) + `<header class="qh"><div class="name">${p.name}</div></header>`;
+  const body = `
+  <section><div class="wrap"><div class="letter">
+    <h1>${TAGS[p.slug]}</h1>
+    <p>${p.plan}</p>
+    <p>The hard part was not the building. It was ${p.risk.charAt(0).toLowerCase() + p.risk.slice(1)}</p>
+    <p>${p.result} Delivered ${p.delivered}, at a total value of ${p.value}.</p>
+    <p>The address is not listed on this page. People live here, and their privacy comes first.</p>
+    ${snap(p.img, 'The house', 'The house, ' + p.delivered.replace(/^\w+ /, ''))}
+    <h2>Why Cartessa does this work</h2>
+    <p>Bill Chalmers has served as chairman of the board of Sacred Heart Rehabilitation Center, and Cartessa supports Dawn Farm, Families Against Narcotics and the University of Michigan Collegiate Recovery Program. Recovery housing and treatment space run through the portfolio: this house, the Eastwood Recovery Center at North Greenfield, and the outpatient clinic on Dequindre Road.</p>
+    ${(r.context || []).map(t => `<p>${t}</p>`).join('')}
+    <div style="margin-top:40px;display:grid;gap:30px">${[QUOTES.community[0], QUOTES.community[1]].map(x => `<div>${pull(x)}</div>`).join('')}</div>
+    <p style="margin-top:44px"><a class="arrow" href="#property-north-greenfield-office-park">North Greenfield Office Park</a> &nbsp; <a class="arrow" href="#property-dequindre-medical-office">Dequindre Medical Office</a></p>
+  </div></div></section>
+  ${sources(p)}`;
+  return {head, body};
+}
+
+/* ===== Westwood North / South (inside the Westwood site) ===== */
+function wwbSite(p){
+  const r = rs(p), south = p.slug === 'westwood-south', rec = recordBlocks(p, {facts: south ? 'Westwood South in detail' : 'Westwood North in detail', near:'Nearby'});
+  const qs = (r.quotes || []).concat(south ? [WW_REVIEWS[4], WW_REVIEWS[2]] : [WW_REVIEWS[0], WW_REVIEWS[1]]);
+  const body = `
+  <section class="wwb-hero">${img(south ? 'westwood-south' : 'wwn', p.name)}</section>
+  <section class="sx"><div class="wrap">
+    <div class="crumbs" style="padding-top:0"><a href="#westwood">Westwood Apartments</a><span>/</span><span>${south ? 'Westwood South' : 'Westwood North'}</span></div>
+    <div class="cols2 wide-l" style="margin-top:18px"><div class="stack"><h1>${TAGS[p.slug]}</h1><p class="lead">${south ? 'Five buildings at 829 through 837 Golf Drive, opening in phases since June 2025 beside Westwood North.' : 'Three buildings at 815, 817 and 821 Golf Drive, completed in December 2022.'}</p><div class="btns"><a class="btn" href="${WW.apply}"${ext}>Apply online</a><a class="btn ghost" href="#property-${south ? 'westwood-north' : 'westwood-south'}">See Westwood ${south ? 'North' : 'South'}</a></div></div>
+    <div>${kv([['Address', r.addr || (south ? '829&#x2013;837 Golf Drive, Pontiac, MI 48341' : '815&#x2013;821 Golf Drive, Pontiac, MI 48341')], ['Apartments', south ? '120' : '64'], ['Opened', r.opened || p.delivered], [p.vl, p.value]].concat(r.kv || []))}</div></div>
+  </div></section>
+  ${sec('story', 'panel', `<div class="cols2 wide-r"><h2 class="sec">How it got built</h2>${memo(p)}</div>`)}
+  ${r.fund && r.fund.length ? sec('funding', '', `<div class="cols2"><div class="stack"><h2 class="sec">How it was paid for</h2><div class="fund">${r.fund.map(f => `<div><span>${f[0]}</span><b>${f[1]}</b></div>`).join('')}</div>${r.fundNote ? `<p class="small">${r.fundNote}</p>` : ''}</div><div class="stack">${r.timeline && r.timeline.length ? `<h2 class="sec">Timeline</h2><div class="tl" style="margin-top:8px">${r.timeline.map(t => `<div><b>${t[0]}</b>${t[1]}</div>`).join('')}</div>` : ''}</div></div>`) : (r.timeline && r.timeline.length ? sec('timeline', '', `<h2 class="sec">Timeline</h2><div class="tl" style="margin-top:22px;max-width:640px">${r.timeline.map(t => `<div><b>${t[0]}</b>${t[1]}</div>`).join('')}</div>`) : '')}
+  ${sec('words', 'panel', `<h2 class="sec">${south ? 'What officials and residents said' : 'What people say'}</h2><div class="quotes" style="margin-top:26px">${qs.map(quote).join('')}</div>`)}
+  ${sec('map', '', `<div class="cols2 wide-l"><div>${mapFig(p)}</div><div class="stack"><h2 class="sec">On Golf Drive</h2>${nearList(r.near)}</div></div>`)}
+  ${rec.filter(x => x[0] !== 'nearby').map((x, i) => sec(x[0], i % 2 ? '' : 'panel', `<div class="cols2 wide-r"><h2 class="sec">${x[1]}</h2><div>${x[2]}</div></div>`)).join('')}
+  ${sources(p)}
+  <section class="sx" style="padding-top:0"><div class="wrap"><div class="apply-band"><div class="stack" style="gap:10px"><h2 style="color:#fff">Ready to move in?</h2><p style="font-family:var(--sans);font-size:16px;line-height:1.5;max-width:52ch;opacity:.92">${WW.phone} &#xB7; ${WW.email}</p></div><div class="btns"><a class="btn white" href="${WW.apply}"${ext}>Application form</a></div></div></div></section>`;
+  return {head: null, body, ww: true};
+}
+
+const KIND_FN = {bank: bankSite, rx: rxSite, cafe: cafeSite, center: centerSite, bridal: bridalSite, park: parkSite, med: medSite, '819': site819, mg: mgSite, quiet: quietSite, wwb: wwbSite};
+function buildSite(p){ const k = cfg(p).kind; return KIND_FN[k](p); }
+
 
 function press(){
   return `
@@ -979,7 +1565,7 @@ function westwood(){
   <section class="section" id="ww-buildings"><div class="wrap two" style="align-items:start">
     <div class="stack" style="gap:20px">
       <h2 class="sec">Two communities, one address</h2>
-      <div class="units"><div><b>64</b><span>apartments at Westwood North<br>815, 817 and 821 Golf Drive, completed December 2022</span></div><div><b>120</b><span>apartments at Westwood South<br>829 through 837 Golf Drive, opened 2025</span></div></div>
+      <div class="units"><div><b>64</b><span>apartments at Westwood North<br>815, 817 and 821 Golf Drive, completed December 2022</span></div><div><b>120</b><span>apartments at Westwood South<br>829 through 837 Golf Drive, opening in phases since June 2025</span></div></div>
       <p class="lead" style="font-size:17px">Westwood South opened with support from Oakland County&#x2019;s Oakland Together Housing Trust Fund. Both communities are owned and managed by the Chalmers family. The office is on site, maintenance lives on site, and the buildings are locked around the clock with 45 cameras.</p>
     </div>
     <figure class="mat">${img('ww-aerial','Aerial view of Westwood North and Westwood South with building numbers')}<figcaption class="capbar">Westwood North, 815&#x2013;821 &#xB7; Westwood South, 829&#x2013;837 Golf Drive</figcaption></figure>
@@ -1024,7 +1610,7 @@ function westwood(){
 
   <section class="section panel" id="ww-press"><div class="wrap two" style="align-items:start">
     <div><h2 class="sec">Westwood South in the news</h2><div class="press" style="margin-top:24px">${ARTICLES.slice(0,6).map(a => `<a href="${a.h}"${ext}><span class="t">${a.t}</span><span class="o">${a.o}</span></a>`).join('')}</div></div>
-    <figure class="mat">${img('westwood-south','Westwood South renderings')}<figcaption class="capbar">Westwood South, 120 apartments, opened 2025</figcaption></figure>
+    <figure class="mat">${img('westwood-south','Westwood South renderings')}<figcaption class="capbar">Westwood South, 120 apartments, opening in phases since 2025</figcaption></figure>
   </div></section>
 
   <section class="section" id="ww-apply"><div class="wrap">
@@ -1052,18 +1638,19 @@ function parse(){
 function render(){
   const r = parse();
   const app = $('#app');
-  let body = '', kind = 'co', prop = null;
+  let body = '', kind = 'co', prop = null, site = null;
   switch(r.page){
     case 'about': body = about(); break;
     case 'portfolio': body = portfolio(r.cat); break;
-    case 'property': body = propertySite(r.slug); prop = P.find(x => x.slug === r.slug) || null; if(prop) kind = 'ps'; break;
+    case 'property': prop = P.find(x => x.slug === r.slug) || null; if(prop && cfg(prop).kind){ site = buildSite(prop); body = site.body; kind = site.ww ? 'ww' : 'ps'; } else body = notFound(); break;
     case 'press': body = press(); break;
     case 'contact': body = contact(); break;
     case 'westwood': body = westwood(); kind = 'ww'; break;
     default: body = home();
   }
-  app.className = kind === 'ww' ? 'ww' : (kind === 'ps' ? 'ps ps-' + siteKind(prop) : '');
-  app.innerHTML = (kind === 'ps' ? siteHeader(prop) : header(kind, r.page)) + `<main>${body}</main>` + (kind === 'ps' ? siteFooter(prop) : footer(kind));
+  app.className = kind === 'ww' ? 'ww' : (kind === 'ps' ? 'ps k-' + cfg(prop).kind : '');
+  app.style.cssText = kind === 'ps' && cfg(prop).accent ? '--brand:' + cfg(prop).accent : '';
+  app.innerHTML = (kind === 'ps' ? site.head : header(kind, r.page)) + `<main>${body}</main>` + (kind === 'ps' ? siteFooter(prop) : footer(kind));
   wire();
   if((r.page === 'westwood' || r.page === 'property') && r.section){
     const el = document.getElementById((r.page === 'westwood' ? 'ww-' : 'sec-') + r.section);

@@ -311,6 +311,38 @@ form.cf{display:grid;gap:14px;background:var(--panel);padding:24px}
 .ww .quotes p{font-family:var(--serif)}
 .ww .record b{font-family:var(--sans);font-weight:800}
 .ww .foot{background:var(--rust-2)}
+
+/* property mini-sites */
+.ps{--brand:#2F5D46;--brand-2:color-mix(in srgb,var(--brand) 78%,#000);--panel:color-mix(in srgb,var(--brand) 7%,#fff);--panel-2:color-mix(in srgb,var(--brand) 15%,#fff)}
+.ps-office{--brand:#1F4E5A}
+.ps-retail{--brand:#7A2E3A}
+.ps-pharmacies{--brand:#1E5A8A}
+.ps-banks{--brand:#5C4A1E}
+.ps-westwood{--brand:#774C3F}
+.ps .mono{width:46px;height:46px;background:var(--brand);color:#fff;display:grid;place-items:center;font-family:var(--serif);font-size:21px;font-weight:600;flex:none}
+.ps .lk-name{font-family:var(--serif);font-weight:600;font-size:25px;letter-spacing:0;line-height:1.05}
+.ps .lk-sub{font-family:var(--sans);font-size:13px;margin-top:4px;color:var(--ink-2)}
+.ps .tagline{font-style:normal;font-family:var(--sans);font-size:14px}
+.ps .tagline a{color:var(--brand);text-decoration:none;font-weight:600}
+.ps .tagline a:hover{text-decoration:underline}
+.ps .ba .tag{background:color-mix(in srgb,var(--brand) 88%,transparent)}
+.ps .foot{background:var(--brand-2)}
+.ps .hero h1{max-width:18ch;font-size:clamp(34px,4.6vw,54px)}
+@media (max-width:480px){.ps .lk-name{font-size:20px}.ps .mono{width:40px;height:40px;font-size:18px}}
+.glance{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border-top:2px solid var(--brand);border-bottom:1px solid var(--rule)}
+.glance>div{background:var(--paper);padding:16px 18px 18px 0;min-width:0}
+.glance>div+div{padding-left:18px}
+.glance dt{font-family:var(--sans);font-size:12px;font-weight:600;color:var(--mute)}
+.glance dd{font-family:var(--serif);font-size:23px;color:var(--brand);line-height:1.15;margin-top:4px;overflow-wrap:anywhere}
+@media (max-width:760px){.glance{grid-template-columns:1fr 1fr}.glance>div:nth-child(odd){padding-left:0}}
+@media (max-width:420px){.glance{grid-template-columns:1fr}.glance>div+div{padding-left:0}}
+.story{display:grid;grid-template-columns:4fr 8fr;gap:40px;align-items:start}
+.story .memo{margin-top:0}
+.story .memo dt:first-child{margin-top:0}
+@media (max-width:860px){.story{grid-template-columns:1fr;gap:20px}}
+.more{display:flex;flex-wrap:wrap;gap:8px 26px;font-family:var(--sans);font-size:15px}
+.more a{color:var(--brand);text-decoration:none;border-bottom:1px solid var(--rule)}
+.more a:hover{border-bottom-color:var(--brand)}
 .apply-band{background:var(--brand);color:#fff;padding:clamp(28px,5vw,48px);display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;min-width:0}
 .apply-band>*{min-width:0}
 @media (max-width:700px){.apply-band{grid-template-columns:1fr}}
@@ -719,63 +751,168 @@ function portfolio(catId){
   </div></section>`;
 }
 
-function property(slug){
+const TAGS = {
+ 'westwood-south':'120 new apartments at affordable rents, finished on budget and on schedule.',
+ 'westwood-north':'64 apartments with a washer and dryer in every unit.',
+ 'the-819':'A college dormitory rebuilt as 26 apartments beside the golf course.',
+ 'miami-garden':'A renovated apartment building for Ypsilanti residents who need housing.',
+ 'madison-heights-recovery-home':'A correctly zoned home for a statewide recovery-care provider.',
+ 'north-greenfield-office-park':'A blighted, mostly vacant office park, 100% occupied in under three years.',
+ 'dequindre-medical-office':'A medical office building its anchor tenant grew to fill completely.',
+ 'the-wedding-shoppe':'A vacant building on Coolidge, gutted and rebuilt in 120 days.',
+ 'westport-shoppes':'The gateway corner of St. Lucie West, rebuilt as a fully leased center.',
+ 'panera-plaza':'A Meijer outlot turned into 10,000 square feet anchored by Panera Bread.',
+ 'port-city-plaza':'A Walmart outlot turned into a strip center for GameStop and Great Clips.',
+ 'pinellas-groves-plaza':'A Mobil station vacant since 1987, now a Starbucks-anchored center.',
+ 'winter-park-starbucks':'A 10,000-square-foot former Exxon lot, now a stand-alone Starbucks.',
+ 'tampa-starbucks':'A vacant Mobil station in Seminole Heights, now a neighborhood Starbucks.',
+ 'belvedere-walgreens':'1.5 acres carved out of a 40-acre site for a Walgreens build-to-suit.',
+ 'cape-coral-walgreens':'A vacant Miami Subs and a slice of the Pep Boys next door, now a Walgreens.',
+ 'jensen-beach-walgreens':'Two off-market acres developed for Walgreens.',
+ 'hudson-walgreens':'A Mobil station, a warehouse and a house, assembled into one Walgreens site.',
+ 'tampa-walgreens':'An Exxon station, a dry cleaner and two houses, assembled for Walgreens.',
+ 'lake-underhill-amsouth':'A decrepit Mobil station rebuilt as an AmSouth branch.',
+ 'ehrlich-amsouth':'A decrepit Shell station, now an AmSouth branch on a ground lease.',
+ 'southchase-amsouth':'An off-market Chevron station rebuilt as an AmSouth branch.',
+ 'satellite-beach-amsouth':'An off-market Chevron station, now an AmSouth branch on a ground lease.',
+ 'alafaya-amsouth':'An operating Chevron station freed from a gas-only deed restriction for AmSouth.',
+ 'indialantic-amsouth':'A custom AmSouth branch on a 20,000-square-foot former Chevron lot.',
+ 'boynton-trail-bank-atlantic':'A former Citgo station ground-leased to Bank Atlantic.'
+};
+const R819 = [{q:'Living adjacent to a golf course is serene and beautiful.', w:'Haley S.', t:'Oakland University &#x2019;21'},{q:'I will recommend The 819 to everybody.', w:'Chris K.', t:'Resident since 2020'},{q:'Thank you for providing more than exceptional community and living environment.', w:'Austin S.', t:'Resident'}];
+function siteExtras(p){
+  const T = QUOTES.tenants, x = {quotes:[], press:[]};
+  switch(p.slug){
+    case 'the-wedding-shoppe': x.quotes=[T[4]]; x.press=[ARTICLES[7]]; break;
+    case 'westport-shoppes': x.quotes=[T[0],T[1],T[3],T[8]]; break;
+    case 'panera-plaza': x.quotes=[T[2]]; break;
+    case 'north-greenfield-office-park': x.quotes=[T[5],T[6],T[7]]; break;
+    case 'the-819': x.quotes=R819; break;
+    case 'westwood-south': x.quotes=[QUOTES.community[2],WW_REVIEWS[4],WW_REVIEWS[2]]; x.press=ARTICLES.slice(0,6); break;
+    case 'westwood-north': x.quotes=[QUOTES.community[2],WW_REVIEWS[0],WW_REVIEWS[1]]; break;
+    case 'tampa-starbucks': x.press=[ARTICLES[9]]; break;
+  }
+  return x;
+}
+function siteKind(p){ return p.slug.indexOf('westwood') === 0 ? 'westwood' : p.cat; }
+function siteSections(p){
+  const x = siteExtras(p), out = [['story','The story'],['facts','At a glance']];
+  if(p.ngop) out.push(['photos','Before and after']);
+  if(p.residents) out.push(['living', p.slug === 'the-819' ? 'Living here' : 'Leasing']);
+  if(x.quotes.length) out.push(['words','In their words']);
+  if(x.press.length) out.push(['press','Press']);
+  if(p.slug !== 'madison-heights-recovery-home') out.push(['location','Location']);
+  return out;
+}
+function initials(name){ const w = name.replace(/^The /,'').split(/\s+/).filter(x => /^[A-Z0-9]/.test(x)); return /^\d/.test(w[0]) ? w[0] : w.slice(0,2).map(x => x[0]).join(''); }
+function siteHeader(p){
+  const mark = siteKind(p) === 'westwood' ? `<img src="${IMG['w-mark']}" alt="">` : `<span class="mono">${initials(p.name)}</span>`;
+  return `<header class="mast"><div class="wrap mast-in">
+    <a class="lockup" href="#property-${p.slug}">${mark}<span><span class="lk-name">${p.name}</span><span class="lk-sub">${p.city}, ${p.state}</span></span></a>
+    <div class="tagline"><a href="#home">A Cartessa Real Estate Company project</a></div>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+  </div>
+  <nav class="navbar" id="nav"><div class="wrap">${siteSections(p).map(l => `<a href="#property-${p.slug}~${l[0]}">${l[1]}</a>`).join('')}<a class="right" href="#portfolio-${p.cat}">All ${catName(p.cat)} projects</a></div></nav></header>`;
+}
+function siteFooter(p){
+  const sibs = byCat(p.cat).filter(x => x !== p).slice(0,6);
+  return `<footer class="foot"><div class="wrap">
+    <div class="foot-grid">
+      <div><span class="lk-name" style="font-family:var(--serif);font-size:24px;letter-spacing:0">${p.name}</span><span class="lk-sub" style="font-family:var(--sans);font-size:13px">${p.city}, ${p.state}</span><p class="epi">${TAGS[p.slug] || ''}</p></div>
+      <div><h4>Cartessa Real Estate Company</h4><ul><li>${CO.addr1}</li><li>${CO.addr2}</li><li><a href="mailto:${CO.email}">${CO.email}</a></li><li><a href="#home">Cartessa home</a></li></ul></div>
+      <div><h4>More ${catName(p.cat)}</h4><ul>${sibs.map(x => `<li><a href="#property-${x.slug}">${x.name}</a></li>`).join('')}<li><a href="#portfolio">Full development portfolio</a></li></ul></div>
+    </div>
+    <div class="fine"><span>&#xA9; 2026 Cartessa Real Estate Company, LLC.</span>${p.residents ? EHO : ''}<span>Redesign concept prepared for Bill and Billy Chalmers by Jason Kemp.</span></div>
+  </div></footer>`;
+}
+function propertySite(slug){
   const p = P.find(x => x.slug === slug);
   if(!p) return notFound();
-  const sibs = byCat(p.cat), i = sibs.indexOf(p);
-  const prev = sibs[(i - 1 + sibs.length) % sibs.length], next = sibs[(i + 1) % sibs.length];
-  let hero;
-  if(p.ngop){
-    hero = `<div class="mat">${beforeAfter('ngop-before','ngop-after','North Greenfield Office Park','At acquisition, 2017','108 days later')}<span class="capbar"><b>Drag to compare.</b> The rear elevation at acquisition and after redevelopment, with the new pergola.</span></div>
+  const x = siteExtras(p), sibs = byCat(p.cat).filter(y => y !== p);
+  const cap = `<b>${p.name}</b>, ${p.city}, ${p.state}`;
+  const photo = p.ngop
+    ? `<div class="mat">${beforeAfter('ngop-before','ngop-after','North Greenfield Office Park','At acquisition, 2017','108 days later')}<span class="capbar"><b>Drag to compare.</b> The rear elevation at acquisition and after redevelopment.</span></div>`
+    : `<figure class="mat ${p.small ? 'narrow' : ''}">${img(p.img, p.name)}<figcaption class="capbar">${cap}</figcaption></figure>`;
+  const who = p.owned ? 'Owned and managed by Cartessa Real Estate Company.' : 'Developed by Bill Chalmers.';
+  const contactBtn = p.residents
+    ? (p.slug === 'the-819' ? `<a class="btn" href="#property-the-819~living">Leasing information</a>` : `<a class="btn" href="#westwood">Visit Westwood Apartments</a>`)
+    : `<a class="btn" href="#property-${p.slug}~story">Read the story</a>`;
+  const mapq = encodeURIComponent(p.name + ' ' + p.city.split(' / ')[0] + ' ' + p.state);
+  const living = !p.residents ? '' : (p.slug === 'the-819' ? `
+  <section class="section" id="sec-living"><div class="wrap two even">
+    <div class="stack"><h2 class="sec">Living at The 819</h2>
+      <p class="lead">Twenty-six apartments in a fully rebuilt building on the edge of a golf course in Pontiac, managed by the same family as Westwood next door. For availability, reach the leasing office.</p>
+      <div class="btns"><a class="btn" href="mailto:${WW.email}">Email the leasing office</a><a class="btn ghost" href="${WW.tel}">${WW.phone}</a></div>
+      <p class="small">${WW.email}</p></div>
+    <figure class="mat narrow">${img('the-819','The 819 Apartments beside the golf course')}<figcaption class="capbar">The 819, on the edge of the golf course</figcaption></figure>
+  </div></section>` : `
+  <section class="section" id="sec-living"><div class="wrap two even">
+    <div class="stack"><h2 class="sec">Now leasing</h2>
+      <p class="lead">One- and two-bedroom apartments with a washer and dryer in every unit and a patio or balcony on every unit. Features, floor plans, reviews and the application are on the Westwood Apartments site.</p>
+      <div class="btns"><a class="btn" href="#westwood">Westwood Apartments</a><a class="btn ghost" href="${WW.tel}">${WW.phone}</a></div></div>
+    <figure class="mat">${img('ww-6','Kitchen at Westwood Apartments')}<figcaption class="capbar">A Westwood kitchen with stainless appliances</figcaption></figure>
+  </div></section>`);
+  return `
+  <section class="hero"><div class="wrap two">
+    <div class="stack" style="gap:20px">
+      <p class="label">${catName(p.cat)} &#xB7; ${p.city}, ${p.state} &#xB7; Delivered ${p.delivered}</p>
+      <h1>${TAGS[p.slug] || p.name}</h1>
+      <p class="lead">${p.size}. ${who}</p>
+      <div class="btns">${contactBtn}${p.links ? p.links.map(l => `<a class="arrow" href="${l.href}"${ext}>${l.label}</a>`).join('') : ''}</div>
+    </div>
+    ${photo}
+  </div></section>
+
+  <section class="section panel" id="sec-story"><div class="wrap story">
+    <div class="stack"><h2 class="sec">The story</h2><p class="small">Told the way Bill writes every deal memo: the plan, what could have killed it, and how it came out.</p></div>
+    <dl class="memo">
+      <dt>Plan</dt><dd>${p.plan}</dd>
+      <dt>Potential deal breakers</dt><dd>${p.risk}</dd>
+      <dt>Result</dt><dd>${p.result}</dd>
+      ${p.notable ? `<dt>Notable</dt><dd>${p.notable}</dd>` : ''}
+    </dl>
+  </div></section>
+
+  <section class="section" id="sec-facts"><div class="wrap">
+    <h2 class="sec">At a glance</h2>
+    <dl class="glance" style="margin-top:26px">
+      <div><dt>Delivered</dt><dd>${p.delivered}</dd></div>
+      <div><dt>${p.vl}</dt><dd>${p.value}</dd></div>
+      <div><dt>Size</dt><dd>${p.size}</dd></div>
+      <div><dt>${p.tenant.indexOf(',') > 0 ? 'Tenants' : 'Tenant'}</dt><dd style="font-size:19px">${p.tenant}</dd></div>
+    </dl>
+  </div></section>
+
+  ${p.ngop ? `<section class="section panel" id="sec-photos"><div class="wrap">
+    <h2 class="sec">Before and after</h2>
     <div class="pair">
       <figure class="mat">${img('ngop-before-front','North Greenfield front elevation before redevelopment')}<figcaption class="capbar">Front elevation, pre-acquisition condition</figcaption></figure>
       <figure class="mat">${img('ngop-after-front','North Greenfield front elevation after redevelopment')}<figcaption class="capbar">Front elevation, 108 days from permit to certificate of occupancy</figcaption></figure>
     </div>
-    <figure class="mat" style="margin-top:20px">${img('ngop-night','North Greenfield at night with the windows lit')}<figcaption class="capbar">The anchor building at night, fully occupied</figcaption></figure>`;
-  } else {
-    hero = `<figure class="mat ${p.small ? 'narrow' : ''}">${img(p.img, p.name)}<figcaption class="capbar"><b>${p.name}</b>, ${p.city}, ${p.state}</figcaption></figure>`;
-  }
-  const residents = p.residents ? `
-  <section class="section panel"><div class="wrap two even">
-    <div class="stack">
-      <h2 class="sec">${p.slug === 'the-819' ? 'Living at The 819' : 'Now leasing'}</h2>
-      <p class="lead">${p.slug === 'the-819' ? 'Twenty-six apartments in a fully rebuilt building on the edge of a golf course in Pontiac, managed by the same family as Westwood. For availability, reach the leasing office.' : 'One- and two-bedroom apartments with a washer and dryer in every unit. The Westwood site has the features, floor plans, reviews and the application.'}</p>
-      <div class="btns">${p.slug === 'the-819' ? `<a class="btn" href="mailto:${WW.email}">Email the leasing office</a><span class="small">${WW.phone}</span>` : `<a class="btn" href="#westwood">Westwood Apartments</a>`}</div>
-    </div>
-    ${p.slug === 'the-819' ? `<div class="quotes">${[{q:'Living adjacent to a golf course is serene and beautiful.', w:'Haley S.', t:'Oakland University &#x2019;21'},{q:'I will recommend The 819 to everybody.', w:'Chris K.', t:'Resident since 2020'}].map(quote).join('')}</div>` : `<figure class="mat">${img('ww-6','Kitchen at Westwood Apartments')}<figcaption class="capbar">A Westwood kitchen: stainless appliances, walk-in closet off the hall</figcaption></figure>`}
-  </div></section>` : '';
-  return `
+    <figure class="mat" style="margin-top:20px">${img('ngop-night','North Greenfield at night with the windows lit')}<figcaption class="capbar">The anchor building at night, fully occupied</figcaption></figure>
+  </div></section>` : ''}
+  ${living}
+  ${x.quotes.length ? `<section class="section panel" id="sec-words"><div class="wrap">
+    <h2 class="sec">In their words</h2>
+    <div class="quotes" style="margin-top:28px">${x.quotes.map(quote).join('')}</div>
+  </div></section>` : ''}
+  ${x.press.length ? `<section class="section" id="sec-press"><div class="wrap">
+    <h2 class="sec">Press</h2>
+    <div class="press" style="margin-top:24px">${x.press.map(a => `<a href="${a.h}"${ext}><span class="t">${a.t}</span><span class="o">${a.o}</span></a>`).join('')}</div>
+  </div></section>` : ''}
+  ${p.slug !== 'madison-heights-recovery-home' ? `<section class="section" id="sec-location"><div class="wrap two even">
+    <div class="stack"><h2 class="sec">Location</h2>
+      <p class="lead">${p.city}, ${p.state}.${siteKind(p) === 'westwood' ? ' ' + WW.addr + '.' : ''}</p>
+      <div class="btns"><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=${mapq}"${ext}>Open in maps</a></div></div>
+    <div class="stack"><p class="label">More ${catName(p.cat)} projects</p><div class="more">${sibs.map(y => `<a href="#property-${y.slug}">${y.name}</a>`).join('')}</div></div>
+  </div></section>` : ''}
+
   <section class="section" style="padding-top:0"><div class="wrap">
-    <div class="crumbs"><a href="#home">Home</a><span>/</span><a href="#portfolio">Development portfolio</a><span>/</span><a href="#portfolio-${p.cat}">${catName(p.cat)}</a></div>
-    <div class="ptitle"><h1>${p.name}</h1><p class="sub"><b>${p.city}, ${p.state}</b> &nbsp;&#xB7;&nbsp; ${catName(p.cat)} &nbsp;&#xB7;&nbsp; Delivered ${p.delivered}${p.owned ? ' &nbsp;&#xB7;&nbsp; Owned and managed by Cartessa' : ''}</p></div>
-    <div class="proj">
-      <aside class="data"><h3>Project data</h3>
-        <dl>
-          <div><dt>Delivered</dt><dd>${p.delivered}</dd></div>
-          <div><dt>${p.vl}</dt><dd>${p.value}</dd></div>
-          <div><dt>Size</dt><dd>${p.size}</dd></div>
-          <div><dt>Tenant</dt><dd style="font-size:19px">${p.tenant}</dd></div>
-          ${p.owned ? '<div><dt>Status</dt><dd style="font-size:19px">Owned and managed by Cartessa</dd></div>' : ''}
-        </dl>
-        ${p.links ? p.links.map(l => `<a class="arrow" href="${l.href}"${ext} style="justify-self:start">${l.label}</a>`).join('') : ''}
-      </aside>
-      <div>
-        ${hero}
-        <dl class="memo">
-          <dt>Plan</dt><dd>${p.plan}</dd>
-          <dt>Potential deal breakers</dt><dd>${p.risk}</dd>
-          <dt>Result</dt><dd>${p.result}</dd>
-          ${p.notable ? `<dt>Notable</dt><dd>${p.notable}</dd>` : ''}
-        </dl>
-      </div>
+    <div class="apply-band">
+      <div class="stack" style="gap:10px"><h2 style="color:#fff">${p.residents ? 'Looking for an apartment?' : 'Have a building like this one?'}</h2><p style="font-family:var(--sans);font-size:16px;line-height:1.5;max-width:52ch;opacity:.92">${p.residents ? `The leasing office answers at ${WW.phone} and ${WW.email}.` : `Bill looks at vacant, blighted and hard-to-finance sites. Reach him at ${CO.email}.`}</p></div>
+      <div class="btns"><a class="btn white" href="${p.residents ? 'mailto:' + WW.email : '#contact'}">${p.residents ? 'Email the leasing office' : 'Contact Cartessa'}</a></div>
     </div>
-    <div class="pn">
-      ${prev === next ? `<a href="#property-${next.slug}"><span>Also in ${catName(p.cat)}</span><b>${next.name}</b></a><a class="next" href="#portfolio"><span>Back to</span><b>Development portfolio</b></a>`
-      : `<a href="#property-${prev.slug}"><span>Previous in ${catName(p.cat)}</span><b>${prev.name}</b></a>
-      <a class="next" href="#property-${next.slug}"><span>Next in ${catName(p.cat)}</span><b>${next.name}</b></a>`}
-    </div>
-  </div></section>
-  ${residents}`;
+  </div></section>`;
 }
 
 function press(){
@@ -905,7 +1042,7 @@ function notFound(){
 /* ---------- router ---------- */
 function parse(){
   const h = (location.hash || '#home').slice(1).replace(/\/+$/,'');
-  if(h.indexOf('property-') === 0) return {page:'property', slug:h.slice(9)};
+  if(h.indexOf('property-') === 0){ const a = h.slice(9).split('~'); return {page:'property', slug:a[0], section:a[1] || ''}; }
   if(h.indexOf('portfolio') === 0) return {page:'portfolio', cat:h.slice(10) || 'all'};
   if(h.indexOf('westwood') === 0) return {page:'westwood', section:h.slice(9)};
   if(['home','about','press','contact'].indexOf(h) >= 0) return {page:h};
@@ -915,21 +1052,21 @@ function parse(){
 function render(){
   const r = parse();
   const app = $('#app');
-  let body = '', kind = 'co';
+  let body = '', kind = 'co', prop = null;
   switch(r.page){
     case 'about': body = about(); break;
     case 'portfolio': body = portfolio(r.cat); break;
-    case 'property': body = property(r.slug); break;
+    case 'property': body = propertySite(r.slug); prop = P.find(x => x.slug === r.slug) || null; if(prop) kind = 'ps'; break;
     case 'press': body = press(); break;
     case 'contact': body = contact(); break;
     case 'westwood': body = westwood(); kind = 'ww'; break;
     default: body = home();
   }
-  app.className = kind === 'ww' ? 'ww' : '';
-  app.innerHTML = header(kind, r.page) + `<main>${body}</main>` + footer(kind);
+  app.className = kind === 'ww' ? 'ww' : (kind === 'ps' ? 'ps ps-' + siteKind(prop) : '');
+  app.innerHTML = (kind === 'ps' ? siteHeader(prop) : header(kind, r.page)) + `<main>${body}</main>` + (kind === 'ps' ? siteFooter(prop) : footer(kind));
   wire();
-  if(r.page === 'westwood' && r.section){
-    const el = document.getElementById('ww-' + r.section);
+  if((r.page === 'westwood' || r.page === 'property') && r.section){
+    const el = document.getElementById((r.page === 'westwood' ? 'ww-' : 'sec-') + r.section);
     if(el){ el.scrollIntoView({block:'start'}); return; }
   }
   window.scrollTo(0, 0);

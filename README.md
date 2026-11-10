@@ -8,7 +8,7 @@ Bill and Billy Chalmers by Jason Kemp.
 
 ## What's in it
 
-- Home, About, Development Portfolio (all 26 projects, each with its own page),
+- Home, About, Development Portfolio (all 26 projects, each built out as its own mini-site),
   Articles & Testimonials, Contact
 - Westwood Apartments as its own section with its own branding
 - A draggable before/after of North Greenfield Office Park, from the completion package
